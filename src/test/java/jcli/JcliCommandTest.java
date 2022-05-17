@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class JcliCommandTest {
 
     @Test
-    public void testWithCommandLineOption() throws Exception {
+    public void testWithCommandLineOption() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
 
@@ -22,7 +22,7 @@ public class JcliCommandTest {
             PicocliRunner.run(JcliCommand.class, ctx, args);
 
             // jcli
-            assertTrue(baos.toString().contains("Hi!"));
+            assertTrue(baos.toString().contains("Welcome to jcli!"));
         }
     }
 }
