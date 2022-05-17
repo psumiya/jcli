@@ -1,3 +1,7 @@
 micronaut:
   application:
     name: jcli
+netty:
+  default:
+    allocator:
+      max-order: 3
