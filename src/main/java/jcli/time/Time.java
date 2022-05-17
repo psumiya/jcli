@@ -11,7 +11,7 @@ public class Time implements Runnable {
     @CommandLine.Option(names = {"-now", "--now"}, description = "Prints the value of Instant.now()")
     boolean now;
 
-    @CommandLine.Option(names = {"-toEpochMilli", "--toEpochMilli", "-toEpochMillis", "--toEpochMillis"}, description = "Returns the value of Instant.now().toEpochMillis()")
+    @CommandLine.Option(names = {"-toEpochMilli", "--toEpochMilli", "-toEpochMillis", "--toEpochMillis"}, description = "Prints the value of Instant.now().toEpochMillis()")
     boolean toEpochMilli;
 
     public void run() {
