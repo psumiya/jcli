@@ -25,4 +25,18 @@ public class JcliCommandTest {
             assertTrue(baos.toString().contains("Welcome to jcli!"));
         }
     }
+
+    @Test
+    public void testWithCommandLineOptionNow() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
+
+        try (ApplicationContext ctx = ApplicationContext.run(Environment.CLI, Environment.TEST)) {
+            String[] args = new String[] { "-now" };
+            PicocliRunner.run(JcliCommand.class, ctx, args);
+            System.out.println(baos);
+            // jcli
+//            assertTrue(baos.toString().contains("Welcome to jcli!"));
+        }
+    }
 }
