@@ -1,4 +1,4 @@
-== jcli
+= jcli
 :nofooter:
 
 Sugared wrappers to execute methods from JDK and JVM-based libraries from the command line.
@@ -34,14 +34,19 @@ Here is a small sample of available options.
 |SubCommand | Options | Description | Usage
 
 |util
-|-uuid, --uuid, randomUUID
+|_-uuid_
 |Generates a UUID
 |`jcli util -uuid`
 
 |time
-|-now, --now
-|Prints the value of Instant.now()
+|_-now_
+|Prints the value of current time as standard formatted date/time
 |`jcli time -now`
+
+|time
+|_-toEpochMilli_
+|Prints the value of current time as the number of milliseconds from the epoch of 1970-01-01T00:00:00Z.
+|`jcli time -toEpochMilli`
 |===
 
 == Build

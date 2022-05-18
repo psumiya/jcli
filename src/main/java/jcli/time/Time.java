@@ -8,10 +8,10 @@ import java.time.Instant;
         mixinStandardHelpOptions = true)
 public class Time implements Runnable {
 
-    @CommandLine.Option(names = {"-now", "--now"}, description = "Prints the value of Instant.now()")
+    @CommandLine.Option(names = {"-now", "--now"}, description = "Prints the value of current time as standard formatted date/time.")
     boolean now;
 
-    @CommandLine.Option(names = {"-toEpochMilli", "--toEpochMilli", "-toEpochMillis", "--toEpochMillis"}, description = "Prints the value of Instant.now().toEpochMillis()")
+    @CommandLine.Option(names = {"-toEpochMilli", "--toEpochMilli", "-toEpochMillis", "--toEpochMillis"}, description = "Prints the value of current time as the number of milliseconds from the epoch of 1970-01-01T00:00:00Z.")
     boolean toEpochMilli;
 
     public void run() {

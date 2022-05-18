@@ -18,6 +18,7 @@ dependencies {
     implementation("io.micronaut.picocli:micronaut-picocli")
     implementation("jakarta.annotation:jakarta.annotation-api")
     runtimeOnly("ch.qos.logback:logback-classic")
+    compileOnly("org.graalvm.nativeimage:svm")
     implementation("io.micronaut:micronaut-validation")
 
     testImplementation("io.micronaut:micronaut-http-client")
