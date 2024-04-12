@@ -1,30 +1,50 @@
 package jcli;
 
 import io.micronaut.configuration.picocli.PicocliRunner;
-import jcli.time.Time;
-import jcli.util.Util;
+import jcli.core.NoInputTemplate;
+import jcli.core.type.NoParam;
+import jcli.subcommand.string.StringCommand;
+import jcli.subcommand.time.TimeCommand;
+import jcli.subcommand.util.UtilCommand;
+import picocli.CommandLine;
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Option;
 
-@Command(name = "jcli", description = "...",
+@Command(name = "jcli", description = "Sugared wrappers to execute methods of JDK and JVM-based libraries from the command line.",
         mixinStandardHelpOptions = true,
         subcommands = {
-                Time.class,
-                Util.class
+                TimeCommand.class,
+                UtilCommand.class,
+                StringCommand.class
         })
-public class JcliCommand implements Runnable {
+public class JcliCommand implements NoInputTemplate {
 
-    @Option(names = {"-v", "--verbose"}, description = "Print welcome message.")
+    @CommandLine.Option(names = {"-v", "--verbose"}, description = "Print welcome message.")
     boolean verbose;
+
+    NoParam function;
 
     public static void main(String[] args) {
         PicocliRunner.run(JcliCommand.class, args);
     }
 
-    public void run() {
-        // business logic here
+    @Override
+    public void init() {
         if (verbose) {
-            System.out.println("Welcome to jcli!");
+            function = NoParam.hello;
         }
     }
+
+    @Override
+    public boolean isValid() {
+        if (function == null) {
+            throw new RuntimeException("Missing function to execute.");
+        }
+        return true;
+    }
+
+    @Override
+    public NoParam getFunction() {
+        return this.function;
+    }
+
 }
