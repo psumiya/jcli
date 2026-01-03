@@ -1,5 +1,25 @@
 [
-  {"name":"java.lang.String", "allPublicMethods":true},
-  {"name":"java.util.UUID", "allPublicMethods":true},
-  {"name":"java.time.Instant", "allPublicMethods":true}
+  {
+    "name": "jcli.config.CommandConfig",
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredFields": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "java.lang.String",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "java.lang.Math",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "java.time.Instant",
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "java.util.UUID",
+    "queryAllPublicMethods": true
+  }
 ]

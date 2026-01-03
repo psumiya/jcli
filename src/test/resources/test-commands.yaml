@@ -1,0 +1,10 @@
+commands:
+  - name: test-string
+    className: java.lang.String
+    strategy: INSTANCE
+    description: "Test String command"
+
+  - name: test-math
+    className: java.lang.Math
+    strategy: STATIC
+    description: "Test Math command"
