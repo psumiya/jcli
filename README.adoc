@@ -3,7 +3,7 @@
 
 Sugared wrappers to execute methods from JDK and JVM-based libraries from the command line.
 
-E.g., To generate a UUID, java.util.UUID contains a method, `UUID.randomUUID()`. This tool helps you to execute that method by invoking `jcli util -uuid`.
+E.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
 
 == Motivation
 The goal is to expose the wealth of utility methods available in the JVM ecosystem right at the command line.
@@ -14,40 +14,54 @@ Most methods return a single result, and so can be used in pipe operations combi
 
 == Available Commands
 
-In order to view the latest document, you can run the help for a command or sub-command.
+The CLI structure maps directly to Java classes:
+- `jcli string` -> `java.lang.String`
+- `jcli uuid` -> `java.util.UUID`
+- `jcli instant` -> `java.time.Instant`
 
-E.g., `jcli time -help`
+In order to view the available methods for a command, you can use the `--methods` flag.
+
+E.g., `jcli instant --methods`
 ```
-Usage: jcli time [-hV] [-now] [-toEpochMilli]
-Methods from java.time
-  -h, --help        Show this help message and exit.
-      -now, --now   Prints the value of Instant.now()
-      -toEpochMilli, --toEpochMilli, -toEpochMillis, --toEpochMillis
-                    Prints the value of Instant.now().toEpochMillis()
-  -V, --version     Print version information and exit.
+...
+now()
+parse(CharSequence)
+isAfter(Instant)
+plusSeconds(long)
+...
 ```
 
-Here is a small sample of available options.
+Here are some examples of valid commands:
 
 [cols="1,1,1,1"]
 |===
-|SubCommand | Options | Description | Usage
+|SubCommand | Method | Description | Usage
 
-|util
-|`-uuid`
-|Generates a UUID
-|`jcli util -uuid`
+|uuid
+|`randomUUID`
+|Generates a random UUID
+|`jcli uuid randomUUID`
 
-|time
-|`-now`
-|Prints the value of current time as standard formatted date/time
-|`jcli time -now`
+|instant
+|`now`
+|Prints the current time (ISO-8601)
+|`jcli instant now`
 
-|time
-|`-toEpochMilli`
-|Prints the value of current time as the number of milliseconds from the epoch of 1970-01-01T00:00:00Z.
-|`jcli time -toEpochMilli`
+|instant
+|`parse`
+|Parses a string text to Instant
+|`jcli instant parse '2023-01-01T00:00:00Z'`
+
+|string
+|`substring`
+|Extracts substring from text
+|`jcli string substring 'hello world' 0 5`
 |===
+
+=== Smart Instance Resolution
+For instance methods (like `Instant.getNano()` or `String.length()`), `jcli` creates an instance automatically if needed.
+- `jcli instant getNano` -> Defaults to `Instant.now().getNano()`
+- `jcli instant getNano 2023-01-01T00:00:00Z` -> Uses the provided timestamp instance.
 
 == Build
 
@@ -83,11 +97,11 @@ Then run, `jcli -h`.
    -v, --verbose   Print welcome message.
    -V, --version   Print version information and exit.
  Commands:
-   time    Methods from java.time
-   util    Methods from java.util
-   string  Methods from java.lang.String
+   instant  Methods from java.time.Instant.
+   uuid     Methods from java.util.UUID.
+   string   Methods from java.lang.String.
  ```
  
  An example command:
  
- `$ ./build/native/nativeCompile/jcli time -fn=getEpochSecond`
+ `$ ./build/native/nativeCompile/jcli instant now`
