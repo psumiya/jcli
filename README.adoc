@@ -60,34 +60,34 @@ To build this project's source code:
 Then run, `jcli -h`.
 
 == Build Native Image
-
-. Install and Use GraalVM
-. Compile Native Image
-.. NativeCompile may take a few minutes (~7 minutes on My Intel / i5 / 8GB Mac)
-
-```
-sdk install java 17.0.8-graalce
-sdk use java 17.0.8-graalce
-./gradlew nativeCompile
-```
-
-The default output directory is `build/native/nativeCompile`.
-
-Here is how you can execute the native file.
-```
-$ ./build/native/nativeCompile/jcli --help
-Usage: jcli [-hvV] [COMMAND]
-Sugared wrappers to execute methods of JDK and JVM-based libraries from the
-command line.
-  -h, --help      Show this help message and exit.
-  -v, --verbose   Print welcome message.
-  -V, --version   Print version information and exit.
-Commands:
-  time    Methods from java.time
-  util    Methods from java.util
-  string  Methods from java.lang.String
-```
-
-An example command:
-
-`$ ./build/native/nativeCompile/jcli time -fn=getEpochSecond`
+ 
+ . Install and Use GraalVM for JDK 21
+ . Compile Native Image
+ .. NativeCompile may take a few minutes
+ 
+ ```
+ sdk install java 21.0.1-graal
+ sdk use java 21.0.1-graal
+ ./gradlew nativeCompile
+ ```
+ 
+ The default output directory is `build/native/nativeCompile`.
+ 
+ Here is how you can execute the native file.
+ ```
+ $ ./build/native/nativeCompile/jcli --help
+ Usage: jcli [-hvV] [COMMAND]
+ Sugared wrappers to execute methods of JDK and JVM-based libraries from the
+ command line.
+   -h, --help      Show this help message and exit.
+   -v, --verbose   Print welcome message.
+   -V, --version   Print version information and exit.
+ Commands:
+   time    Methods from java.time
+   util    Methods from java.util
+   string  Methods from java.lang.String
+ ```
+ 
+ An example command:
+ 
+ `$ ./build/native/nativeCompile/jcli time -fn=getEpochSecond`

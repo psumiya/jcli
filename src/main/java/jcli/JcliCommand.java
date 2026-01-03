@@ -1,6 +1,5 @@
 package jcli;
 
-import io.micronaut.configuration.picocli.PicocliRunner;
 import jcli.core.NoInputTemplate;
 import jcli.core.type.NoParam;
 import jcli.subcommand.string.StringCommand;
@@ -9,22 +8,21 @@ import jcli.subcommand.util.UtilCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
-@Command(name = "jcli", description = "Sugared wrappers to execute methods of JDK and JVM-based libraries from the command line.",
-        mixinStandardHelpOptions = true,
-        subcommands = {
-                TimeCommand.class,
-                UtilCommand.class,
-                StringCommand.class
-        })
+@Command(name = "jcli", description = "Sugared wrappers to execute methods of JDK and JVM-based libraries from the command line.", mixinStandardHelpOptions = true, subcommands = {
+        TimeCommand.class,
+        UtilCommand.class,
+        StringCommand.class
+})
 public class JcliCommand implements NoInputTemplate {
 
-    @CommandLine.Option(names = {"-v", "--verbose"}, description = "Print welcome message.")
+    @CommandLine.Option(names = { "-v", "--verbose" }, description = "Print welcome message.")
     boolean verbose;
 
     NoParam function;
 
     public static void main(String[] args) {
-        PicocliRunner.run(JcliCommand.class, args);
+        int exitCode = new CommandLine(new JcliCommand()).execute(args);
+        System.exit(exitCode);
     }
 
     @Override
