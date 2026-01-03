@@ -12,7 +12,10 @@ public class ReflectionCommand {
 
     public static Object invoke(Object instance, Class<?> targetClass, String methodName, String[] args) {
         // 1. Find method with matching name and parameter count
-        Method method = findMethod(targetClass, methodName, args.length);
+        Method method = findMethod(targetClass, methodName, args.length)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "No public method found: " + methodName + " with " + args.length + " arguments in "
+                                + targetClass.getName()));
 
         // 2. Convert arguments
         Object[] typedArgs = convertArgs(method.getParameterTypes(), args);
@@ -25,15 +28,11 @@ public class ReflectionCommand {
         }
     }
 
-    private static Method findMethod(Class<?> targetClass, String methodName, int argCount) {
-        Optional<Method> match = Arrays.stream(targetClass.getMethods())
+    public static Optional<Method> findMethod(Class<?> targetClass, String methodName, int argCount) {
+        return Arrays.stream(targetClass.getMethods())
                 .filter(m -> m.getName().equals(methodName))
                 .filter(m -> m.getParameterCount() == argCount)
                 .findFirst();
-
-        return match.orElseThrow(() -> new IllegalArgumentException(
-                "No public method found: " + methodName + " with " + argCount + " arguments in "
-                        + targetClass.getName()));
     }
 
     private static Object[] convertArgs(Class<?>[] types, String[] args) {

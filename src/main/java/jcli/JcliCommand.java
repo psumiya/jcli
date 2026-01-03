@@ -1,24 +1,20 @@
 package jcli;
 
-import jcli.core.NoInputTemplate;
-import jcli.core.type.NoParam;
 import jcli.subcommand.string.StringCommand;
-import jcli.subcommand.time.TimeCommand;
-import jcli.subcommand.util.UtilCommand;
+import jcli.subcommand.instant.InstantCommand;
+import jcli.subcommand.uuid.UuidCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @Command(name = "jcli", description = "Sugared wrappers to execute methods of JDK and JVM-based libraries from the command line.", mixinStandardHelpOptions = true, subcommands = {
-        TimeCommand.class,
-        UtilCommand.class,
+        InstantCommand.class,
+        UuidCommand.class,
         StringCommand.class
 })
-public class JcliCommand implements NoInputTemplate {
+public class JcliCommand implements Runnable {
 
     @CommandLine.Option(names = { "-v", "--verbose" }, description = "Print welcome message.")
     boolean verbose;
-
-    NoParam function;
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new JcliCommand()).execute(args);
@@ -26,23 +22,9 @@ public class JcliCommand implements NoInputTemplate {
     }
 
     @Override
-    public void init() {
+    public void run() {
         if (verbose) {
-            function = NoParam.hello;
+            System.out.println("Welcome to Jcli! Type `jcli -h` to view help manual.");
         }
     }
-
-    @Override
-    public boolean isValid() {
-        if (function == null) {
-            throw new RuntimeException("Missing function to execute.");
-        }
-        return true;
-    }
-
-    @Override
-    public NoParam getFunction() {
-        return this.function;
-    }
-
 }

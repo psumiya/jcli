@@ -1,1 +1,5 @@
-[{"name":"java.lang.String", "allPublicMethods":true}]
+[
+  {"name":"java.lang.String", "allPublicMethods":true},
+  {"name":"java.util.UUID", "allPublicMethods":true},
+  {"name":"java.time.Instant", "allPublicMethods":true}
+]
