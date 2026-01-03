@@ -33,9 +33,9 @@ public class UniversalCommand implements Runnable {
     public UniversalCommand(CommandConfig config) {
         this.config = config;
         try {
-            this.targetClass = Class.forName(config.getClassName());
+            this.targetClass = Class.forName(config.className());
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Class not found: " + config.getClassName(), e);
+            throw new RuntimeException("Class not found: " + config.className(), e);
         }
     }
 
@@ -68,7 +68,7 @@ public class UniversalCommand implements Runnable {
     }
 
     private void executeStrategy() throws Exception {
-        switch (config.getStrategy()) {
+        switch (config.strategy()) {
             case STATIC:
                 executeStatic();
                 break;
@@ -138,10 +138,10 @@ public class UniversalCommand implements Runnable {
                 String[] realArgs = java.util.Arrays.copyOfRange(args, 1, args.length);
 
                 Object instance;
-                if (config.getFactory() != null) {
+                if (config.factory() != null) {
                     // Invoke factory method (static) to get instance
                     // e.g. Instant.parse(text)
-                    instance = ReflectionCommand.invoke(null, targetClass, config.getFactory(),
+                    instance = ReflectionCommand.invoke(null, targetClass, config.factory(),
                             new String[] { instanceText });
                 } else {
                     throw new IllegalStateException(

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+import jcli.core.InstanceStrategy;
 
 public class CommandLoader {
 
@@ -27,18 +28,15 @@ public class CommandLoader {
 
             List<CommandConfig> configs = new ArrayList<>();
             for (Map<String, Object> map : commandsData) {
-                CommandConfig config = new CommandConfig();
-                config.setName((String) map.get("name"));
-                config.setClassName((String) map.get("className"));
-                config.setStrategy(jcli.core.InstanceStrategy.valueOf((String) map.get("strategy")));
-                config.setFactory((String) map.get("factory"));
-                config.setDescription((String) map.get("description"));
-
+                String name = (String) map.get("name");
+                String className = (String) map.get("className");
+                InstanceStrategy strategy = jcli.core.InstanceStrategy.valueOf((String) map.get("strategy"));
+                String factory = (String) map.get("factory");
+                String description = (String) map.get("description");
                 @SuppressWarnings("unchecked")
                 List<String> examples = (List<String>) map.get("examples");
-                config.setExamples(examples);
 
-                configs.add(config);
+                configs.add(new CommandConfig(name, className, strategy, factory, description, examples));
             }
             return configs;
 

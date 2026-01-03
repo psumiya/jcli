@@ -29,19 +29,19 @@ public class JcliCommand implements Runnable {
                 UniversalCommand command = new UniversalCommand(config);
                 // We need to set the name describing the command for help message
                 CommandLine subCmd = new CommandLine(command);
-                subCmd.getCommandSpec().name(config.getName());
-                subCmd.getCommandSpec().usageMessage().description(config.getDescription());
+                subCmd.getCommandSpec().name(config.name());
+                subCmd.getCommandSpec().usageMessage().description(config.description());
 
-                if (config.getExamples() != null && !config.getExamples().isEmpty()) {
+                if (config.examples() != null && !config.examples().isEmpty()) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("\nExamples:");
-                    for (String ex : config.getExamples()) {
+                    for (String ex : config.examples()) {
                         sb.append("\n  ").append(ex);
                     }
                     subCmd.getCommandSpec().usageMessage().footer(sb.toString());
                 }
 
-                cmd.addSubcommand(config.getName(), subCmd);
+                cmd.addSubcommand(config.name(), subCmd);
             }
         } catch (Exception e) {
             System.err.println("Failed to load commands: " + e.getMessage());
