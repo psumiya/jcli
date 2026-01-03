@@ -14,7 +14,7 @@ Most methods return a single result, and so can be used in pipe operations combi
 
 == Configuration & Extensibility
 
-**NEW**: `jcli` is now completely configuration-driven! You can add new commands without writing any Java code.
+`jcli` is now completely configuration-driven! You can add new commands without writing any Java code.
 
 Command definitions are located in `src/main/resources/commands.yaml`.
 
