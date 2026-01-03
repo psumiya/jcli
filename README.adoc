@@ -108,4 +108,4 @@ To build this project's source code:
  $ ./build/native/nativeCompile/jcli --help
  ```
  
- **Note on Reflection**: If you add new classes to `commands.yaml` that are not yet known to the native image, you must also add them to `src/main/resources/META-INF/native-image/jcli/jcli/reflect-config.json` so they are accessible at runtime.
+ **Note on Native Image**: The build automatically generates the `reflect-config.json` based on your `commands.yaml`. You do **not** need to manually edit any JSON files. Simply add your command to the YAML and rebuild (`./gradlew build` or `./gradlew nativeCompile`).
