@@ -9,7 +9,8 @@ import picocli.CommandLine.Command;
 @Command(name = "jcli", description = "Sugared wrappers to execute methods of JDK and JVM-based libraries from the command line.", mixinStandardHelpOptions = true, subcommands = {
         InstantCommand.class,
         UuidCommand.class,
-        StringCommand.class
+        StringCommand.class,
+        jcli.subcommand.math.MathCommand.class
 })
 public class JcliCommand implements Runnable {
 

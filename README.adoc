@@ -18,6 +18,7 @@ The CLI structure maps directly to Java classes:
 - `jcli string` -> `java.lang.String`
 - `jcli uuid` -> `java.util.UUID`
 - `jcli instant` -> `java.time.Instant`
+- `jcli math` -> `java.lang.Math`
 
 In order to view the available methods for a command, you can use the `--methods` flag.
 
@@ -55,7 +56,17 @@ Here are some examples of valid commands:
 |string
 |`substring`
 |Extracts substring from text
-|`jcli string substring 'hello world' 0 5`
+|jcli string substring 'hello world' 0 5
+
+|math
+|`abs`
+|Returns the absolute value
+|`jcli math abs -50`
+
+|math
+|`max`
+|Returns the greater of two values
+|`jcli math max 10 20`
 |===
 
 === Smart Instance Resolution
