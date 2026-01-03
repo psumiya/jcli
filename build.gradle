@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.yaml:snakeyaml:2.2")
+    }
+}
+
 plugins {
     id("com.github.johnrengelman.shadow") version "7.1.1"
     id("java")
@@ -50,3 +59,48 @@ test {
 compileJava {
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
+
+import org.yaml.snakeyaml.Yaml
+import groovy.json.JsonBuilder
+
+task generateReflectConfig {
+    def commandsFile = file("src/main/resources/commands.yaml")
+    def reflectConfigFile = file("src/main/resources/META-INF/native-image/jcli/jcli/reflect-config.json")
+    
+    inputs.file(commandsFile)
+    outputs.file(reflectConfigFile)
+    
+    doLast {
+        if (!commandsFile.exists()) {
+             throw new GradleException("commands.yaml not found at ${commandsFile}")
+        }
+        
+        def yaml = new Yaml()
+        def data = yaml.load(commandsFile.newInputStream())
+        def commands = data['commands']
+        def reflectionEntries = []
+        
+        // Add CommandConfig for generic command loading
+        reflectionEntries << [
+            name: "jcli.config.CommandConfig",
+            allDeclaredConstructors: true,
+            allPublicConstructors: true,
+            allDeclaredFields: true,
+            allPublicMethods: true
+        ]
+        
+        // Add command classes
+        commands.each { cmd ->
+            reflectionEntries << [
+                name: cmd['className'],
+                queryAllPublicMethods: true
+            ]
+        }
+        
+        reflectConfigFile.parentFile.mkdirs()
+        reflectConfigFile.text = new JsonBuilder(reflectionEntries).toPrettyString()
+        println "Generated reflect-config.json with ${reflectionEntries.size()} entries."
+    }
+}
+
+processResources.dependsOn generateReflectConfig

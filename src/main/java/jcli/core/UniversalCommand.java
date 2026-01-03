@@ -67,25 +67,6 @@ public class UniversalCommand implements Runnable {
         }
     }
 
-    private void printHelp() {
-        System.out.println("Usage: jcli " + config.getName() + " [OPTIONS] <method> [args...]");
-        System.out.println();
-        System.out.println("Description:");
-        System.out.println("  " + config.getDescription());
-        System.out.println();
-
-        if (config.getExamples() != null && !config.getExamples().isEmpty()) {
-            System.out.println("Examples:");
-            for (String ex : config.getExamples()) {
-                System.out.println("  " + ex);
-            }
-            System.out.println();
-        }
-
-        System.out.println("Options:");
-        System.out.println("  --methods   List all public methods.");
-        System.out.println("  -h, --help  Show this help message.");
-    }
 
     private void executeStrategy() throws Exception {
         switch (config.getStrategy()) {
