@@ -12,9 +12,39 @@ It is also intended that this be a GraalVM-compatible project so that distributi
 
 Most methods return a single result, and so can be used in pipe operations combined with other command line utilities if needed.
 
+== Configuration & Extensibility
+
+**NEW**: `jcli` is now completely configuration-driven! You can add new commands without writing any Java code.
+
+Command definitions are located in `src/main/resources/commands.yaml`.
+
+```yaml
+commands:
+  - name: string
+    className: java.lang.String
+    strategy: INSTANCE
+    description: "Methods from java.lang.String"
+    examples:
+       - "jcli string length 'hello'"
+
+  - name: math
+    className: java.lang.Math
+    strategy: STATIC
+    description: "Methods from java.lang.Math"
+    examples:
+       - "jcli math max 10 20"
+```
+
+To add a new command, simply append a new entry to this YAML file.
+
+=== Strategies
+- `STATIC`: For static utility classes (e.g., `java.lang.Math`).
+- `INSTANCE`: For classes where you operate on an instance provided as the first argument (e.g., `java.lang.String`).
+- `HYBRID`: Tries to match a static factory method first; if not found, treats the first argument as an instance (e.g., `java.time.Instant`).
+
 == Available Commands
 
-The CLI structure maps directly to Java classes:
+The CLI structure maps directly to the configuration in `commands.yaml`. By default:
 - `jcli string` -> `java.lang.String`
 - `jcli uuid` -> `java.util.UUID`
 - `jcli instant` -> `java.time.Instant`
@@ -23,16 +53,8 @@ The CLI structure maps directly to Java classes:
 In order to view the available methods for a command, you can use the `--methods` flag.
 
 E.g., `jcli instant --methods`
-```
-...
-now()
-parse(CharSequence)
-isAfter(Instant)
-plusSeconds(long)
-...
-```
 
-Here are some examples of valid commands:
+=== Examples
 
 [cols="1,1,1,1"]
 |===
@@ -48,31 +70,16 @@ Here are some examples of valid commands:
 |Prints the current time (ISO-8601)
 |`jcli instant now`
 
-|instant
-|`parse`
-|Parses a string text to Instant
-|`jcli instant parse '2023-01-01T00:00:00Z'`
-
 |string
 |`substring`
 |Extracts substring from text
 |jcli string substring 'hello world' 0 5
 
 |math
-|`abs`
-|Returns the absolute value
-|`jcli math abs -50`
-
-|math
 |`max`
 |Returns the greater of two values
 |`jcli math max 10 20`
 |===
-
-=== Smart Instance Resolution
-For instance methods (like `Instant.getNano()` or `String.length()`), `jcli` creates an instance automatically if needed.
-- `jcli instant getNano` -> Defaults to `Instant.now().getNano()`
-- `jcli instant getNano 2023-01-01T00:00:00Z` -> Uses the provided timestamp instance.
 
 == Build
 
@@ -81,11 +88,9 @@ To build this project's source code:
 . Clone this project
 . At the root of the project, execute `./gradlew clean build`
 . The build generates a jar at `build/libs`. To execute the cli app, run `java -jar build/libs/jcli-0.1-all.jar -h` to view the help manual.
-. Or, create an alias like this. `alias jcli='java -jar build/libs/jcli-0.1-all.jar'`
-Then run, `jcli -h`.
 
 == Build Native Image
- 
+
  . Install and Use GraalVM for JDK 21
  . Compile Native Image
  .. NativeCompile may take a few minutes
@@ -101,18 +106,6 @@ Then run, `jcli -h`.
  Here is how you can execute the native file.
  ```
  $ ./build/native/nativeCompile/jcli --help
- Usage: jcli [-hvV] [COMMAND]
- Sugared wrappers to execute methods of JDK and JVM-based libraries from the
- command line.
-   -h, --help      Show this help message and exit.
-   -v, --verbose   Print welcome message.
-   -V, --version   Print version information and exit.
- Commands:
-   instant  Methods from java.time.Instant.
-   uuid     Methods from java.util.UUID.
-   string   Methods from java.lang.String.
  ```
  
- An example command:
- 
- `$ ./build/native/nativeCompile/jcli instant now`
+ **Note on Reflection**: If you add new classes to `commands.yaml` that are not yet known to the native image, you must also add them to `src/main/resources/META-INF/native-image/jcli/jcli/reflect-config.json` so they are accessible at runtime.
