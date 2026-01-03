@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class CommandLoader {
 
     public static List<CommandConfig> loadCommands() {
-        Yaml yaml = new Yaml(); // Safely using default constructor for simple POJOs
+        Yaml yaml = new Yaml();
         String configResource = System.getProperty("jcli.config.resource", "commands.yaml");
 
         try (InputStream inputStream = CommandLoader.class

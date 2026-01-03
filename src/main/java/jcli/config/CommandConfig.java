@@ -9,10 +9,6 @@ public class CommandConfig {
     public String factory;
     public String description;
 
-    // Getters/Setters for SnakeYAML if needed (SnakeYAML uses public fields or
-    // getters/setters)
-    // Using public fields for simplicity with standard Java Bean behavior.
-
     public String getName() {
         return name;
     }

@@ -67,7 +67,6 @@ public class UniversalCommand implements Runnable {
         }
     }
 
-
     private void executeStrategy() throws Exception {
         switch (config.getStrategy()) {
             case STATIC:
@@ -96,20 +95,8 @@ public class UniversalCommand implements Runnable {
         String[] realArgs = java.util.Arrays.copyOfRange(args, 1, args.length);
 
         // For String, the instance IS the text. For others, we might need a factory.
+        // Currently, we treat the first argument as the instance (e.g. String).
         Object instance = instanceText;
-
-        // If the class is NOT String, and we have a factory, use it?
-        // Wait, for String command, "text" is the instance.
-        // For generic instance commands, usually we need to parse the first arg into an
-        // object.
-        // But for this specific task, let's assume String-like behavior or look at
-        // current implementations.
-        // StringCommand just uses the text.
-        // We will assume "INSTANCE" strategy implies the first arg is the object
-        // representation (String).
-        // Since we only support String currently for 'text', this works for
-        // StringCommand.
-        // If we want to support other types in INSTANCE mode, we might need a factory.
 
         Object result = ReflectionCommand.invoke(instance, targetClass, method, realArgs);
         System.out.println(result);
@@ -125,37 +112,14 @@ public class UniversalCommand implements Runnable {
                 Object result = ReflectionCommand.invoke(null, targetClass, method, args);
                 System.out.println(result);
                 return;
-            } else {
-                // Instance method with "current" instance (e.g. Instant.now())
-                if (targetClass == java.time.Instant.class && method.equals("now")) {
-                    // This is actually a static method 'now()', wait.
-                    // Instant.now() IS static.
-                    // The hybrid logic in InstantCommand.java handles `now` as static.
-                    // But `getEpochSecond` is instance.
-                    // If I call `jcli instant getEpochSecond`, I need an instance.
-                    // The current InstantCommand implementation assumes if static match found ->
-                    // run it.
-                    // If not, check if we have instance args.
-                }
             }
+            // If strictly instance method with no args, it falls through to instance check
+            // logic.
         }
 
-        // If we are here, either no match found, or strictly instance method on
-        // provided arg.
-
-        // Try static match first regardless (covered above technically, but let's be
-        // robust)
-        // Actually, ReflectionCommand.invoke handles finding the method.
-        // We can just try to find a static method matching args.
-
-        // Let's refine Hybrid based on InstantCommand logic:
-        // 1. Check if method exists with N args.
-        // 2. If yes, and static -> invoke.
-        // 3. If yes, and instance -> invoke on "default" instance? No, invoke on
-        // provided instance?
-        // InstantCommand logic:
-        // - Find method with N args. If static -> run. (e.g. now(), parse(text))
-        // - If not found or instance method, check if we have N+1 args (1 for
+        // Strategy:
+        // 1. Check if method exists with N args. If static -> run.
+        // 2. If not found or instance method, check if we have N+1 args (1 for
         // instance).
 
         // Check for static match with current args
