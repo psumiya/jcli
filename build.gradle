@@ -65,13 +65,81 @@ compileJava {
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}", "-parameters"]
 }
 
+
 import org.yaml.snakeyaml.Yaml
 import groovy.json.JsonBuilder
 import io.github.classgraph.ClassGraph
 
 
+// Shared configuration and logic
+ext {
+    rejectedPackages = [
+        "java.util.concurrent",
+        "java.util.jar",
+        "java.util.logging",
+        "java.util.prefs",
+        "java.util.random",
+        "java.util.regex",
+        "java.util.spi",
+        "java.util.stream",
+        "java.util.zip",
+        "java.lang.invoke", 
+        "java.lang.instrument", 
+        "java.lang.reflect", 
+        "java.lang.management",
+        "java.lang.module",
+        "java.lang.ref",
+        "java.lang.foreign",
+        "java.util.function",
+        "java.lang.annotation",
+        "java.lang.classfile",
+        "java.lang.constant",
+        "com.jayway.jsonpath.internal",
+        "com.jayway.jsonpath.spi"
+    ] as String[]
 
+    // Class names to reject
+    rejectedClasses = [
+        // 'com.jayway.jsonpath.Configuration', 
+    ] as Set
 
+    // Shared method to check if a single class should be processed
+    // Note: Checks mostly on name basis
+    shouldProcessClass = { classInfo ->
+        // Standard exclusions
+        if (!classInfo.isPublic() || classInfo.isAbstract() || classInfo.isInnerClass()) return false
+        
+        // Inheritance/Interface exclusions
+        if (classInfo.extendsSuperclass("java.lang.Throwable")) return false
+        if (classInfo.implementsInterface("java.util.Collection")) return false
+        if (classInfo.implementsInterface("java.util.Map")) return false
+        if (classInfo.implementsInterface("java.util.Iterator")) return false
+        
+        def name = classInfo.getName()
+        // Package/Prefix exclusions
+        if (name.startsWith("java.util.Optional")) return false
+        if (name.startsWith("java.util.Observable")) return false
+        if (name.startsWith("com.jayway.jsonpath.internal")) return false
+        if (name.startsWith("com.jayway.jsonpath.spi")) return false
+
+        // Specific class exclusions
+        if (name == "java.util.BitSet") return false
+        if (name == "java.util.EventObject") return false
+        if (name == "java.util.ServiceLoader") return false
+        if (name == "java.util.Timer") return false
+        if (name == "java.util.StringJoiner") return false
+        if (name == "java.util.StringTokenizer") return false
+        if (name == "java.util.PropertyResourceBundle") return false
+        if (name == "java.util.PropertyPermission") return false
+        if (name == "java.util.SimpleTimeZone") return false
+        if (name == "java.util.Collections") return false
+        if (name.endsWith("SummaryStatistics")) return false
+        if (name == "java.util.FormattableFlags") return false
+        if (name == "java.util.GregorianCalendar") return false
+        
+        return true
+    }
+}
 
 task packageNative(type: Tar) {
     dependsOn 'nativeCompile'
@@ -86,8 +154,6 @@ task packageNative(type: Tar) {
     archiveFileName = "jcli-${project.version}-osx-${arch}.tar.gz"
     destinationDirectory = file("${buildDir}/distributions")
     compression = Compression.GZIP
-
-
 
     into("bin") {
         from("build/native/nativeCompile") {
@@ -116,8 +182,7 @@ task generateReflectConfig {
         
         def yaml = new Yaml()
         def data = yaml.load(commandsFile.newInputStream())
-        def explicitCommands = data['commands'] ?: [] // Handle null if only scanPackages is present
-        // Extract command list from the nested structure if it exists, or treat it as list of maps
+        def explicitCommands = data['commands'] ?: [] 
         if (data['commands'] instanceof List) {
              explicitCommands = data['commands']
         }
@@ -127,7 +192,7 @@ task generateReflectConfig {
         def reflectionEntries = []
         def commandIndex = [:]
         
-        // 1. Process explicitly defined commands
+        // 1. Process explicit commands
         explicitCommands.each { cmd ->
             if (cmd instanceof Map && cmd.containsKey('className')) {
                 reflectionEntries << [
@@ -145,60 +210,11 @@ task generateReflectConfig {
                 .enableAllInfo()
                 .enableSystemJarsAndModules()
                 .acceptPackages(scanPackages as String[])
-                .rejectPackages(
-                    "java.util.concurrent", 
-                    "java.util.concurrent",
-                    "java.util.jar",
-                    "java.util.logging",
-                    "java.util.prefs",
-                    "java.util.random",
-                    "java.util.regex",
-                    "java.util.spi",
-                    "java.util.stream",
-                    "java.util.zip",
-                    "java.lang.invoke", 
-                    "java.lang.instrument", 
-                    "java.lang.reflect", 
-                    "java.lang.management",
-                    "java.lang.module",
-                    "java.lang.ref",
-                    "java.lang.foreign",
-                    "java.util.function",
-                    "java.lang.annotation",
-                    "java.lang.classfile",
-                    "java.lang.constant",
-                    "com.jayway.jsonpath.internal",
-                    "com.jayway.jsonpath.spi"
-                )
-                .rejectClasses(
-                  //  'com.jayway.jsonpath.Configuration', 
-                  //  'com.jayway.jsonpath.Configuration$ConfigurationBuilder',
-                  //  'com.jayway.jsonpath.Criteria',
-                  //  'com.jayway.jsonpath.Option'
-                )
+                .rejectPackages(project.ext.rejectedPackages)
                 .scan()
             
             scanResult.getAllClasses().forEach { classInfo ->
-                if (classInfo.isPublic() && !classInfo.isAbstract() && !classInfo.isInnerClass() && 
-                    !classInfo.extendsSuperclass("java.lang.Throwable") &&
-                    !classInfo.implementsInterface("java.util.Collection") &&
-                    !classInfo.implementsInterface("java.util.Map") &&
-                    !classInfo.implementsInterface("java.util.Iterator") &&
-                    !classInfo.getName().startsWith("java.util.Optional") &&
-                    !classInfo.getName().startsWith("java.util.Observable") &&
-                    !classInfo.getName().equals("java.util.BitSet") &&
-                    !classInfo.getName().equals("java.util.EventObject") &&
-                    !classInfo.getName().equals("java.util.ServiceLoader") &&
-                    !classInfo.getName().equals("java.util.Timer") &&
-                    !classInfo.getName().equals("java.util.StringJoiner") &&
-                    !classInfo.getName().equals("java.util.StringTokenizer") &&
-                    !classInfo.getName().equals("java.util.PropertyResourceBundle") &&
-                    !classInfo.getName().equals("java.util.PropertyPermission") &&
-                    !classInfo.getName().equals("java.util.SimpleTimeZone") &&
-                    !classInfo.getName().equals("java.util.Collections") &&
-                    !classInfo.getName().endsWith("SummaryStatistics") &&
-                    !classInfo.getName().equals("java.util.FormattableFlags") &&
-                    !classInfo.getName().equals("java.util.GregorianCalendar")) {
+                if (project.ext.shouldProcessClass(classInfo)) {
                      def className = classInfo.getName()
                      def simpleName = classInfo.getSimpleName()
                      
@@ -222,9 +238,6 @@ task generateReflectConfig {
                          methods: methodsList
                      ]
                      
-                     // Add to command index (SimpleName -> FullName)
-                     // If collision, keep existing (first wins) or warn? For now, silent overwrite or ignore. 
-                     // Let's protect against duplicates by checking.
                      if (!commandIndex.containsKey(simpleName)) {
                          commandIndex[simpleName] = className
                      }
@@ -257,7 +270,7 @@ task generateReflectConfig {
 }
 
 task generateDocsJson {
-    dependsOn 'classes' // Need compiled classes for reflection/scanning if we used that, but here we use ClassGraph which scans classpath
+    dependsOn 'classes' 
     description = "Generates JSON data for the documentation site"
     group = "documentation"
 
@@ -278,8 +291,6 @@ task generateDocsJson {
             commands: []
         ]
         
-        // Helper to formatting method params
-        // Helper to formatting method params
         def formatParams = { method ->
              def params = method.getParameterInfo()
              params.indices.collect { i ->
@@ -298,34 +309,10 @@ task generateDocsJson {
                 .enableAllInfo()
                 .enableSystemJarsAndModules()
                 .acceptPackages(scanPackages as String[])
-                .rejectPackages(
-                    "java.util.concurrent", 
-                    "java.util.concurrent",
-                    "java.util.jar",
-                    "java.util.logging",
-                    "java.util.prefs",
-                    "java.util.random",
-                    "java.util.regex",
-                    "java.util.spi",
-                    "java.util.stream",
-                    "java.util.zip",
-                    "java.lang.invoke", 
-                    "java.lang.instrument", 
-                    "java.lang.reflect", 
-                    "java.lang.management",
-                    "java.lang.module",
-                    "java.lang.ref",
-                    "java.lang.foreign",
-                    "java.util.function",
-                    "java.lang.annotation",
-                    "java.lang.classfile",
-                    "java.lang.constant",
-                    "com.jayway.jsonpath.internal",
-                    "com.jayway.jsonpath.spi"
-                )
+                .rejectPackages(project.ext.rejectedPackages)
                 .scan()
             
-            // Helpers for filtering
+            // Helpers for filtering types
             def isTypeSupported = { typeSig ->
                 def typeStr = typeSig.toString().replaceAll('java\\.lang\\.', '')
                 def fullTypeStr = typeSig.toString()
@@ -353,7 +340,6 @@ task generateDocsJson {
             def isReturnTypeSupported = { typeSig ->
                 def typeStr = typeSig.toString()
                 
-                // Quick string checks
                 if (typeStr.contains("java.util.stream.")) return false
                 if (typeStr == "java.util.Iterator") return false
                 if (typeStr == "java.util.Spliterator") return false
@@ -371,47 +357,26 @@ task generateDocsJson {
             }
 
             scanResult.getAllClasses().forEach { classInfo ->
-                if (classInfo.isPublic() && !classInfo.isAbstract() && !classInfo.isInnerClass() && 
-                    !classInfo.extendsSuperclass("java.lang.Throwable") &&
-                    !classInfo.implementsInterface("java.util.Collection") &&
-                    !classInfo.implementsInterface("java.util.Map") &&
-                    !classInfo.implementsInterface("java.util.Iterator") &&
-                    !classInfo.getName().startsWith("java.util.Optional") &&
-                    !classInfo.getName().startsWith("java.util.Observable") &&
-                    !classInfo.getName().equals("java.util.BitSet") &&
-                    !classInfo.getName().equals("java.util.EventObject") &&
-                    !classInfo.getName().equals("java.util.ServiceLoader") &&
-                    !classInfo.getName().equals("java.util.Timer") &&
-                    !classInfo.getName().equals("java.util.StringJoiner") &&
-                    !classInfo.getName().equals("java.util.StringTokenizer") &&
-                    !classInfo.getName().equals("java.util.PropertyResourceBundle") &&
-                    !classInfo.getName().equals("java.util.PropertyPermission") &&
-                    !classInfo.getName().equals("java.util.SimpleTimeZone") &&
-                    !classInfo.getName().equals("java.util.Collections") &&
-                    !classInfo.getName().endsWith("SummaryStatistics") &&
-                    !classInfo.getName().equals("java.util.FormattableFlags") &&
-                    !classInfo.getName().equals("java.util.GregorianCalendar") &&
-                    !classInfo.getName().startsWith("com.jayway.jsonpath.internal") &&
-                    !classInfo.getName().startsWith("com.jayway.jsonpath.spi")) {
+                if (project.ext.shouldProcessClass(classInfo)) {
                      
                      def methods = []
                      classInfo.getMethodInfo().each { method ->
                           if (method.isPublic() && !method.isConstructor()) {
-                              def returnTypeSig = method.getTypeSignatureOrTypeDescriptor().getResultType()
-                              def paramInfos = method.getParameterInfo()
-                              
-                              def allParamsSupported = paramInfos.every { param ->
-                                  isTypeSupported(param.getTypeDescriptor())
-                              }
-                              
-                              if (allParamsSupported && isReturnTypeSupported(returnTypeSig)) {
-                                  methods << [
-                                      name: method.getName(),
-                                      signature: "${method.getName()}(${formatParams(method).join(', ')})",
-                                      returnType: returnTypeSig.toString().replaceAll('java\\.lang\\.', ''),
-                                      isStatic: method.isStatic()
-                                  ]
-                              }
+                               def returnTypeSig = method.getTypeSignatureOrTypeDescriptor().getResultType()
+                               def paramInfos = method.getParameterInfo()
+                               
+                               def allParamsSupported = paramInfos.every { param ->
+                                   isTypeSupported(param.getTypeDescriptor())
+                               }
+                               
+                               if (allParamsSupported && isReturnTypeSupported(returnTypeSig)) {
+                                   methods << [
+                                       name: method.getName(),
+                                       signature: "${method.getName()}(${formatParams(method).join(', ')})",
+                                       returnType: returnTypeSig.toString().replaceAll('java\\.lang\\.', ''),
+                                       isStatic: method.isStatic()
+                                   ]
+                               }
                           }
                      }
 
