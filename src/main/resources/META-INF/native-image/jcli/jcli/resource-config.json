@@ -3,6 +3,9 @@
         "includes": [
             {
                 "pattern": "commands.yaml"
+            },
+            {
+                "pattern": "command-index.json"
             }
         ]
     }
