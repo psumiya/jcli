@@ -3,109 +3,112 @@
 
 Sugared wrappers to execute methods from JDK and JVM-based libraries from the command line.
 
-E.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
+== How to Use
 
-== Motivation
-The goal is to expose the wealth of utility methods available in the JVM ecosystem right at the command line.
+Generate a UUID:
 
-It is also intended that this be a GraalVM-compatible project so that distributions do not require the end user to do a JVM setup with some compatible Java version.
+    jcli UUID randomUUID
 
-Most methods return a single result, and so can be used in pipe operations combined with other command line utilities if needed.
+Get the current date:
 
-== Auto-Discovery & Configuration
+    jcli LocalDate now
 
-`jcli` uses **Build-Time Package Scanning** to automatically discover and register commands.
+Calculate the max of two numbers:
 
-The configuration is simple. In `src/main/resources/commands.yaml`:
-
-```yaml
-scanPackages:
-  - java.lang
-  - java.util
-  - java.time
-```
-
-During the build, `jcli` scans these packages and registers classes as commands using their **SimpleName** (e.g., `java.lang.Math` -> `Math`).
-
-=== Automatic Filtering
-To keep the CLI useful and focused on command-line relevant utilities, `jcli` **automatically excludes**:
-
-*   **Collections**: `ArrayList`, `HashMap`, `HashSet`, etc. (Creating empty containers is rarely useful in a CLI).
-*   **I/O & Streams**: `ZipFile`, `Scanner`, `InputStream`, etc.
-*   **Infrastructure**: `java.util.concurrent`, `java.util.logging`, `java.util.prefs`.
-*   **Reflection**: `java.lang.reflect`, `java.lang.invoke`.
-*   **Exceptions**: All classes extending `Throwable`.
-*   **Unsupported Return Types**: Methods returning `Stream`, `Iterator`, or `Spliterator` are hidden to prevent unusable output.
-
-NOTE: If you try to call an excluded method, `jcli` will provide a diagnostic error explaining exactly why it is not available.
-
-This results in a clean, high-signal list of commands focused on **Values** (String, Integer) and **Utilities** (Math, Time, UUID).
-
-== Available Commands
-
-With the default configuration, you get access to ~100 powerful Java commands, including:
-
-*   **Core**: `String`, `Math`, `Integer`, `Boolean`, `System`
-*   **Time**: `LocalDate`, `LocalTime`, `Instant`, `Duration`, `Period`, `ZoneId`
-*   **Utils**: `UUID`, `Base64`, `Objects`, `Random`, `Currency`
-
-=== Examples
-
-[cols="1,1,1,1"]
-|===
-|Command | Method | Description | Usage
-
-|`UUID`
-|`randomUUID`
-|Generates a random UUID
-|`jcli UUID randomUUID`
-
-|`LocalDate`
-|`now`
-|Prints the current date
-|`jcli LocalDate now`
-
-|`String`
-|`length`
-|Returns string length (instance method)
-|`jcli String length "hello world"`
-
-|`Math`
-|`max`
-|Returns the greater of two values
-|`jcli Math max 10 20`
-
-|`Instant`
-|`getEpochSecond`
-|Parses text to Instant (Smart Factory)
-|`jcli Instant getEpochSecond "2023-01-01T00:00:00Z"`
-|===
+    jcli Math max 10 20
 
 == Build
 
-To build this project's source code:
+You can build `jcli` as a standard runnable JAR or as a native executable using GraalVM.
 
-. Clone this project
-. At the root of the project, execute `./gradlew clean build`
-. The build generates a jar at `build/libs`. To execute the cli app, run `java -jar build/libs/jcli-0.1-all.jar -h` to view the help manual.
+=== Prerequisites
 
-== Build Native Image
+We recommend using **SDKMAN!** to manage your Java versions.
 
- . Install and Use GraalVM Community Edition
- . Compile Native Image
- .. NativeCompile may take a few minutes
- 
- ```
- sdk install java 25.0.1-graalce
- sdk use java 25.0.1-graalce
- ./gradlew nativeCompile
- ```
- 
- The default output directory is `build/native/nativeCompile`.
- 
- Here is how you can execute the native file.
- ```
- $ ./build/native/nativeCompile/jcli --help
- ```
- 
- **Note on Native Image**: The build automatically generates the `reflect-config.json` based on your `commands.yaml`. You do **not** need to manually edit any JSON files. Simply add your command to the YAML and rebuild (`./gradlew build` or `./gradlew nativeCompile`).
+*   **Java 25** (for standard build)
+*   **GraalVM for Java 25** (for native build)
+
+```bash
+# Install GraalVM for Java 25
+sdk install java 25.0.1-graalce
+sdk use java 25.0.1-graalce
+```
+
+=== Standard Build (JVM)
+
+To build the standard executable JAR:
+
+1.  Clone the project.
+2.  Run the build:
+    ```bash
+    ./gradlew clean build
+    ```
+3.  Execute the JAR:
+    ```bash
+    java -jar build/libs/jcli-0.1-all.jar -h
+    ```
+
+=== Native Build (GraalVM)
+
+To compile a standalone native executable (faster startup, no JVM required at runtime):
+
+1.  Ensure you are using GraalVM 25:
+    ```bash
+    sdk use java 25.0.1-graalce
+    ```
+2.  Run the native compile task (this may take a few minutes):
+    ```bash
+    ./gradlew nativeCompile
+    ```
+3.  The executable is generated at `build/native/nativeCompile/jcli`.
+4.  Execute it directly:
+    ```bash
+    ./build/native/nativeCompile/jcli --help
+    ```
+
+== Available Commands
+
+`jcli` uses **Build-Time Package Scanning** to automatically discover and register commands from configured packages.
+
+### Automatic Filtering
+
+To provide a clean and useful CLI experience, `jcli` aggressively filters out classes that are not typically useful for command-line one-off tasks.
+
+**Excluded Categories:**
+*   **Collections**: `ArrayList`, `HashMap`, `HashSet`, etc.
+*   **I/O & Streams**: `ZipFile`, `Scanner`, `InputStream`, `OutputStream`.
+*   **Concurrency**: `java.util.concurrent.*`.
+*   **Reflection & Infrastructure**: `java.lang.reflect`, `java.lang.invoke`, `java.util.logging`.
+*   **Exceptions**: Any class extending `Throwable`.
+*   **Complex Return Types**: Methods returning `Stream`, `Iterator`, or `Spliterator`.
+
+**Included Categories:**
+*   **Core Values**: `String`, `Math`, `Integer`, `Boolean`.
+*   **Time & Date**: `LocalDate`, `LocalTime`, `Instant`, `Duration`, `Period`.
+*   **Utilities**: `UUID`, `Base64`, `Objects`, `Random`, `Currency`.
+
+If you attempt to call a filtered/excluded class, `jcli` will provide a helpful error message explaining why it is not available.
+
+== How to Add Packages
+
+You can extend `jcli` to support more libraries or packages by modifying the configuration.
+
+1.  Open `src/main/resources/commands.yaml`.
+2.  Add the package you want to scan under `scanPackages`.
+
+    ```yaml
+    scanPackages:
+      - java.lang
+      - java.util
+      - java.time
+      - your.custom.package  # <--- Add this
+    ```
+
+3.  **Rebuild**:
+    *   For JVM: `./gradlew build`
+    *   For Native: `./gradlew nativeCompile`
+
+During the build, `jcli` will:
+*   Scan the new package.
+*   Apply the filtering rules.
+*   Automatically generate `reflect-config.json` for GraalVM compatibility.
