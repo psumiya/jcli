@@ -5,7 +5,7 @@ Sugared wrappers to execute methods from JDK and JVM-based libraries from the co
 
 == How to Use
 
-E.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
+E.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli UUID randomUUID`.
 
 == Installation
 
@@ -32,6 +32,10 @@ Or to calculate the max of two numbers:
 Or to query a JSON using JsonPath:
 
     jcli JsonPath read '{"key":"value"}' "$.key"
+
+Or to query a JSON file:
+
+    jcli JsonPath read @/path/to/file.json "$.key"
 
 == Build
 
