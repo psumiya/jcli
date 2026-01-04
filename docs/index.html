@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCLI Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="search-container">
+                <input type="text" id="command-search" placeholder="Search commands..." />
+            </div>
+            <nav id="command-list">
+                <!-- Commands will be populated here -->
+            </nav>
+        </aside>
+        <main class="content">
+            <header id="content-header">
+                <h1>Select a command to view details</h1>
+                <p class="subtitle">JCLI - Java Command Line Interface</p>
+            </header>
+            <div id="command-detail">
+                <!-- Command details will be rendered here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const commandListEl = document.getElementById('command-list');
+            const searchInput = document.getElementById('command-search');
+            const commandDetailEl = document.getElementById('command-detail');
+            const contentHeader = document.getElementById('content-header');
+
+            let allCommands = [];
+            let currentFiltered = [];
+
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    allCommands = data.commands;
+
+                    // Respect existing input (if user typed while loading)
+                    const term = searchInput.value.toLowerCase();
+
+                    if (term) {
+                        currentFiltered = allCommands.filter(c =>
+                            c.name.toLowerCase().includes(term) ||
+                            c.fullName.toLowerCase().includes(term)
+                        );
+                    } else {
+                        currentFiltered = allCommands;
+                    }
+
+                    renderCommandList(currentFiltered);
+
+                    // Check URL hash for direct linking
+                    const hash = window.location.hash.slice(1);
+                    if (hash) {
+                        const cmd = allCommands.find(c => c.name === hash);
+                        if (cmd) selectCommand(cmd);
+                    }
+                })
+                .catch(err => console.error('Failed to load docs data:', err));
+
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                currentFiltered = allCommands.filter(c =>
+                    c.name.toLowerCase().includes(term) ||
+                    c.fullName.toLowerCase().includes(term)
+                );
+                renderCommandList(currentFiltered);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && currentFiltered.length > 0) {
+                    selectCommand(currentFiltered[0]);
+                    window.location.hash = currentFiltered[0].name;
+                    // Optional: blur input
+                    searchInput.blur();
+                }
+            });
+
+            function renderCommandList(commands) {
+                commandListEl.innerHTML = '';
+                if (commands.length === 0) {
+                    commandListEl.innerHTML = '<div style="padding: 1rem; color: #888; text-align: center;">No results found</div>';
+                    return;
+                }
+
+                commands.forEach(cmd => {
+                    const item = document.createElement('div');
+                    item.className = 'command-item';
+                    item.textContent = cmd.name;
+                    item.onclick = () => {
+                        window.location.hash = cmd.name;
+                        selectCommand(cmd);
+                    };
+                    commandListEl.appendChild(item);
+                });
+            }
+
+            function selectCommand(cmd) {
+                // Update active state in sidebar
+                document.querySelectorAll('.command-item').forEach(el => {
+                    el.classList.toggle('active', el.textContent === cmd.name);
+                });
+
+                // Update Header
+                contentHeader.style.display = 'none';
+
+                // Render detail
+                commandDetailEl.innerHTML = `
+                    <div class="detail-header">
+                        <h1>${cmd.name}</h1>
+                        <code class="class-name">${cmd.fullName}</code>
+                        <p class="description">${cmd.description || 'No description available.'}</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h2>Available Methods</h2>
+                        ${cmd.methods.length > 0 ? `
+                            <table class="methods-table">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Usage</th>
+                                        <th>Return Type</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${cmd.methods.map(m => `
+                                        <tr>
+                                            <td><code class="method-signature">${m.signature}</code></td>
+                                            <td><code class="usage-preview">${formatUsage(cmd.name, m)}</code></td>
+                                            <td><code>${m.returnType}</code></td>
+                                            <td><span class="badge ${m.isStatic ? 'static' : 'instance'}">${m.isStatic ? 'Static' : 'Instance'}</span></td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        ` : '<p>No public methods available for this command.</p>'}
+                    </div>
+                `;
+            }
+
+            function formatUsage(commandName, method) {
+                let usage = `jcli ${commandName}`;
+
+                // Method name comes first
+                usage += ` ${method.name}`;
+
+                if (!method.isStatic) {
+                    usage += ` &lt;instance&gt;`;
+                }
+
+                // Add method arguments if any
+                // Extract args from signature: "methodName(String arg0, int arg1)" -> ["String arg0", "int arg1"]
+                const paramsMatch = method.signature.match(/\((.*)\)/);
+                if (paramsMatch && paramsMatch[1]) {
+                    const params = paramsMatch[1].split(', ');
+                    params.forEach(p => {
+                        // "String arg0" -> "arg0"
+                        const parts = p.split(' ');
+                        const argName = parts.length > 1 ? parts[parts.length - 1] : parts[0];
+                        usage += ` &lt;${argName}&gt;`;
+                    });
+                }
+
+                return usage;
+            }
+        });
+    </script>
+</body>
+
+</html>

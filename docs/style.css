@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #007bff;
+    --bg-color: #f8f9fa;
+    --sidebar-bg: #fff;
+    --text-color: #333;
+    --border-color: #dee2e6;
+    --code-bg: #f1f3f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#command-search {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#command-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+
+.command-item {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.command-item:hover {
+    background-color: var(--bg-color);
+}
+
+.command-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+#content-header {
+    text-align: center;
+    margin-top: 20vh;
+    color: #6c757d;
+}
+
+.detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-header h1 {
+    margin: 0 0 0.5rem 0;
+}
+
+.class-name {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: var(--code-bg);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #d63384;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Methods Table */
+.methods-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.methods-table th,
+.methods-table td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.methods-table th {
+    background-color: var(--bg-color);
+    font-weight: 600;
+}
+
+.method-signature {
+    font-family: monospace;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.static {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge.instance {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
