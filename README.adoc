@@ -109,6 +109,7 @@ You can extend `jcli` to support more libraries or packages by modifying the con
     *   For Native: `./gradlew nativeCompile`
 
 During the build, `jcli` will:
+
 *   Scan the new package.
 *   Apply the filtering rules.
 *   Automatically generate `reflect-config.json` for GraalVM compatibility.
