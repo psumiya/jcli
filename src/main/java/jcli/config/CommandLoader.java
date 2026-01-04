@@ -49,7 +49,9 @@ public class CommandLoader {
                             if (!exists) {
                                 // Just check if we can load the class before adding it config
                                 // This ensures we don't register broken commands
-                                Class<?> cls = Class.forName(className);
+                                // Use initialize=false to avoid triggering static initializers (like TimeZone
+                                // in json-smart)
+                                Class<?> cls = Class.forName(className, false, CommandLoader.class.getClassLoader());
 
                                 // Smart Factory Detection:
                                 // Look for static methods like parse(String), valueOf(String), of(String),

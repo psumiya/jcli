@@ -13,7 +13,8 @@ import java.util.Optional;
 public class UniversalCommand implements Runnable {
 
     private final CommandConfig config;
-    private final Class<?> targetClass;
+    // Loaded lazily to avoid static initialization side-effects at startup
+    private Class<?> targetClass;
 
     @Spec
     CommandSpec spec;
@@ -32,16 +33,24 @@ public class UniversalCommand implements Runnable {
 
     public UniversalCommand(CommandConfig config) {
         this.config = config;
-        try {
-            this.targetClass = Class.forName(config.className());
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Class not found: " + config.className(), e);
+    }
+
+    private void loadTargetClass() {
+        if (targetClass == null) {
+            try {
+                // Initialize = true here because we are about to use it
+                this.targetClass = Class.forName(config.className());
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("Class not found: " + config.className(), e);
+            }
         }
     }
 
     @Override
     public void run() {
         try {
+            loadTargetClass();
+
             if (listMethods) {
                 System.out.println(ReflectionCommand.listMethods(targetClass));
                 return;

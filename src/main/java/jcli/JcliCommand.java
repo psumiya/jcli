@@ -15,6 +15,10 @@ public class JcliCommand implements Runnable {
     boolean verbose;
 
     public static void main(String[] args) {
+        // Silence java.util.logging (fixes TimeZone warnings)
+        java.util.logging.LogManager.getLogManager().reset();
+        java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.OFF);
+
         int exitCode = createCommandLine().execute(args);
         System.exit(exitCode);
     }

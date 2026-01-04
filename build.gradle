@@ -28,7 +28,7 @@ dependencies {
     annotationProcessor("info.picocli:picocli-codegen:4.6.3")
     implementation("info.picocli:picocli:4.6.3")
     implementation("org.yaml:snakeyaml:2.2")
-    implementation("ch.qos.logback:logback-classic:1.2.10")
+    implementation("org.slf4j:slf4j-nop:2.0.9")
     implementation("com.jayway.jsonpath:json-path:2.9.0")
     
     // Test dependencies
@@ -166,15 +166,12 @@ task generateReflectConfig {
                     "java.lang.annotation",
                     "java.lang.classfile",
                     "java.lang.constant",
-                    "java.lang.runtime",
-                    "com.jayway.jsonpath.internal",
-                    "com.jayway.jsonpath.spi"
                 )
                 .rejectClasses(
-                    'com.jayway.jsonpath.Configuration',
-                    'com.jayway.jsonpath.Configuration$ConfigurationBuilder',
-                    'com.jayway.jsonpath.Criteria',
-                    'com.jayway.jsonpath.Option'
+                  //  'com.jayway.jsonpath.Configuration', 
+                  //  'com.jayway.jsonpath.Configuration$ConfigurationBuilder',
+                  //  'com.jayway.jsonpath.Criteria',
+                  //  'com.jayway.jsonpath.Option'
                 )
                 .scan()
             

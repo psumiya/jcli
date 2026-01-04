@@ -3,6 +3,8 @@ scanPackages:
   - java.util
   - java.time
   - com.jayway.jsonpath
+  - net.minidev.json
+  - net.minidev.asm
 
 commands: []
 

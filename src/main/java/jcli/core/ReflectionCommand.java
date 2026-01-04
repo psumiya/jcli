@@ -41,7 +41,17 @@ public class ReflectionCommand {
                 })
                 .filter(m -> Arrays.stream(m.getParameterTypes()).allMatch(ReflectionCommand::isTypeSupported))
                 .filter(m -> isReturnTypeSupported(m.getReturnType()))
+                .sorted(java.util.Comparator.comparingInt(ReflectionCommand::countObjectParams))
                 .findFirst();
+    }
+
+    private static int countObjectParams(Method m) {
+        int count = 0;
+        for (Class<?> type : m.getParameterTypes()) {
+            if (type == Object.class)
+                count++;
+        }
+        return count;
     }
 
     private static boolean isReturnTypeSupported(Class<?> type) {
