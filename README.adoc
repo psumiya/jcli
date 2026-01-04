@@ -23,7 +23,7 @@ You can build `jcli` as a standard runnable JAR or as a native executable using 
 
 === Prerequisites
 
-We recommend using **SDKMAN!** to manage your Java versions.
+
 
 *   **Java 25** (for standard build)
 *   **GraalVM for Java 25** (for native build)
