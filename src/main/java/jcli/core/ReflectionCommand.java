@@ -168,7 +168,50 @@ public class ReflectionCommand {
             }
         }
 
+        if (type.isArray()) {
+            return convertArray(type, arg);
+        }
+
         throw new IllegalArgumentException("Unsupported argument type: " + type.getName());
+    }
+
+    private static Object convertArray(Class<?> arrayType, String arg) {
+        // Try parsing as JSON first
+        try {
+            Object parsed = net.minidev.json.JSONValue.parse(arg);
+            if (parsed instanceof net.minidev.json.JSONArray) {
+                net.minidev.json.JSONArray jsonArray = (net.minidev.json.JSONArray) parsed;
+                Class<?> componentType = arrayType.getComponentType();
+                Object array = java.lang.reflect.Array.newInstance(componentType, jsonArray.size());
+
+                for (int i = 0; i < jsonArray.size(); i++) {
+                    Object element = jsonArray.get(i);
+                    // Convert each element (recursively if needed, though simple types mainly)
+                    // We treat the element as string for convert(), or ideally convert handles
+                    // Object if compatible
+                    // But convert takes String arg. We used to do convert(type, String).
+                    // Let's coerce element to String for simplicity utilizing existing logic,
+                    // or handle raw objects if easy.
+                    // For primitives, JSONValue gives Long/Double/Boolean etc.
+
+                    Object val = convert(componentType, String.valueOf(element));
+                    java.lang.reflect.Array.set(array, i, val);
+                }
+                return array;
+            }
+        } catch (Exception e) {
+            // Check if it's just comma separated
+        }
+
+        // Fallback: simple comma separation?
+        // "1,2,3"
+        String[] parts = arg.split(",");
+        Class<?> componentType = arrayType.getComponentType();
+        Object array = java.lang.reflect.Array.newInstance(componentType, parts.length);
+        for (int i = 0; i < parts.length; i++) {
+            java.lang.reflect.Array.set(array, i, convert(componentType, parts[i].trim()));
+        }
+        return array;
     }
 
     public static String diagnoseError(Class<?> targetClass, String methodName, int argCount) {
