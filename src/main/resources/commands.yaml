@@ -1,35 +1,7 @@
-commands:
-  - name: string
-    className: java.lang.String
-    strategy: INSTANCE
-    description: "Methods from java.lang.String"
-    examples:
-      - "jcli string length 'hello'"
-      - "jcli string substring 'hello world' 0 5"
-      - "jcli string startsWith 'hello' 'he'"
+scanPackages:
+  - java.lang
+  - java.util
+  - java.time
 
-  - name: math
-    className: java.lang.Math
-    strategy: STATIC
-    description: "Methods from java.lang.Math"
-    examples:
-      - "jcli math abs -10"
-      - "jcli math max 10 20"
-      - "jcli math sqrt 16"
-
-  - name: instant
-    className: java.time.Instant
-    strategy: HYBRID
-    factory: parse
-    description: "Methods from java.time.Instant"
-    examples:
-      - "jcli instant now"
-      - "jcli instant parse '2023-01-01T00:00:00Z'"
-
-  - name: uuid
-    className: java.util.UUID
-    strategy: STATIC
-    description: "Methods from java.util.UUID"
-    examples:
-      - "jcli uuid randomUUID"
+commands: []
 

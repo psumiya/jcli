@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath("org.yaml:snakeyaml:2.2")
+        classpath("io.github.classgraph:classgraph:4.8.165")
     }
 }
 
@@ -62,13 +63,16 @@ compileJava {
 
 import org.yaml.snakeyaml.Yaml
 import groovy.json.JsonBuilder
+import io.github.classgraph.ClassGraph
 
 task generateReflectConfig {
     def commandsFile = file("src/main/resources/commands.yaml")
     def reflectConfigFile = file("src/main/resources/META-INF/native-image/jcli/jcli/reflect-config.json")
+    def commandIndexFile = file("src/main/resources/command-index.json")
     
     inputs.file(commandsFile)
     outputs.file(reflectConfigFile)
+    outputs.file(commandIndexFile)
     
     doLast {
         if (!commandsFile.exists()) {
@@ -77,9 +81,97 @@ task generateReflectConfig {
         
         def yaml = new Yaml()
         def data = yaml.load(commandsFile.newInputStream())
-        def commands = data['commands']
-        def reflectionEntries = []
+        def explicitCommands = data['commands'] ?: [] // Handle null if only scanPackages is present
+        // Extract command list from the nested structure if it exists, or treat it as list of maps
+        if (data['commands'] instanceof List) {
+             explicitCommands = data['commands']
+        }
         
+        def scanPackages = data['scanPackages'] ?: []
+        
+        def reflectionEntries = []
+        def commandIndex = [:]
+        
+        // 1. Process explicitly defined commands
+        explicitCommands.each { cmd ->
+            if (cmd instanceof Map && cmd.containsKey('className')) {
+                reflectionEntries << [
+                    name: cmd['className'],
+                    queryAllPublicMethods: true
+                ]
+            }
+        }
+        
+        // 2. Scan packages
+        if (scanPackages) {
+            println "Scanning packages: ${scanPackages}"
+            def scanResult = new ClassGraph()
+                .enableAllInfo()
+                .enableSystemJarsAndModules()
+                .acceptPackages(scanPackages as String[])
+                .rejectPackages(
+                    "java.util.concurrent", 
+                    "java.util.logging", 
+                    "java.lang.invoke", 
+                    "java.lang.instrument", 
+                    "java.lang.reflect", 
+                    "java.util.stream",
+                    "java.lang.management",
+                    "java.lang.module",
+                    "java.lang.ref",
+                    "java.lang.foreign",
+                    "java.util.zip",
+                    "java.util.jar",
+                    "java.util.prefs",
+                    "java.util.regex",
+                    "java.util.spi",
+                    "java.util.random",
+                    "java.util.function"
+                )
+                .scan()
+            
+            scanResult.getAllClasses().forEach { classInfo ->
+                if (classInfo.isPublic() && !classInfo.isAbstract() && !classInfo.isInnerClass() && 
+                    !classInfo.extendsSuperclass("java.lang.Throwable") &&
+                    !classInfo.implementsInterface("java.util.Collection") &&
+                    !classInfo.implementsInterface("java.util.Map") &&
+                    !classInfo.implementsInterface("java.util.Iterator") &&
+                    !classInfo.getName().startsWith("java.util.Optional") &&
+                    !classInfo.getName().startsWith("java.util.Observable") &&
+                    !classInfo.getName().equals("java.util.BitSet") &&
+                    !classInfo.getName().equals("java.util.EventObject") &&
+                    !classInfo.getName().equals("java.util.ServiceLoader") &&
+                    !classInfo.getName().equals("java.util.Timer") &&
+                    !classInfo.getName().equals("java.util.StringJoiner") &&
+                    !classInfo.getName().equals("java.util.StringTokenizer") &&
+                    !classInfo.getName().equals("java.util.PropertyResourceBundle") &&
+                    !classInfo.getName().equals("java.util.PropertyPermission") &&
+                    !classInfo.getName().equals("java.util.SimpleTimeZone") &&
+                    !classInfo.getName().equals("java.util.Collections") &&
+                    !classInfo.getName().endsWith("SummaryStatistics") &&
+                    !classInfo.getName().equals("java.util.FormattableFlags") &&
+                    !classInfo.getName().equals("java.util.GregorianCalendar")) {
+                     def className = classInfo.getName()
+                     def simpleName = classInfo.getSimpleName()
+                     
+                     // Add to reflection config
+                     reflectionEntries << [
+                         name: className,
+                         queryAllPublicMethods: true,
+                         allDeclaredConstructors: true,
+                         allPublicConstructors: true
+                     ]
+                     
+                     // Add to command index (SimpleName -> FullName)
+                     // If collision, keep existing (first wins) or warn? For now, silent overwrite or ignore. 
+                     // Let's protect against duplicates by checking.
+                     if (!commandIndex.containsKey(simpleName)) {
+                         commandIndex[simpleName] = className
+                     }
+                }
+            }
+        }
+
         // Add CommandConfig for generic command loading
         reflectionEntries << [
             name: "jcli.config.CommandConfig",
@@ -89,17 +181,18 @@ task generateReflectConfig {
             allPublicMethods: true
         ]
         
-        // Add command classes
-        commands.each { cmd ->
-            reflectionEntries << [
-                name: cmd['className'],
-                queryAllPublicMethods: true
-            ]
-        }
-        
         reflectConfigFile.parentFile.mkdirs()
         reflectConfigFile.text = new JsonBuilder(reflectionEntries).toPrettyString()
+        
+        commandIndex.each { k, v -> 
+            println "Indexed: ${k} -> ${v}" 
+        }
+        
+        commandIndexFile.parentFile.mkdirs()
+        commandIndexFile.text = new JsonBuilder(commandIndex).toPrettyString()
+        
         println "Generated reflect-config.json with ${reflectionEntries.size()} entries."
+        println "Generated command-index.json with ${commandIndex.size()} entries."
     }
 }
 

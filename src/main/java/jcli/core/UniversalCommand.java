@@ -143,9 +143,12 @@ public class UniversalCommand implements Runnable {
                     // e.g. Instant.parse(text)
                     instance = ReflectionCommand.invoke(null, targetClass, config.factory(),
                             new String[] { instanceText });
+                } else if (targetClass.equals(String.class)) {
+                    // Fallback: If target is String, the instance is just the text
+                    instance = instanceText;
                 } else {
-                    throw new IllegalStateException(
-                            "Factory method required for Hybrid command execution on instances");
+                    // Fallback: Try to instantiate via constructor
+                    instance = ReflectionCommand.createInstance(targetClass, instanceText);
                 }
 
                 Object result = ReflectionCommand.invoke(instance, targetClass, method, realArgs);
@@ -154,6 +157,16 @@ public class UniversalCommand implements Runnable {
             }
         }
 
-        throw new IllegalArgumentException("No matching method found: " + method);
+        // Diagnosis
+        String error = ReflectionCommand.diagnoseError(targetClass, method, args.length);
+        if (args.length > 0) {
+            String instanceError = ReflectionCommand.diagnoseError(targetClass, method, args.length - 1);
+            // If instance error is more specific than "No method found", prefer it
+            if (!instanceError.startsWith("No method found") && !instanceError.contains("different arguments")) {
+                error = instanceError;
+            }
+        }
+
+        throw new IllegalArgumentException(error);
     }
 }

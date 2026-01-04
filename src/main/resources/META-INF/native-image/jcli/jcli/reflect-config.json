@@ -1,25 +1,585 @@
 [
     {
+        "name": "java.lang.Boolean",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Byte",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Character",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Class",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Compiler",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Double",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Float",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.InheritableThreadLocal",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Integer",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Long",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Math",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Module",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.ModuleLayer",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Package",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.ProcessBuilder",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Runtime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.RuntimePermission",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.SecurityManager",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Short",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.StackTraceElement",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.StackWalker",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.StrictMath",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.String",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.StringBuffer",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.StringBuilder",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.System",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Thread",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.ThreadGroup",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.ThreadLocal",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Throwable",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.Void",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.annotation.ElementType",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.annotation.RetentionPolicy",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.constant.ConstantDescs",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.constant.DynamicCallSiteDesc",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.runtime.ObjectMethods",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.runtime.SwitchBootstraps",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.DayOfWeek",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.Duration",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.Instant",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.LocalDate",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.LocalDateTime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.LocalTime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.Month",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.MonthDay",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.OffsetDateTime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.OffsetTime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.Period",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.Year",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.YearMonth",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.ZoneOffset",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.ZonedDateTime",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.HijrahChronology",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.HijrahDate",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.HijrahEra",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.IsoChronology",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.IsoEra",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.JapaneseChronology",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.JapaneseDate",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.JapaneseEra",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.MinguoChronology",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.MinguoDate",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.MinguoEra",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.ThaiBuddhistChronology",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.ThaiBuddhistDate",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.chrono.ThaiBuddhistEra",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.DateTimeFormatter",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.DateTimeFormatterBuilder",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.DecimalStyle",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.FormatStyle",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.ResolverStyle",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.SignStyle",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.format.TextStyle",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.ChronoField",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.ChronoUnit",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.IsoFields",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.JulianFields",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.TemporalAdjusters",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.TemporalQueries",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.ValueRange",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.temporal.WeekFields",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.zone.ZoneOffsetTransition",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.zone.ZoneOffsetTransitionRule",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.time.zone.ZoneRules",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Arrays",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Base64",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Currency",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Date",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Formatter",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.HexFormat",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Locale",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Objects",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Random",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.Spliterators",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.SplittableRandom",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.util.UUID",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
         "name": "jcli.config.CommandConfig",
         "allDeclaredConstructors": true,
         "allPublicConstructors": true,
         "allDeclaredFields": true,
         "allPublicMethods": true
-    },
-    {
-        "name": "java.lang.String",
-        "queryAllPublicMethods": true
-    },
-    {
-        "name": "java.lang.Math",
-        "queryAllPublicMethods": true
-    },
-    {
-        "name": "java.time.Instant",
-        "queryAllPublicMethods": true
-    },
-    {
-        "name": "java.util.UUID",
-        "queryAllPublicMethods": true
     }
 ]

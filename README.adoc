@@ -12,73 +12,73 @@ It is also intended that this be a GraalVM-compatible project so that distributi
 
 Most methods return a single result, and so can be used in pipe operations combined with other command line utilities if needed.
 
-== Configuration & Extensibility
+== Auto-Discovery & Configuration
 
-`jcli` is now completely configuration-driven! You can add new commands without writing any Java code.
+`jcli` uses **Build-Time Package Scanning** to automatically discover and register commands.
 
-Command definitions are located in `src/main/resources/commands.yaml`.
+The configuration is simple. In `src/main/resources/commands.yaml`:
 
 ```yaml
-commands:
-  - name: string
-    className: java.lang.String
-    strategy: INSTANCE
-    description: "Methods from java.lang.String"
-    examples:
-       - "jcli string length 'hello'"
-
-  - name: math
-    className: java.lang.Math
-    strategy: STATIC
-    description: "Methods from java.lang.Math"
-    examples:
-       - "jcli math max 10 20"
+scanPackages:
+  - java.lang
+  - java.util
+  - java.time
 ```
 
-To add a new command, simply append a new entry to this YAML file.
+During the build, `jcli` scans these packages and registers classes as commands using their **SimpleName** (e.g., `java.lang.Math` -> `Math`).
 
-=== Strategies
-- `STATIC`: For static utility classes (e.g., `java.lang.Math`).
-- `INSTANCE`: For classes where you operate on an instance provided as the first argument (e.g., `java.lang.String`).
-- `HYBRID`: Tries to match a static factory method first; if not found, treats the first argument as an instance (e.g., `java.time.Instant`).
+=== Automatic Filtering
+To keep the CLI useful and focused on command-line relevant utilities, `jcli` **automatically excludes**:
+
+*   **Collections**: `ArrayList`, `HashMap`, `HashSet`, etc. (Creating empty containers is rarely useful in a CLI).
+*   **I/O & Streams**: `ZipFile`, `Scanner`, `InputStream`, etc.
+*   **Infrastructure**: `java.util.concurrent`, `java.util.logging`, `java.util.prefs`.
+*   **Reflection**: `java.lang.reflect`, `java.lang.invoke`.
+*   **Exceptions**: All classes extending `Throwable`.
+*   **Unsupported Return Types**: Methods returning `Stream`, `Iterator`, or `Spliterator` are hidden to prevent unusable output.
+
+NOTE: If you try to call an excluded method, `jcli` will provide a diagnostic error explaining exactly why it is not available.
+
+This results in a clean, high-signal list of commands focused on **Values** (String, Integer) and **Utilities** (Math, Time, UUID).
 
 == Available Commands
 
-The CLI structure maps directly to the configuration in `commands.yaml`. By default:
-- `jcli string` -> `java.lang.String`
-- `jcli uuid` -> `java.util.UUID`
-- `jcli instant` -> `java.time.Instant`
-- `jcli math` -> `java.lang.Math`
+With the default configuration, you get access to ~100 powerful Java commands, including:
 
-In order to view the available methods for a command, you can use the `--methods` flag.
-
-E.g., `jcli instant --methods`
+*   **Core**: `String`, `Math`, `Integer`, `Boolean`, `System`
+*   **Time**: `LocalDate`, `LocalTime`, `Instant`, `Duration`, `Period`, `ZoneId`
+*   **Utils**: `UUID`, `Base64`, `Objects`, `Random`, `Currency`
 
 === Examples
 
 [cols="1,1,1,1"]
 |===
-|SubCommand | Method | Description | Usage
+|Command | Method | Description | Usage
 
-|uuid
+|`UUID`
 |`randomUUID`
 |Generates a random UUID
-|`jcli uuid randomUUID`
+|`jcli UUID randomUUID`
 
-|instant
+|`LocalDate`
 |`now`
-|Prints the current time (ISO-8601)
-|`jcli instant now`
+|Prints the current date
+|`jcli LocalDate now`
 
-|string
-|`substring`
-|Extracts substring from text
-|jcli string substring 'hello world' 0 5
+|`String`
+|`length`
+|Returns string length (instance method)
+|`jcli String length "hello world"`
 
-|math
+|`Math`
 |`max`
 |Returns the greater of two values
-|`jcli math max 10 20`
+|`jcli Math max 10 20`
+
+|`Instant`
+|`getEpochSecond`
+|Parses text to Instant (Smart Factory)
+|`jcli Instant getEpochSecond "2023-01-01T00:00:00Z"`
 |===
 
 == Build
