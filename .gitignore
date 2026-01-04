@@ -13,3 +13,5 @@ out/
 .classpath
 .factorypath
 README.html
+src/main/resources/command-index.json
+src/main/resources/reflect-config.json
