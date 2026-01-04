@@ -5,7 +5,7 @@ Sugared wrappers to execute methods from JDK and JVM-based libraries from the co
 
 == How to Use
 
-GE.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
+E.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
 
 == Installation
 
@@ -29,6 +29,10 @@ Or to calculate the max of two numbers:
 
     jcli Math max 10 20
 
+Or to query a JSON using JsonPath:
+
+    jcli JsonPath read '{"key":"value"}' "$.key"
+
 == Build
 
 You can build `jcli` as a standard runnable JAR or as a native executable using GraalVM.
@@ -40,11 +44,12 @@ You can build `jcli` as a standard runnable JAR or as a native executable using 
 *   **Java 25** (for standard build)
 *   **GraalVM for Java 25** (for native build)
 
-```bash
+[source,bash]
+----
 # Install GraalVM for Java 25
 sdk install java 25.0.1-graalce
 sdk use java 25.0.1-graalce
-```
+----
 
 === Standard Build (JVM)
 
@@ -52,41 +57,47 @@ To build the standard executable JAR:
 
 1.  Clone the project.
 2.  Run the build:
-    ```bash
+    [source,bash]
+    ----
     ./gradlew clean build
-    ```
+    ----
 3.  Execute the JAR:
-    ```bash
+    [source,bash]
+    ----
     java -jar build/libs/jcli-0.0.2-beta-all.jar -h
-    ```
+    ----
 
 === Native Build (GraalVM)
 
 To compile a standalone native executable (faster startup, no JVM required at runtime):
 
 1.  Ensure you are using GraalVM 25:
-    ```bash
+    [source,bash]
+    ----
     sdk use java 25.0.1-graalce
-    ```
+    ----
 2.  Run the native compile task (this may take a few minutes):
-    ```bash
+    [source,bash]
+    ----
     ./gradlew nativeCompile
-    ```
+    ----
 3.  The executable is generated at `build/native/nativeCompile/jcli`.
 4.  Execute it directly:
-    ```bash
+    [source,bash]
+    ----
     ./build/native/nativeCompile/jcli --help
-    ```
+    ----
 
 == Available Commands
 
 `jcli` uses **Build-Time Package Scanning** to automatically discover and register commands from configured packages.
 
-### Automatic Filtering
+=== Automatic Filtering
 
 To provide a clean and useful CLI experience, `jcli` aggressively filters out classes that are not typically useful for command-line one-off tasks.
 
 **Excluded Categories:**
+
 *   **Collections**: `ArrayList`, `HashMap`, `HashSet`, etc.
 *   **I/O & Streams**: `ZipFile`, `Scanner`, `InputStream`, `OutputStream`.
 *   **Concurrency**: `java.util.concurrent.*`.
@@ -95,6 +106,7 @@ To provide a clean and useful CLI experience, `jcli` aggressively filters out cl
 *   **Complex Return Types**: Methods returning `Stream`, `Iterator`, or `Spliterator`.
 
 **Included Categories:**
+
 *   **Core Values**: `String`, `Math`, `Integer`, `Boolean`.
 *   **Time & Date**: `LocalDate`, `LocalTime`, `Instant`, `Duration`, `Period`.
 *   **Utilities**: `UUID`, `Base64`, `Objects`, `Random`, `Currency`.
