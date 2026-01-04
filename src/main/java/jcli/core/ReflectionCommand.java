@@ -18,7 +18,7 @@ public class ReflectionCommand {
                                 + targetClass.getName()));
 
         // 2. Convert arguments
-        Object[] typedArgs = convertArgs(method.getParameterTypes(), args);
+        Object[] typedArgs = convertArgs(method.getParameterTypes(), args, method.isVarArgs());
 
         // 3. Invoke
         try {
@@ -31,7 +31,14 @@ public class ReflectionCommand {
     public static Optional<Method> findMethod(Class<?> targetClass, String methodName, int argCount) {
         return Arrays.stream(targetClass.getMethods())
                 .filter(m -> m.getName().equals(methodName))
-                .filter(m -> m.getParameterCount() == argCount)
+                .filter(m -> {
+                    if (m.isVarArgs()) {
+                        // For varargs, we need at least (paramCount - 1) args
+                        // e.g. func(String, int...) takes 1 or more args.
+                        return argCount >= (m.getParameterCount() - 1);
+                    }
+                    return m.getParameterCount() == argCount;
+                })
                 .filter(m -> Arrays.stream(m.getParameterTypes()).allMatch(ReflectionCommand::isTypeSupported))
                 .filter(m -> isReturnTypeSupported(m.getReturnType()))
                 .findFirst();
@@ -58,16 +65,45 @@ public class ReflectionCommand {
                 type == Boolean.class || type == Double.class ||
                 type == Float.class || type == Short.class || type == Byte.class ||
                 type.isEnum() ||
-                type == Class.class;
+                type == Class.class ||
+                type == Object.class ||
+                type.isArray();
+    }
+
+    private static Object[] convertArgs(Class<?>[] types, String[] args, boolean isVarArgs) {
+        if (!isVarArgs) {
+            Object[] typedArgs = new Object[types.length];
+            for (int i = 0; i < types.length; i++) {
+                typedArgs[i] = convert(types[i], args[i]);
+            }
+            return typedArgs;
+        }
+
+        // Handle Varargs
+        int fixedParams = types.length - 1;
+        Object[] typedArgs = new Object[types.length];
+
+        // Convert fixed portion
+        for (int i = 0; i < fixedParams; i++) {
+            typedArgs[i] = convert(types[i], args[i]);
+        }
+
+        // Convert varargs portion
+        Class<?> varArgType = types[fixedParams].getComponentType();
+        int varArgCount = args.length - fixedParams;
+        Object varArgsArray = java.lang.reflect.Array.newInstance(varArgType, varArgCount);
+
+        for (int i = 0; i < varArgCount; i++) {
+            Object val = convert(varArgType, args[fixedParams + i]);
+            java.lang.reflect.Array.set(varArgsArray, i, val);
+        }
+        typedArgs[fixedParams] = varArgsArray;
+
+        return typedArgs;
     }
 
     private static Object[] convertArgs(Class<?>[] types, String[] args) {
-        Object[] typedArgs = new Object[types.length];
-
-        for (int i = 0; i < types.length; i++) {
-            typedArgs[i] = convert(types[i], args[i]);
-        }
-        return typedArgs;
+        return convertArgs(types, args, false);
     }
 
     public static Object createInstance(Class<?> targetClass, String argument) {
@@ -105,7 +141,7 @@ public class ReflectionCommand {
             return Double.parseDouble(arg);
         if (type == float.class || type == Float.class)
             return Float.parseFloat(arg);
-        if (type == CharSequence.class)
+        if (type == CharSequence.class || type == Object.class)
             return arg;
 
         if (type.isEnum()) {
@@ -179,5 +215,31 @@ public class ReflectionCommand {
                     sb.append(")\n");
                 });
         return sb.toString();
+    }
+
+    public static String resolveArgument(String arg) {
+        if (arg == null)
+            return null;
+        if (arg.equals("-")) {
+            try {
+                java.io.ByteArrayOutputStream result = new java.io.ByteArrayOutputStream();
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = System.in.read(buffer)) != -1) {
+                    result.write(buffer, 0, length);
+                }
+                return result.toString("UTF-8").trim();
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to read from stdin", e);
+            }
+        }
+        if (arg.startsWith("@")) {
+            try {
+                return java.nio.file.Files.readString(java.nio.file.Path.of(arg.substring(1))).trim();
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to read file: " + arg.substring(1), e);
+            }
+        }
+        return arg;
     }
 }

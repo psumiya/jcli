@@ -48,15 +48,15 @@ public class UniversalCommand implements Runnable {
             }
 
             if (method == null) {
-                // If method is missing, Picocli should handle help if requested,
-                // but if not requested, show error.
-                // However, since we use usageHelp=true, Picocli handles help BEFORE run().
-                // So if we are here, help was NOT requested, but method is missing.
                 System.err.println("Error: Missing required argument '<method>'");
                 CommandLine.usage(this, System.out);
                 return;
             }
 
+            // Resolve arguments (file/stdin expansion)
+            for (int i = 0; i < args.length; i++) {
+                args[i] = ReflectionCommand.resolveArgument(args[i]);
+            }
             executeStrategy();
 
         } catch (Exception e) {
@@ -87,42 +87,18 @@ public class UniversalCommand implements Runnable {
     }
 
     private void executeInstance() {
-        // First argument is the instance/text
         if (args.length < 1) {
             throw new IllegalArgumentException("Instance command requires at least one argument (the instance)");
         }
         String instanceText = args[0];
         String[] realArgs = java.util.Arrays.copyOfRange(args, 1, args.length);
-
-        // For String, the instance IS the text. For others, we might need a factory.
-        // Currently, we treat the first argument as the instance (e.g. String).
         Object instance = instanceText;
-
         Object result = ReflectionCommand.invoke(instance, targetClass, method, realArgs);
         System.out.println(result);
     }
 
     private void executeHybrid() throws Exception {
-        // Try exact match (static or implicit instance)
-        Optional<Method> exactMatch = ReflectionCommand.findMethod(targetClass, method, args.length);
-        if (exactMatch.isPresent()) {
-            Method m = exactMatch.get();
-            if (Modifier.isStatic(m.getModifiers())) {
-                // Static method call
-                Object result = ReflectionCommand.invoke(null, targetClass, method, args);
-                System.out.println(result);
-                return;
-            }
-            // If strictly instance method with no args, it falls through to instance check
-            // logic.
-        }
-
-        // Strategy:
-        // 1. Check if method exists with N args. If static -> run.
-        // 2. If not found or instance method, check if we have N+1 args (1 for
-        // instance).
-
-        // Check for static match with current args
+        // 1. Try static match with ALL args
         Optional<Method> staticMatch = ReflectionCommand.findMethod(targetClass, method, args.length);
         if (staticMatch.isPresent() && Modifier.isStatic(staticMatch.get().getModifiers())) {
             Object result = ReflectionCommand.invoke(null, targetClass, method, args);
@@ -130,7 +106,24 @@ public class UniversalCommand implements Runnable {
             return;
         }
 
-        // Check for instance match with (args - 1)
+        // 2. Try Instance Match with Default Constructor
+        // If class has default constructor, we can try using it as the instance
+        // and passing ALL args to the method.
+        boolean hasDefaultConstructor = java.util.Arrays.stream(targetClass.getConstructors())
+                .anyMatch(c -> c.getParameterCount() == 0);
+
+        if (hasDefaultConstructor) {
+            Optional<Method> instanceMatch = ReflectionCommand.findMethod(targetClass, method, args.length);
+            if (instanceMatch.isPresent() && !Modifier.isStatic(instanceMatch.get().getModifiers())) {
+                Object instance = targetClass.getConstructor().newInstance();
+                Object result = ReflectionCommand.invoke(instance, targetClass, method, args);
+                System.out.println(result);
+                return;
+            }
+        }
+
+        // 3. Try Instance Match with Argument 0 as Instance Source
+        // (Legacy behavior / String constructor behavior)
         if (args.length > 0) {
             Optional<Method> instanceMatch = ReflectionCommand.findMethod(targetClass, method, args.length - 1);
             if (instanceMatch.isPresent() && !Modifier.isStatic(instanceMatch.get().getModifiers())) {
@@ -139,15 +132,11 @@ public class UniversalCommand implements Runnable {
 
                 Object instance;
                 if (config.factory() != null) {
-                    // Invoke factory method (static) to get instance
-                    // e.g. Instant.parse(text)
                     instance = ReflectionCommand.invoke(null, targetClass, config.factory(),
                             new String[] { instanceText });
                 } else if (targetClass.equals(String.class)) {
-                    // Fallback: If target is String, the instance is just the text
                     instance = instanceText;
                 } else {
-                    // Fallback: Try to instantiate via constructor
                     instance = ReflectionCommand.createInstance(targetClass, instanceText);
                 }
 
@@ -161,7 +150,6 @@ public class UniversalCommand implements Runnable {
         String error = ReflectionCommand.diagnoseError(targetClass, method, args.length);
         if (args.length > 0) {
             String instanceError = ReflectionCommand.diagnoseError(targetClass, method, args.length - 1);
-            // If instance error is more specific than "No method found", prefer it
             if (!instanceError.startsWith("No method found") && !instanceError.contains("different arguments")) {
                 error = instanceError;
             }

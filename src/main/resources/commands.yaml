@@ -2,6 +2,7 @@ scanPackages:
   - java.lang
   - java.util
   - java.time
+  - com.jayway.jsonpath
 
 commands: []
 

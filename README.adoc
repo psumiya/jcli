@@ -57,7 +57,7 @@ To build the standard executable JAR:
     ```
 3.  Execute the JAR:
     ```bash
-    java -jar build/libs/jcli-0.1-all.jar -h
+    java -jar build/libs/jcli-0.0.2-beta-all.jar -h
     ```
 
 === Native Build (GraalVM)

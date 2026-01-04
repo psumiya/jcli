@@ -17,7 +17,7 @@ plugins {
 
 
 
-version = "0.0.1-beta"
+version = "0.0.2-beta"
 group = "jcli"
 
 repositories {
@@ -29,6 +29,7 @@ dependencies {
     implementation("info.picocli:picocli:4.6.3")
     implementation("org.yaml:snakeyaml:2.2")
     implementation("ch.qos.logback:logback-classic:1.2.10")
+    implementation("com.jayway.jsonpath:json-path:2.9.0")
     
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
@@ -139,27 +140,41 @@ task generateReflectConfig {
         if (scanPackages) {
             println "Scanning packages: ${scanPackages}"
             def scanResult = new ClassGraph()
+                .overrideClasspath(sourceSets.main.runtimeClasspath)
                 .enableAllInfo()
                 .enableSystemJarsAndModules()
                 .acceptPackages(scanPackages as String[])
                 .rejectPackages(
                     "java.util.concurrent", 
-                    "java.util.logging", 
+                    "java.util.concurrent",
+                    "java.util.jar",
+                    "java.util.logging",
+                    "java.util.prefs",
+                    "java.util.random",
+                    "java.util.regex",
+                    "java.util.spi",
+                    "java.util.stream",
+                    "java.util.zip",
                     "java.lang.invoke", 
                     "java.lang.instrument", 
                     "java.lang.reflect", 
-                    "java.util.stream",
                     "java.lang.management",
                     "java.lang.module",
                     "java.lang.ref",
                     "java.lang.foreign",
-                    "java.util.zip",
-                    "java.util.jar",
-                    "java.util.prefs",
-                    "java.util.regex",
-                    "java.util.spi",
-                    "java.util.random",
-                    "java.util.function"
+                    "java.util.function",
+                    "java.lang.annotation",
+                    "java.lang.classfile",
+                    "java.lang.constant",
+                    "java.lang.runtime",
+                    "com.jayway.jsonpath.internal",
+                    "com.jayway.jsonpath.spi"
+                )
+                .rejectClasses(
+                    'com.jayway.jsonpath.Configuration',
+                    'com.jayway.jsonpath.Configuration$ConfigurationBuilder',
+                    'com.jayway.jsonpath.Criteria',
+                    'com.jayway.jsonpath.Option'
                 )
                 .scan()
             

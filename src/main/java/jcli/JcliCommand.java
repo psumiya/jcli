@@ -21,6 +21,7 @@ public class JcliCommand implements Runnable {
 
     public static CommandLine createCommandLine() {
         CommandLine cmd = new CommandLine(new JcliCommand());
+        cmd.setExpandAtFiles(false);
 
         // Dynamically register commands
         try {
