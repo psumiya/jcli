@@ -24,12 +24,6 @@
         "allPublicConstructors": true
     },
     {
-        "name": "java.lang.Compiler",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true
-    },
-    {
         "name": "java.lang.Double",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -37,6 +31,12 @@
     },
     {
         "name": "java.lang.Float",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.IO",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true
@@ -97,6 +97,12 @@
     },
     {
         "name": "java.lang.RuntimePermission",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.ScopedValue",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true
@@ -198,6 +204,24 @@
         "allPublicConstructors": true
     },
     {
+        "name": "java.lang.classfile.Attributes",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.classfile.Opcode",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.classfile.TypeKind",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
         "name": "java.lang.constant.ConstantDescs",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -205,6 +229,12 @@
     },
     {
         "name": "java.lang.constant.DynamicCallSiteDesc",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true
+    },
+    {
+        "name": "java.lang.runtime.ExactConversionsSupport",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true

@@ -9,11 +9,13 @@ buildscript {
 }
 
 plugins {
-    id("com.github.johnrengelman.shadow") version "7.1.1"
+    id("com.gradleup.shadow") version "9.3.0"
     id("java")
     id("application")
-    id("org.graalvm.buildtools.native") version "0.9.28"
+    id("org.graalvm.buildtools.native") version "0.11.2"
 }
+
+
 
 version = "0.1"
 group = "jcli"
@@ -29,18 +31,19 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.2.10")
     
     // Test dependencies
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 application {
     mainClass.set("jcli.JcliCommand")
 }
 
+
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 graalvmNative {
@@ -48,7 +51,6 @@ graalvmNative {
         main {
             imageName.set("jcli") 
             buildArgs.add("--verbose")
-
         }
     }
 }
@@ -64,6 +66,8 @@ compileJava {
 import org.yaml.snakeyaml.Yaml
 import groovy.json.JsonBuilder
 import io.github.classgraph.ClassGraph
+
+
 
 task generateReflectConfig {
     def commandsFile = file("src/main/resources/commands.yaml")

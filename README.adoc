@@ -91,13 +91,13 @@ To build this project's source code:
 
 == Build Native Image
 
- . Install and Use GraalVM for JDK 21
+ . Install and Use GraalVM Community Edition
  . Compile Native Image
  .. NativeCompile may take a few minutes
  
  ```
- sdk install java 21.0.1-graal
- sdk use java 21.0.1-graal
+ sdk install java 25.0.1-graalce
+ sdk use java 25.0.1-graalce
  ./gradlew nativeCompile
  ```
  
