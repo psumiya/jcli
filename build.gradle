@@ -188,11 +188,23 @@ task generateReflectConfig {
                      def simpleName = classInfo.getSimpleName()
                      
                      // Add to reflection config
+                     def methodsList = []
+                     classInfo.getMethodInfo().each { method ->
+                         if (method.isPublic()) {
+                             def parameterTypes = method.getParameterInfo().collect { it.getTypeSignatureOrTypeDescriptor().toString() }
+                             methodsList << [
+                                 name: method.getName(),
+                                 parameterTypes: parameterTypes
+                             ]
+                         }
+                     }
+
                      reflectionEntries << [
                          name: className,
                          queryAllPublicMethods: true,
                          allDeclaredConstructors: true,
-                         allPublicConstructors: true
+                         allPublicConstructors: true,
+                         methods: methodsList
                      ]
                      
                      // Add to command index (SimpleName -> FullName)
