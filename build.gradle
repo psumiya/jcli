@@ -69,6 +69,35 @@ import io.github.classgraph.ClassGraph
 
 
 
+
+
+task packageNative(type: Tar) {
+    dependsOn 'nativeCompile'
+    description = "Packages the native binary into a tar.gz for distribution"
+    group = "distribution"
+
+    def arch = System.getProperty("os.arch")
+    // Normalize architecture names
+    if (arch == "amd64") arch = "x86_64"
+    
+    // We assume OSX for now as per requirements, but could expand later
+    archiveFileName = "jcli-${project.version}-osx-${arch}.tar.gz"
+    destinationDirectory = file("${buildDir}/distributions")
+    compression = Compression.GZIP
+
+
+
+    into("bin") {
+        from("build/native/nativeCompile") {
+            include "jcli"
+        }
+    }
+    
+    doLast {
+        println "Created distribution: ${destinationDirectory.get()}/${archiveFileName.get()}"
+    }
+}
+
 task generateReflectConfig {
     def commandsFile = file("src/main/resources/commands.yaml")
     def reflectConfigFile = file("src/main/resources/META-INF/native-image/jcli/jcli/reflect-config.json")
