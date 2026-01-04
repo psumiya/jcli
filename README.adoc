@@ -5,15 +5,27 @@ Sugared wrappers to execute methods from JDK and JVM-based libraries from the co
 
 == How to Use
 
-Generate a UUID:
+GE.g., To generate a UUID, `java.util.UUID` contains a method `randomUUID()`. This tool helps you execute that method by invoking `jcli uuid randomUUID`.
 
-    jcli UUID randomUUID
+== Installation
 
-Get the current date:
+You can install `jcli` via Homebrew.
+
+[source,bash]
+----
+brew tap psumiya/jcli
+brew install jcli
+----
+
+== Motivation
+
+`jcli` aims to provide a convenient way to execute common JDK and JVM-based library methods directly from the command line, without writing boilerplate Java code.
+
+For example, to get the current date:
 
     jcli LocalDate now
 
-Calculate the max of two numbers:
+Or to calculate the max of two numbers:
 
     jcli Math max 10 20
 
@@ -113,15 +125,3 @@ During the build, `jcli` will:
 *   Scan the new package.
 *   Apply the filtering rules.
 *   Automatically generate `reflect-config.json` for GraalVM compatibility.
-
-== Installation (Homebrew)
-
-You can install `jcli` using the provided Homebrew formula.
-
-1.  Download the `jcli.rb` formula or use the URL.
-2.  Install using `brew`:
-    ```bash
-    brew install --build-from-source https://raw.githubusercontent.com/psumiya/jcli/main/jcli.rb
-    ```
-
-The formula is designed to automatically detect your architecture (Apple Silicon vs Intel) and download the appropriate pre-compiled binary.
