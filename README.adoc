@@ -121,7 +121,7 @@ You can install `jcli` using the provided Homebrew formula.
 1.  Download the `jcli.rb` formula or use the URL.
 2.  Install using `brew`:
     ```bash
-    brew install --build-from-source ./jcli.rb
+    brew install --build-from-source https://raw.githubusercontent.com/psumiya/jcli/main/jcli.rb
     ```
 
 The formula is designed to automatically detect your architecture (Apple Silicon vs Intel) and download the appropriate pre-compiled binary.
