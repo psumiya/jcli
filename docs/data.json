@@ -1,6 +1,6 @@
 {
-    "generatedAt": "Sun Jan 04 17:07:06 PST 2026",
-    "version": "0.0.2-beta",
+    "generatedAt": "Sun Jan 04 17:32:36 PST 2026",
+    "version": "0.0.3-beta",
     "commands": [
         {
             "name": "Boolean",
@@ -3821,6 +3821,34 @@
                     "returnType": "com.jayway.jsonpath.DocumentContext",
                     "isStatic": true,
                     "example": "jcli JsonPath parse \"test\""
+                },
+                {
+                    "name": "read",
+                    "signature": "read(Object arg0)",
+                    "returnType": "T",
+                    "isStatic": false,
+                    "example": "jcli JsonPath read @data.json $.commands.length()"
+                },
+                {
+                    "name": "read",
+                    "signature": "read(String arg0)",
+                    "returnType": "T",
+                    "isStatic": false,
+                    "example": "jcli JsonPath read @data.json $.commands.length()"
+                },
+                {
+                    "name": "read",
+                    "signature": "read(Object arg0, String arg1, com.jayway.jsonpath.Predicate[] arg2)",
+                    "returnType": "T",
+                    "isStatic": true,
+                    "example": "jcli JsonPath read @data.json $.commands.length()"
+                },
+                {
+                    "name": "read",
+                    "signature": "read(String arg0, String arg1, com.jayway.jsonpath.Predicate[] arg2)",
+                    "returnType": "T",
+                    "isStatic": true,
+                    "example": "jcli JsonPath read @data.json $.commands.length()"
                 }
             ]
         },

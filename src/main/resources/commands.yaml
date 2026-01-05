@@ -45,3 +45,7 @@ examples:
   # UUID
   "java.util.UUID.randomUUID": []
   "java.util.UUID.fromString": ["00000000-0000-0000-0000-000000000000"]
+
+  # JsonPath
+  # "com.jayway.jsonpath.JsonPath.read": ["{\"store\": {\"book\": []}}", "$.store.book"]
+  "com.jayway.jsonpath.JsonPath.read": ["@data.json", "$.commands.length()"]
