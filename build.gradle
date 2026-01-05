@@ -97,12 +97,32 @@ ext {
         "java.lang.classfile",
         "java.lang.constant",
         "com.jayway.jsonpath.internal",
-        "com.jayway.jsonpath.spi"
+        "com.jayway.jsonpath.spi",
+        "net.minidev.asm"
     ] as String[]
 
     // Class names to reject
     rejectedClasses = [
-        // 'com.jayway.jsonpath.Configuration', 
+        "java.util.Base64",
+        "net.minidev.json.reader.BeansWriterASMRemap",
+        "java.lang.Class",
+        "java.lang.Compiler",
+        "com.jayway.jsonpath.Configuration",
+        "net.minidev.asm.ConvertDate",
+        "com.jayway.jsonpath.Criteria",
+        "net.minidev.json.writer.FakeMapper",
+        "java.lang.InheritableThreadLocal",
+        "net.minidev.json.JSONUtil",
+        "java.lang.Runtime",
+        "java.lang.RuntimePermission",
+        "java.lang.SecurityManager",
+        "java.util.Spliterators",
+        "java.lang.StackTraceElement",
+        "java.lang.StackWalker",
+        "java.lang.Thread",
+        "java.lang.ThreadGroup",
+        "java.lang.ThreadLocal",
+        "java.lang.Throwable"
     ] as Set
 
     // Shared method to check if a single class should be processed
@@ -118,6 +138,10 @@ ext {
         if (classInfo.implementsInterface("java.util.Iterator")) return false
         
         def name = classInfo.getName()
+        
+        // Check explicit rejection list
+        if (rejectedClasses.contains(name)) return false
+
         // Package/Prefix exclusions
         if (name.startsWith("java.util.Optional")) return false
         if (name.startsWith("java.util.Observable")) return false

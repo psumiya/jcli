@@ -1,317 +1,5 @@
 [
     {
-        "name": "com.jayway.jsonpath.Configuration",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "setDefaults",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Configuration$Defaults"
-                ]
-            },
-            {
-                "name": "addEvaluationListeners",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.EvaluationListener[]"
-                ]
-            },
-            {
-                "name": "setEvaluationListeners",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.EvaluationListener[]"
-                ]
-            },
-            {
-                "name": "getEvaluationListeners",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "jsonProvider",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.spi.json.JsonProvider"
-                ]
-            },
-            {
-                "name": "jsonProvider",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "mappingProvider",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.spi.mapper.MappingProvider"
-                ]
-            },
-            {
-                "name": "mappingProvider",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "addOptions",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Option[]"
-                ]
-            },
-            {
-                "name": "setOptions",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Option[]"
-                ]
-            },
-            {
-                "name": "getOptions",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "containsOption",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Option"
-                ]
-            },
-            {
-                "name": "defaultConfiguration",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "builder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "equals",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "com.jayway.jsonpath.Criteria",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "apply",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Predicate$PredicateContext"
-                ]
-            },
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "where",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.internal.Path"
-                ]
-            },
-            {
-                "name": "where",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "and",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "is",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "eq",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "ne",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "lt",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "lte",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "gt",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "gte",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "regex",
-                "parameterTypes": [
-                    "java.util.regex.Pattern"
-                ]
-            },
-            {
-                "name": "in",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "in",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "contains",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "nin",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "nin",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "subsetof",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "subsetof",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "anyof",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "anyof",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "noneof",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "noneof",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "all",
-                "parameterTypes": [
-                    "java.lang.Object[]"
-                ]
-            },
-            {
-                "name": "all",
-                "parameterTypes": [
-                    "java.util.Collection<?>"
-                ]
-            },
-            {
-                "name": "size",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "type",
-                "parameterTypes": [
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "exists",
-                "parameterTypes": [
-                    "boolean"
-                ]
-            },
-            {
-                "name": "notEmpty",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "empty",
-                "parameterTypes": [
-                    "boolean"
-                ]
-            },
-            {
-                "name": "matches",
-                "parameterTypes": [
-                    "com.jayway.jsonpath.Predicate"
-                ]
-            },
-            {
-                "name": "parse",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "create",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.String",
-                    "java.lang.String"
-                ]
-            }
-        ]
-    },
-    {
         "name": "com.jayway.jsonpath.JsonPath",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -1316,6 +1004,42 @@
                 ]
             },
             {
+                "name": "isEmoji",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isEmojiPresentation",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isEmojiModifier",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isEmojiModifierBase",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isEmojiComponent",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isExtendedPictographic",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
                 "name": "toLowerCase",
                 "parameterTypes": [
                     "char"
@@ -1497,543 +1221,6 @@
                 "name": "compareTo",
                 "parameterTypes": [
                     "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.Class",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "toGenericString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "forName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "forName",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "boolean",
-                    "java.lang.ClassLoader"
-                ]
-            },
-            {
-                "name": "forName",
-                "parameterTypes": [
-                    "java.lang.Module",
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "newInstance",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isInstance",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "isAssignableFrom",
-                "parameterTypes": [
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "isInterface",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isArray",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isPrimitive",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isAnnotation",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isSynthetic",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getClassLoader",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getModule",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getTypeParameters",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getSuperclass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getGenericSuperclass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getPackage",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getPackageName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getInterfaces",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getGenericInterfaces",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getComponentType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getModifiers",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getSigners",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getEnclosingMethod",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getEnclosingConstructor",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaringClass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getEnclosingClass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getSimpleName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getTypeName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getCanonicalName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isAnonymousClass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isLocalClass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isMemberClass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getClasses",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getFields",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMethods",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getConstructors",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getField",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getMethod",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.Class<?>[]"
-                ]
-            },
-            {
-                "name": "getConstructor",
-                "parameterTypes": [
-                    "java.lang.Class<?>[]"
-                ]
-            },
-            {
-                "name": "getDeclaredClasses",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaredFields",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getRecordComponents",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaredMethods",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaredConstructors",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaredField",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getDeclaredMethod",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.Class<?>[]"
-                ]
-            },
-            {
-                "name": "getDeclaredConstructor",
-                "parameterTypes": [
-                    "java.lang.Class<?>[]"
-                ]
-            },
-            {
-                "name": "getResourceAsStream",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getResource",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getProtectionDomain",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "desiredAssertionStatus",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isEnum",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isRecord",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getEnumConstants",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "cast",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "asSubclass",
-                "parameterTypes": [
-                    "java.lang.Class<U>"
-                ]
-            },
-            {
-                "name": "getAnnotation",
-                "parameterTypes": [
-                    "java.lang.Class<A>"
-                ]
-            },
-            {
-                "name": "isAnnotationPresent",
-                "parameterTypes": [
-                    "java.lang.Class<? extends java.lang.annotation.Annotation>"
-                ]
-            },
-            {
-                "name": "getAnnotationsByType",
-                "parameterTypes": [
-                    "java.lang.Class<A>"
-                ]
-            },
-            {
-                "name": "getAnnotations",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getDeclaredAnnotation",
-                "parameterTypes": [
-                    "java.lang.Class<A>"
-                ]
-            },
-            {
-                "name": "getDeclaredAnnotationsByType",
-                "parameterTypes": [
-                    "java.lang.Class<A>"
-                ]
-            },
-            {
-                "name": "getDeclaredAnnotations",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getAnnotatedSuperclass",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getAnnotatedInterfaces",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getNestHost",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isNestmateOf",
-                "parameterTypes": [
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "getNestMembers",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "descriptorString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "componentType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "arrayType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "describeConstable",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isHidden",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getPermittedSubclasses",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isSealed",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "arrayType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "componentType",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.Compiler",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "compileClass",
-                "parameterTypes": [
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "compileClasses",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "command",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "enable",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "disable",
-                "parameterTypes": [
-                    
                 ]
             }
         ]
@@ -2387,6 +1574,18 @@
                 ]
             },
             {
+                "name": "float16ToFloat",
+                "parameterTypes": [
+                    "short"
+                ]
+            },
+            {
+                "name": "floatToFloat16",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
                 "name": "compareTo",
                 "parameterTypes": [
                     "java.lang.Float"
@@ -2447,33 +1646,39 @@
         ]
     },
     {
-        "name": "java.lang.InheritableThreadLocal",
+        "name": "java.lang.IO",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true,
         "methods": [
             {
-                "name": "withInitial",
+                "name": "println",
                 "parameterTypes": [
-                    "java.util.function.Supplier<? extends S>"
+                    "java.lang.Object"
                 ]
             },
             {
-                "name": "get",
+                "name": "println",
                 "parameterTypes": [
                     
                 ]
             },
             {
-                "name": "set",
+                "name": "print",
                 "parameterTypes": [
-                    "T"
+                    "java.lang.Object"
                 ]
             },
             {
-                "name": "remove",
+                "name": "readln",
                 "parameterTypes": [
                     
+                ]
+            },
+            {
+                "name": "readln",
+                "parameterTypes": [
+                    "java.lang.String"
                 ]
             }
         ]
@@ -3668,6 +2873,38 @@
                 ]
             },
             {
+                "name": "clamp",
+                "parameterTypes": [
+                    "long",
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "long",
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "double",
+                    "double",
+                    "double"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "float",
+                    "float",
+                    "float"
+                ]
+            },
+            {
                 "name": "fma",
                 "parameterTypes": [
                     "double",
@@ -3821,6 +3058,55 @@
                     "float",
                     "int"
                 ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "long",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "powExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedPowExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "powExact",
+                "parameterTypes": [
+                    "long",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedPowExact",
+                "parameterTypes": [
+                    "long",
+                    "int"
+                ]
             }
         ]
     },
@@ -3856,6 +3142,12 @@
             },
             {
                 "name": "getLayer",
+                "parameterTypes": [
+                    
+                ]
+            },
+            {
+                "name": "isNativeAccessEnabled",
                 "parameterTypes": [
                     
                 ]
@@ -4326,157 +3618,11 @@
         ]
     },
     {
-        "name": "java.lang.Runtime",
+        "name": "java.lang.ScopedValue",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true,
         "methods": [
-            {
-                "name": "getRuntime",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "exit",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "addShutdownHook",
-                "parameterTypes": [
-                    "java.lang.Thread"
-                ]
-            },
-            {
-                "name": "removeShutdownHook",
-                "parameterTypes": [
-                    "java.lang.Thread"
-                ]
-            },
-            {
-                "name": "halt",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.String[]"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.String[]",
-                    "java.io.File"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String[]"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String[]",
-                    "java.lang.String[]"
-                ]
-            },
-            {
-                "name": "exec",
-                "parameterTypes": [
-                    "java.lang.String[]",
-                    "java.lang.String[]",
-                    "java.io.File"
-                ]
-            },
-            {
-                "name": "availableProcessors",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "freeMemory",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "totalMemory",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "maxMemory",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "gc",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "runFinalization",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "load",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "loadLibrary",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "version",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.RuntimePermission",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "implies",
-                "parameterTypes": [
-                    "java.security.Permission"
-                ]
-            },
-            {
-                "name": "equals",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
             {
                 "name": "hashCode",
                 "parameterTypes": [
@@ -4484,222 +3630,40 @@
                 ]
             },
             {
-                "name": "getActions",
+                "name": "where",
+                "parameterTypes": [
+                    "java.lang.ScopedValue<T>",
+                    "T"
+                ]
+            },
+            {
+                "name": "newInstance",
                 "parameterTypes": [
                     
                 ]
             },
             {
-                "name": "newPermissionCollection",
+                "name": "get",
                 "parameterTypes": [
                     
                 ]
             },
             {
-                "name": "checkGuard",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "getName",
+                "name": "isBound",
                 "parameterTypes": [
                     
                 ]
             },
             {
-                "name": "toString",
+                "name": "orElse",
                 "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.SecurityManager",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getSecurityContext",
-                "parameterTypes": [
-                    
+                    "T"
                 ]
             },
             {
-                "name": "checkPermission",
+                "name": "orElseThrow",
                 "parameterTypes": [
-                    "java.security.Permission"
-                ]
-            },
-            {
-                "name": "checkPermission",
-                "parameterTypes": [
-                    "java.security.Permission",
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "checkCreateClassLoader",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "checkAccess",
-                "parameterTypes": [
-                    "java.lang.Thread"
-                ]
-            },
-            {
-                "name": "checkAccess",
-                "parameterTypes": [
-                    "java.lang.ThreadGroup"
-                ]
-            },
-            {
-                "name": "checkExit",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "checkExec",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkLink",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkRead",
-                "parameterTypes": [
-                    "java.io.FileDescriptor"
-                ]
-            },
-            {
-                "name": "checkRead",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkRead",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "checkWrite",
-                "parameterTypes": [
-                    "java.io.FileDescriptor"
-                ]
-            },
-            {
-                "name": "checkWrite",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkDelete",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkConnect",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "int"
-                ]
-            },
-            {
-                "name": "checkConnect",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "int",
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "checkListen",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "checkAccept",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "int"
-                ]
-            },
-            {
-                "name": "checkMulticast",
-                "parameterTypes": [
-                    "java.net.InetAddress"
-                ]
-            },
-            {
-                "name": "checkMulticast",
-                "parameterTypes": [
-                    "java.net.InetAddress",
-                    "byte"
-                ]
-            },
-            {
-                "name": "checkPropertiesAccess",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "checkPropertyAccess",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkPrintJobAccess",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "checkPackageAccess",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkPackageDefinition",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "checkSetFactory",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "checkSecurityAccess",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getThreadGroup",
-                "parameterTypes": [
-                    
+                    "java.util.function.Supplier<? extends X>"
                 ]
             }
         ]
@@ -4862,131 +3826,6 @@
                 "name": "compareTo",
                 "parameterTypes": [
                     "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.StackTraceElement",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getFileName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getLineNumber",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getModuleName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getModuleVersion",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getClassLoaderName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getClassName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMethodName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isNativeMethod",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "equals",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "hashCode",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.StackWalker",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getInstance",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getInstance",
-                "parameterTypes": [
-                    "java.lang.StackWalker$Option"
-                ]
-            },
-            {
-                "name": "getInstance",
-                "parameterTypes": [
-                    "java.util.Set<java.lang.StackWalker$Option>"
-                ]
-            },
-            {
-                "name": "getInstance",
-                "parameterTypes": [
-                    "java.util.Set<java.lang.StackWalker$Option>",
-                    "int"
-                ]
-            },
-            {
-                "name": "walk",
-                "parameterTypes": [
-                    "java.util.function.Function<? super java.util.stream.Stream<java.lang.StackWalker$StackFrame>, ? extends T>"
-                ]
-            },
-            {
-                "name": "forEach",
-                "parameterTypes": [
-                    "java.util.function.Consumer<? super java.lang.StackWalker$StackFrame>"
-                ]
-            },
-            {
-                "name": "getCallerClass",
-                "parameterTypes": [
-                    
                 ]
             }
         ]
@@ -5463,6 +4302,38 @@
                 ]
             },
             {
+                "name": "clamp",
+                "parameterTypes": [
+                    "long",
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "long",
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "double",
+                    "double",
+                    "double"
+                ]
+            },
+            {
+                "name": "clamp",
+                "parameterTypes": [
+                    "float",
+                    "float",
+                    "float"
+                ]
+            },
+            {
                 "name": "fma",
                 "parameterTypes": [
                     "double",
@@ -5614,6 +4485,55 @@
                 "name": "scalb",
                 "parameterTypes": [
                     "float",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "long",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedMultiplyExact",
+                "parameterTypes": [
+                    "long",
+                    "long"
+                ]
+            },
+            {
+                "name": "powExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedPowExact",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "powExact",
+                "parameterTypes": [
+                    "long",
+                    "int"
+                ]
+            },
+            {
+                "name": "unsignedPowExact",
+                "parameterTypes": [
+                    "long",
                     "int"
                 ]
             }
@@ -5799,6 +4719,14 @@
                 ]
             },
             {
+                "name": "indexOf",
+                "parameterTypes": [
+                    "int",
+                    "int",
+                    "int"
+                ]
+            },
+            {
                 "name": "lastIndexOf",
                 "parameterTypes": [
                     "int"
@@ -5821,6 +4749,14 @@
                 "name": "indexOf",
                 "parameterTypes": [
                     "java.lang.String",
+                    "int"
+                ]
+            },
+            {
+                "name": "indexOf",
+                "parameterTypes": [
+                    "java.lang.String",
+                    "int",
                     "int"
                 ]
             },
@@ -5905,6 +4841,13 @@
             },
             {
                 "name": "split",
+                "parameterTypes": [
+                    "java.lang.String",
+                    "int"
+                ]
+            },
+            {
+                "name": "splitWithDelimiters",
                 "parameterTypes": [
                     "java.lang.String",
                     "int"
@@ -6514,9 +5457,37 @@
                 ]
             },
             {
+                "name": "repeat",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "java.lang.CharSequence",
+                    "int"
+                ]
+            },
+            {
                 "name": "toString",
                 "parameterTypes": [
                     
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "java.lang.CharSequence",
+                    "int"
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "int",
+                    "int"
                 ]
             },
             {
@@ -7017,9 +5988,37 @@
                 ]
             },
             {
+                "name": "repeat",
+                "parameterTypes": [
+                    "int",
+                    "int"
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "java.lang.CharSequence",
+                    "int"
+                ]
+            },
+            {
                 "name": "toString",
                 "parameterTypes": [
                     
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "java.lang.CharSequence",
+                    "int"
+                ]
+            },
+            {
+                "name": "repeat",
+                "parameterTypes": [
+                    "int",
+                    "int"
                 ]
             },
             {
@@ -7560,583 +6559,146 @@
         ]
     },
     {
-        "name": "java.lang.Thread",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "currentThread",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "yield",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "sleep",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "sleep",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "sleep",
-                "parameterTypes": [
-                    "java.time.Duration"
-                ]
-            },
-            {
-                "name": "onSpinWait",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "ofPlatform",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "ofVirtual",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "startVirtualThread",
-                "parameterTypes": [
-                    "java.lang.Runnable"
-                ]
-            },
-            {
-                "name": "isVirtual",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "start",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "run",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "stop",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "interrupt",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "interrupted",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isInterrupted",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isAlive",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "suspend",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "resume",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setPriority",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "getPriority",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getThreadGroup",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "activeCount",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "enumerate",
-                "parameterTypes": [
-                    "java.lang.Thread[]"
-                ]
-            },
-            {
-                "name": "countStackFrames",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "join",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "join",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "join",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "join",
-                "parameterTypes": [
-                    "java.time.Duration"
-                ]
-            },
-            {
-                "name": "dumpStack",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setDaemon",
-                "parameterTypes": [
-                    "boolean"
-                ]
-            },
-            {
-                "name": "isDaemon",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "checkAccess",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getContextClassLoader",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setContextClassLoader",
-                "parameterTypes": [
-                    "java.lang.ClassLoader"
-                ]
-            },
-            {
-                "name": "holdsLock",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "getStackTrace",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getAllStackTraces",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getId",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "threadId",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getState",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setDefaultUncaughtExceptionHandler",
-                "parameterTypes": [
-                    "java.lang.Thread$UncaughtExceptionHandler"
-                ]
-            },
-            {
-                "name": "getDefaultUncaughtExceptionHandler",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getUncaughtExceptionHandler",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setUncaughtExceptionHandler",
-                "parameterTypes": [
-                    "java.lang.Thread$UncaughtExceptionHandler"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.ThreadGroup",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getParent",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMaxPriority",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isDaemon",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isDestroyed",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setDaemon",
-                "parameterTypes": [
-                    "boolean"
-                ]
-            },
-            {
-                "name": "setMaxPriority",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "parentOf",
-                "parameterTypes": [
-                    "java.lang.ThreadGroup"
-                ]
-            },
-            {
-                "name": "checkAccess",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "activeCount",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "enumerate",
-                "parameterTypes": [
-                    "java.lang.Thread[]"
-                ]
-            },
-            {
-                "name": "enumerate",
-                "parameterTypes": [
-                    "java.lang.Thread[]",
-                    "boolean"
-                ]
-            },
-            {
-                "name": "activeGroupCount",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "enumerate",
-                "parameterTypes": [
-                    "java.lang.ThreadGroup[]"
-                ]
-            },
-            {
-                "name": "enumerate",
-                "parameterTypes": [
-                    "java.lang.ThreadGroup[]",
-                    "boolean"
-                ]
-            },
-            {
-                "name": "stop",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "interrupt",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "suspend",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "resume",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "destroy",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "list",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "uncaughtException",
-                "parameterTypes": [
-                    "java.lang.Thread",
-                    "java.lang.Throwable"
-                ]
-            },
-            {
-                "name": "allowThreadSuspension",
-                "parameterTypes": [
-                    "boolean"
-                ]
-            },
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.ThreadLocal",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "withInitial",
-                "parameterTypes": [
-                    "java.util.function.Supplier<? extends S>"
-                ]
-            },
-            {
-                "name": "get",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "set",
-                "parameterTypes": [
-                    "T"
-                ]
-            },
-            {
-                "name": "remove",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.Throwable",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getMessage",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getLocalizedMessage",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getCause",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "initCause",
-                "parameterTypes": [
-                    "java.lang.Throwable"
-                ]
-            },
-            {
-                "name": "toString",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "printStackTrace",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "printStackTrace",
-                "parameterTypes": [
-                    "java.io.PrintStream"
-                ]
-            },
-            {
-                "name": "printStackTrace",
-                "parameterTypes": [
-                    "java.io.PrintWriter"
-                ]
-            },
-            {
-                "name": "fillInStackTrace",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getStackTrace",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "setStackTrace",
-                "parameterTypes": [
-                    "java.lang.StackTraceElement[]"
-                ]
-            },
-            {
-                "name": "addSuppressed",
-                "parameterTypes": [
-                    "java.lang.Throwable"
-                ]
-            },
-            {
-                "name": "getSuppressed",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
         "name": "java.lang.Void",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
         "allPublicConstructors": true,
         "methods": [
             
+        ]
+    },
+    {
+        "name": "java.lang.runtime.ExactConversionsSupport",
+        "queryAllPublicMethods": true,
+        "allDeclaredConstructors": true,
+        "allPublicConstructors": true,
+        "methods": [
+            {
+                "name": "isIntToByteExact",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isIntToShortExact",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isIntToCharExact",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isIntToFloatExact",
+                "parameterTypes": [
+                    "int"
+                ]
+            },
+            {
+                "name": "isLongToByteExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isLongToShortExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isLongToCharExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isLongToIntExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isLongToFloatExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isLongToDoubleExact",
+                "parameterTypes": [
+                    "long"
+                ]
+            },
+            {
+                "name": "isFloatToByteExact",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
+                "name": "isFloatToShortExact",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
+                "name": "isFloatToCharExact",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
+                "name": "isFloatToIntExact",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
+                "name": "isFloatToLongExact",
+                "parameterTypes": [
+                    "float"
+                ]
+            },
+            {
+                "name": "isDoubleToByteExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            },
+            {
+                "name": "isDoubleToShortExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            },
+            {
+                "name": "isDoubleToCharExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            },
+            {
+                "name": "isDoubleToIntExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            },
+            {
+                "name": "isDoubleToLongExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            },
+            {
+                "name": "isDoubleToFloatExact",
+                "parameterTypes": [
+                    "double"
+                ]
+            }
         ]
     },
     {
@@ -8906,6 +7468,12 @@
                 "parameterTypes": [
                     "java.time.temporal.Temporal",
                     "java.time.temporal.TemporalUnit"
+                ]
+            },
+            {
+                "name": "until",
+                "parameterTypes": [
+                    "java.time.Instant"
                 ]
             },
             {
@@ -20707,57 +19275,6 @@
         ]
     },
     {
-        "name": "java.util.Base64",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getEncoder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getUrlEncoder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMimeEncoder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMimeEncoder",
-                "parameterTypes": [
-                    "int",
-                    "byte[]"
-                ]
-            },
-            {
-                "name": "getDecoder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getUrlDecoder",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getMimeDecoder",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
         "name": "java.util.Currency",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -20777,6 +19294,12 @@
             },
             {
                 "name": "getAvailableCurrencies",
+                "parameterTypes": [
+                    
+                ]
+            },
+            {
+                "name": "availableCurrencies",
                 "parameterTypes": [
                     
                 ]
@@ -21388,6 +19911,12 @@
                 ]
             },
             {
+                "name": "availableLocales",
+                "parameterTypes": [
+                    
+                ]
+            },
+            {
                 "name": "getISOCountries",
                 "parameterTypes": [
                     
@@ -21481,6 +20010,12 @@
                 "name": "toLanguageTag",
                 "parameterTypes": [
                     
+                ]
+            },
+            {
+                "name": "caseFoldLanguageTag",
+                "parameterTypes": [
+                    "java.lang.String"
                 ]
             },
             {
@@ -21928,193 +20463,6 @@
         ]
     },
     {
-        "name": "java.util.Spliterators",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "emptySpliterator",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "emptyIntSpliterator",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "emptyLongSpliterator",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "emptyDoubleSpliterator",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.lang.Object[]",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.lang.Object[]",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "int[]",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "int[]",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "long[]",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "long[]",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "double[]",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "double[]",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.util.Collection<? extends T>",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.util.Iterator<? extends T>",
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliteratorUnknownSize",
-                "parameterTypes": [
-                    "java.util.Iterator<? extends T>",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfInt",
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliteratorUnknownSize",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfInt",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfLong",
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliteratorUnknownSize",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfLong",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliterator",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfDouble",
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "spliteratorUnknownSize",
-                "parameterTypes": [
-                    "java.util.PrimitiveIterator$OfDouble",
-                    "int"
-                ]
-            },
-            {
-                "name": "iterator",
-                "parameterTypes": [
-                    "java.util.Spliterator<? extends T>"
-                ]
-            },
-            {
-                "name": "iterator",
-                "parameterTypes": [
-                    "java.util.Spliterator$OfInt"
-                ]
-            },
-            {
-                "name": "iterator",
-                "parameterTypes": [
-                    "java.util.Spliterator$OfLong"
-                ]
-            },
-            {
-                "name": "iterator",
-                "parameterTypes": [
-                    "java.util.Spliterator$OfDouble"
-                ]
-            }
-        ]
-    },
-    {
         "name": "java.util.SplittableRandom",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -22362,312 +20710,6 @@
             },
             {
                 "name": "compareTo",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.ASMUtil",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "autoBoxing",
-                "parameterTypes": [
-                    "org.objectweb.asm.MethodVisitor",
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "getAccessors",
-                "parameterTypes": [
-                    "java.lang.Class<?>",
-                    "net.minidev.asm.FieldFilter"
-                ]
-            },
-            {
-                "name": "newLabels",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "getSetterName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getGetterName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getIsName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.Accessor",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getIndex",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isPublic",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isEnum",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getName",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getGenericType",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isUsable",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isReadable",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isWritable",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.BasicFiledFilter",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "canUse",
-                "parameterTypes": [
-                    "java.lang.reflect.Field"
-                ]
-            },
-            {
-                "name": "canUse",
-                "parameterTypes": [
-                    "java.lang.reflect.Field",
-                    "java.lang.reflect.Method"
-                ]
-            },
-            {
-                "name": "canRead",
-                "parameterTypes": [
-                    "java.lang.reflect.Field"
-                ]
-            },
-            {
-                "name": "canWrite",
-                "parameterTypes": [
-                    "java.lang.reflect.Field"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.BeansAccessBuilder",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "addConversion",
-                "parameterTypes": [
-                    "java.lang.Iterable<java.lang.Class<?>>"
-                ]
-            },
-            {
-                "name": "addConversion",
-                "parameterTypes": [
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "bulid",
-                "parameterTypes": [
-                    
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.BeansAccessConfig",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "addTypeMapper",
-                "parameterTypes": [
-                    "java.lang.Class<?>",
-                    "java.lang.Class<?>"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.ConvertDate",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "getMonth",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "convertToDate",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.asm.DefaultConverter",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "convertToint",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToInt",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToshort",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToShort",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTolong",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToLong",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTobyte",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToByte",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTofloat",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToFloat",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTodouble",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToDouble",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTochar",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToChar",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertTobool",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "convertToBool",
                 "parameterTypes": [
                     "java.lang.Object"
                 ]
@@ -23113,46 +21155,6 @@
         ]
     },
     {
-        "name": "net.minidev.json.JSONUtil",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "convertToStrict",
-                "parameterTypes": [
-                    "java.lang.Object",
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "convertToX",
-                "parameterTypes": [
-                    "java.lang.Object",
-                    "java.lang.Class<?>"
-                ]
-            },
-            {
-                "name": "getSetterName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getGetterName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getIsName",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            }
-        ]
-    },
-    {
         "name": "net.minidev.json.JSONValue",
         "queryAllPublicMethods": true,
         "allDeclaredConstructors": true,
@@ -23535,29 +21537,6 @@
         "allDeclaredConstructors": true,
         "allPublicConstructors": true,
         "methods": [
-            {
-                "name": "writeJSONString",
-                "parameterTypes": [
-                    "E",
-                    "java.lang.Appendable",
-                    "net.minidev.json.JSONStyle"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.json.reader.BeansWriterASMRemap",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "renameField",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "java.lang.String"
-                ]
-            },
             {
                 "name": "writeJSONString",
                 "parameterTypes": [
@@ -23969,72 +21948,6 @@
                 "parameterTypes": [
                     "java.lang.Object",
                     "java.lang.Object"
-                ]
-            },
-            {
-                "name": "createArray",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "getValue",
-                "parameterTypes": [
-                    "java.lang.Object",
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "getType",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "convert",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "net.minidev.json.writer.FakeMapper",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "startObject",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "startArray",
-                "parameterTypes": [
-                    "java.lang.String"
-                ]
-            },
-            {
-                "name": "setValue",
-                "parameterTypes": [
-                    "java.lang.Object",
-                    "java.lang.String",
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "addValue",
-                "parameterTypes": [
-                    "java.lang.Object",
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "createObject",
-                "parameterTypes": [
-                    
                 ]
             },
             {

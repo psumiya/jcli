@@ -1,105 +1,7 @@
 {
-    "generatedAt": "Sun Jan 04 16:05:42 PST 2026",
+    "generatedAt": "Sun Jan 04 17:07:06 PST 2026",
     "version": "0.0.2-beta",
     "commands": [
-        {
-            "name": "ASMUtil",
-            "fullName": "net.minidev.asm.ASMUtil",
-            "description": "Wrapper for net.minidev.asm.ASMUtil",
-            "methods": [
-                {
-                    "name": "getGetterName",
-                    "signature": "getGetterName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli ASMUtil getGetterName \"test\""
-                },
-                {
-                    "name": "getIsName",
-                    "signature": "getIsName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli ASMUtil getIsName \"test\""
-                },
-                {
-                    "name": "getSetterName",
-                    "signature": "getSetterName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli ASMUtil getSetterName \"test\""
-                },
-                {
-                    "name": "newLabels",
-                    "signature": "newLabels(int arg0)",
-                    "returnType": "org.objectweb.asm.Label[]",
-                    "isStatic": true,
-                    "example": "jcli ASMUtil newLabels 0"
-                }
-            ]
-        },
-        {
-            "name": "Base64",
-            "fullName": "java.util.Base64",
-            "description": "Wrapper for java.util.Base64",
-            "methods": [
-                {
-                    "name": "getDecoder",
-                    "signature": "getDecoder()",
-                    "returnType": "java.util.Base64$Decoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getDecoder "
-                },
-                {
-                    "name": "getEncoder",
-                    "signature": "getEncoder()",
-                    "returnType": "java.util.Base64$Encoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getEncoder "
-                },
-                {
-                    "name": "getMimeDecoder",
-                    "signature": "getMimeDecoder()",
-                    "returnType": "java.util.Base64$Decoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getMimeDecoder "
-                },
-                {
-                    "name": "getMimeEncoder",
-                    "signature": "getMimeEncoder()",
-                    "returnType": "java.util.Base64$Encoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getMimeEncoder "
-                },
-                {
-                    "name": "getUrlDecoder",
-                    "signature": "getUrlDecoder()",
-                    "returnType": "java.util.Base64$Decoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getUrlDecoder "
-                },
-                {
-                    "name": "getUrlEncoder",
-                    "signature": "getUrlEncoder()",
-                    "returnType": "java.util.Base64$Encoder",
-                    "isStatic": true,
-                    "example": "jcli Base64 getUrlEncoder "
-                }
-            ]
-        },
-        {
-            "name": "BeansWriterASMRemap",
-            "fullName": "net.minidev.json.reader.BeansWriterASMRemap",
-            "description": "Wrapper for net.minidev.json.reader.BeansWriterASMRemap",
-            "methods": [
-                {
-                    "name": "renameField",
-                    "signature": "renameField(String arg0, String arg1)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli BeansWriterASMRemap renameField \"test\" \"test\""
-                }
-            ]
-        },
         {
             "name": "Boolean",
             "fullName": "java.lang.Boolean",
@@ -568,6 +470,48 @@
                     "example": "jcli Character isDigit 0"
                 },
                 {
+                    "name": "isEmoji",
+                    "signature": "isEmoji(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isEmoji 0"
+                },
+                {
+                    "name": "isEmojiComponent",
+                    "signature": "isEmojiComponent(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isEmojiComponent 0"
+                },
+                {
+                    "name": "isEmojiModifier",
+                    "signature": "isEmojiModifier(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isEmojiModifier 0"
+                },
+                {
+                    "name": "isEmojiModifierBase",
+                    "signature": "isEmojiModifierBase(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isEmojiModifierBase 0"
+                },
+                {
+                    "name": "isEmojiPresentation",
+                    "signature": "isEmojiPresentation(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isEmojiPresentation 0"
+                },
+                {
+                    "name": "isExtendedPictographic",
+                    "signature": "isExtendedPictographic(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Character isExtendedPictographic 0"
+                },
+                {
                     "name": "isHighSurrogate",
                     "signature": "isHighSurrogate(char arg0)",
                     "returnType": "boolean",
@@ -979,111 +923,6 @@
                     "returnType": "java.time.temporal.ChronoUnit[]",
                     "isStatic": true,
                     "example": "jcli ChronoUnit values "
-                }
-            ]
-        },
-        {
-            "name": "Class",
-            "fullName": "java.lang.Class",
-            "description": "Wrapper for java.lang.Class",
-            "methods": [
-                {
-                    "name": "forName",
-                    "signature": "forName(String arg0)",
-                    "returnType": "Class<?>",
-                    "isStatic": true,
-                    "example": "jcli Class forName \"test\""
-                }
-            ]
-        },
-        {
-            "name": "Compiler",
-            "fullName": "java.lang.Compiler",
-            "description": "Wrapper for java.lang.Compiler",
-            "methods": [
-                {
-                    "name": "compileClasses",
-                    "signature": "compileClasses(String arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Compiler compileClasses \"test\""
-                },
-                {
-                    "name": "disable",
-                    "signature": "disable()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Compiler disable "
-                },
-                {
-                    "name": "enable",
-                    "signature": "enable()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Compiler enable "
-                }
-            ]
-        },
-        {
-            "name": "Configuration",
-            "fullName": "com.jayway.jsonpath.Configuration",
-            "description": "Wrapper for com.jayway.jsonpath.Configuration",
-            "methods": [
-                {
-                    "name": "builder",
-                    "signature": "builder()",
-                    "returnType": "com.jayway.jsonpath.Configuration$ConfigurationBuilder",
-                    "isStatic": true,
-                    "example": "jcli Configuration builder "
-                },
-                {
-                    "name": "defaultConfiguration",
-                    "signature": "defaultConfiguration()",
-                    "returnType": "com.jayway.jsonpath.Configuration",
-                    "isStatic": true,
-                    "example": "jcli Configuration defaultConfiguration "
-                }
-            ]
-        },
-        {
-            "name": "ConvertDate",
-            "fullName": "net.minidev.asm.ConvertDate",
-            "description": "Wrapper for net.minidev.asm.ConvertDate",
-            "methods": [
-                {
-                    "name": "getMonth",
-                    "signature": "getMonth(String arg0)",
-                    "returnType": "Integer",
-                    "isStatic": true,
-                    "example": "jcli ConvertDate getMonth \"test\""
-                }
-            ]
-        },
-        {
-            "name": "Criteria",
-            "fullName": "com.jayway.jsonpath.Criteria",
-            "description": "Wrapper for com.jayway.jsonpath.Criteria",
-            "methods": [
-                {
-                    "name": "create",
-                    "signature": "create(String arg0, String arg1, String arg2)",
-                    "returnType": "com.jayway.jsonpath.Criteria",
-                    "isStatic": true,
-                    "example": "jcli Criteria create \"test\" \"test\" \"test\""
-                },
-                {
-                    "name": "parse",
-                    "signature": "parse(String arg0)",
-                    "returnType": "com.jayway.jsonpath.Criteria",
-                    "isStatic": true,
-                    "example": "jcli Criteria parse \"test\""
-                },
-                {
-                    "name": "where",
-                    "signature": "where(String arg0)",
-                    "returnType": "com.jayway.jsonpath.Criteria",
-                    "isStatic": true,
-                    "example": "jcli Criteria where \"test\""
                 }
             ]
         },
@@ -1858,44 +1697,156 @@
             ]
         },
         {
-            "name": "FakeMapper",
-            "fullName": "net.minidev.json.writer.FakeMapper",
-            "description": "Wrapper for net.minidev.json.writer.FakeMapper",
+            "name": "ExactConversionsSupport",
+            "fullName": "java.lang.runtime.ExactConversionsSupport",
+            "description": "Wrapper for java.lang.runtime.ExactConversionsSupport",
             "methods": [
                 {
-                    "name": "createArray",
-                    "signature": "createArray()",
-                    "returnType": "Object",
-                    "isStatic": false,
-                    "example": "jcli FakeMapper createArray "
+                    "name": "isDoubleToByteExact",
+                    "signature": "isDoubleToByteExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToByteExact 0.0"
                 },
                 {
-                    "name": "createObject",
-                    "signature": "createObject()",
-                    "returnType": "Object",
-                    "isStatic": false,
-                    "example": "jcli FakeMapper createObject "
+                    "name": "isDoubleToCharExact",
+                    "signature": "isDoubleToCharExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToCharExact 0.0"
                 },
                 {
-                    "name": "getType",
-                    "signature": "getType(String arg0)",
-                    "returnType": "reflect.Type",
-                    "isStatic": false,
-                    "example": "jcli FakeMapper getType \"test\""
+                    "name": "isDoubleToFloatExact",
+                    "signature": "isDoubleToFloatExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToFloatExact 0.0"
                 },
                 {
-                    "name": "startArray",
-                    "signature": "startArray(String arg0)",
-                    "returnType": "net.minidev.json.writer.JsonReaderI<?>",
-                    "isStatic": false,
-                    "example": "jcli FakeMapper startArray \"test\""
+                    "name": "isDoubleToIntExact",
+                    "signature": "isDoubleToIntExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToIntExact 0.0"
                 },
                 {
-                    "name": "startObject",
-                    "signature": "startObject(String arg0)",
-                    "returnType": "net.minidev.json.writer.JsonReaderI<?>",
-                    "isStatic": false,
-                    "example": "jcli FakeMapper startObject \"test\""
+                    "name": "isDoubleToLongExact",
+                    "signature": "isDoubleToLongExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToLongExact 0.0"
+                },
+                {
+                    "name": "isDoubleToShortExact",
+                    "signature": "isDoubleToShortExact(double arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isDoubleToShortExact 0.0"
+                },
+                {
+                    "name": "isFloatToByteExact",
+                    "signature": "isFloatToByteExact(float arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isFloatToByteExact 0.0"
+                },
+                {
+                    "name": "isFloatToCharExact",
+                    "signature": "isFloatToCharExact(float arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isFloatToCharExact 0.0"
+                },
+                {
+                    "name": "isFloatToIntExact",
+                    "signature": "isFloatToIntExact(float arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isFloatToIntExact 0.0"
+                },
+                {
+                    "name": "isFloatToLongExact",
+                    "signature": "isFloatToLongExact(float arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isFloatToLongExact 0.0"
+                },
+                {
+                    "name": "isFloatToShortExact",
+                    "signature": "isFloatToShortExact(float arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isFloatToShortExact 0.0"
+                },
+                {
+                    "name": "isIntToByteExact",
+                    "signature": "isIntToByteExact(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isIntToByteExact 0"
+                },
+                {
+                    "name": "isIntToCharExact",
+                    "signature": "isIntToCharExact(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isIntToCharExact 0"
+                },
+                {
+                    "name": "isIntToFloatExact",
+                    "signature": "isIntToFloatExact(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isIntToFloatExact 0"
+                },
+                {
+                    "name": "isIntToShortExact",
+                    "signature": "isIntToShortExact(int arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isIntToShortExact 0"
+                },
+                {
+                    "name": "isLongToByteExact",
+                    "signature": "isLongToByteExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToByteExact 0"
+                },
+                {
+                    "name": "isLongToCharExact",
+                    "signature": "isLongToCharExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToCharExact 0"
+                },
+                {
+                    "name": "isLongToDoubleExact",
+                    "signature": "isLongToDoubleExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToDoubleExact 0"
+                },
+                {
+                    "name": "isLongToFloatExact",
+                    "signature": "isLongToFloatExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToFloatExact 0"
+                },
+                {
+                    "name": "isLongToIntExact",
+                    "signature": "isLongToIntExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToIntExact 0"
+                },
+                {
+                    "name": "isLongToShortExact",
+                    "signature": "isLongToShortExact(long arg0)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli ExactConversionsSupport isLongToShortExact 0"
                 }
             ]
         },
@@ -1938,6 +1889,20 @@
                     "returnType": "double",
                     "isStatic": false,
                     "example": "jcli Float doubleValue \"0\" "
+                },
+                {
+                    "name": "float16ToFloat",
+                    "signature": "float16ToFloat(short arg0)",
+                    "returnType": "float",
+                    "isStatic": true,
+                    "example": "jcli Float float16ToFloat 0"
+                },
+                {
+                    "name": "floatToFloat16",
+                    "signature": "floatToFloat16(float arg0)",
+                    "returnType": "short",
+                    "isStatic": true,
+                    "example": "jcli Float floatToFloat16 0.0"
                 },
                 {
                     "name": "floatToIntBits",
@@ -2502,23 +2467,30 @@
             ]
         },
         {
-            "name": "InheritableThreadLocal",
-            "fullName": "java.lang.InheritableThreadLocal",
-            "description": "Wrapper for java.lang.InheritableThreadLocal",
+            "name": "IO",
+            "fullName": "java.lang.IO",
+            "description": "Wrapper for java.lang.IO",
             "methods": [
                 {
-                    "name": "get",
-                    "signature": "get()",
-                    "returnType": "T",
-                    "isStatic": false,
-                    "example": "jcli InheritableThreadLocal get "
+                    "name": "println",
+                    "signature": "println()",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli IO println "
                 },
                 {
-                    "name": "remove",
-                    "signature": "remove()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli InheritableThreadLocal remove "
+                    "name": "readln",
+                    "signature": "readln()",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli IO readln "
+                },
+                {
+                    "name": "readln",
+                    "signature": "readln(String arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli IO readln \"test\""
                 }
             ]
         },
@@ -3496,34 +3468,6 @@
             ]
         },
         {
-            "name": "JSONUtil",
-            "fullName": "net.minidev.json.JSONUtil",
-            "description": "Wrapper for net.minidev.json.JSONUtil",
-            "methods": [
-                {
-                    "name": "getGetterName",
-                    "signature": "getGetterName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli JSONUtil getGetterName \"test\""
-                },
-                {
-                    "name": "getIsName",
-                    "signature": "getIsName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli JSONUtil getIsName \"test\""
-                },
-                {
-                    "name": "getSetterName",
-                    "signature": "getSetterName(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli JSONUtil getSetterName \"test\""
-                }
-            ]
-        },
-        {
             "name": "JSONValue",
             "fullName": "net.minidev.json.JSONValue",
             "description": "Wrapper for net.minidev.json.JSONValue",
@@ -4081,6 +4025,13 @@
             "fullName": "java.util.Locale",
             "description": "Wrapper for java.util.Locale",
             "methods": [
+                {
+                    "name": "caseFoldLanguageTag",
+                    "signature": "caseFoldLanguageTag(String arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Locale caseFoldLanguageTag \"test\""
+                },
                 {
                     "name": "clone",
                     "signature": "clone()",
@@ -4831,6 +4782,34 @@
                     "example": "jcli Math ceilMod 0 0"
                 },
                 {
+                    "name": "clamp",
+                    "signature": "clamp(long arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Math clamp 0 0 0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(long arg0, long arg1, long arg2)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli Math clamp 0 0 0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(double arg0, double arg1, double arg2)",
+                    "returnType": "double",
+                    "isStatic": true,
+                    "example": "jcli Math clamp 0.0 0.0 0.0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(float arg0, float arg1, float arg2)",
+                    "returnType": "float",
+                    "isStatic": true,
+                    "example": "jcli Math clamp 0.0 0.0 0.0"
+                },
+                {
                     "name": "copySign",
                     "signature": "copySign(double arg0, double arg1)",
                     "returnType": "double",
@@ -5188,6 +5167,20 @@
                     "example": "jcli Math pow 2 3"
                 },
                 {
+                    "name": "powExact",
+                    "signature": "powExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Math powExact 0 0"
+                },
+                {
+                    "name": "powExact",
+                    "signature": "powExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli Math powExact 0 0"
+                },
+                {
                     "name": "random",
                     "signature": "random()",
                     "returnType": "double",
@@ -5328,11 +5321,46 @@
                     "example": "jcli Math ulp 0.0"
                 },
                 {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Math unsignedMultiplyExact 0 0"
+                },
+                {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli Math unsignedMultiplyExact 0 0"
+                },
+                {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(long arg0, long arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli Math unsignedMultiplyExact 0 0"
+                },
+                {
                     "name": "unsignedMultiplyHigh",
                     "signature": "unsignedMultiplyHigh(long arg0, long arg1)",
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli Math unsignedMultiplyHigh 0 0"
+                },
+                {
+                    "name": "unsignedPowExact",
+                    "signature": "unsignedPowExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Math unsignedPowExact 0 0"
+                },
+                {
+                    "name": "unsignedPowExact",
+                    "signature": "unsignedPowExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli Math unsignedPowExact 0 0"
                 }
             ]
         },
@@ -5960,282 +5988,37 @@
             ]
         },
         {
-            "name": "Runtime",
-            "fullName": "java.lang.Runtime",
-            "description": "Wrapper for java.lang.Runtime",
+            "name": "ScopedValue",
+            "fullName": "java.lang.ScopedValue",
+            "description": "Wrapper for java.lang.ScopedValue",
             "methods": [
                 {
-                    "name": "availableProcessors",
-                    "signature": "availableProcessors()",
-                    "returnType": "int",
+                    "name": "get",
+                    "signature": "get()",
+                    "returnType": "T",
                     "isStatic": false,
-                    "example": "jcli Runtime availableProcessors "
-                },
-                {
-                    "name": "exec",
-                    "signature": "exec(String arg0)",
-                    "returnType": "Process",
-                    "isStatic": false,
-                    "example": "jcli Runtime exec \"test\""
-                },
-                {
-                    "name": "exit",
-                    "signature": "exit(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime exit 0"
-                },
-                {
-                    "name": "freeMemory",
-                    "signature": "freeMemory()",
-                    "returnType": "long",
-                    "isStatic": false,
-                    "example": "jcli Runtime freeMemory "
-                },
-                {
-                    "name": "gc",
-                    "signature": "gc()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime gc "
-                },
-                {
-                    "name": "getRuntime",
-                    "signature": "getRuntime()",
-                    "returnType": "Runtime",
-                    "isStatic": true,
-                    "example": "jcli Runtime getRuntime "
-                },
-                {
-                    "name": "halt",
-                    "signature": "halt(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime halt 0"
-                },
-                {
-                    "name": "load",
-                    "signature": "load(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime load \"test\""
-                },
-                {
-                    "name": "loadLibrary",
-                    "signature": "loadLibrary(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime loadLibrary \"test\""
-                },
-                {
-                    "name": "maxMemory",
-                    "signature": "maxMemory()",
-                    "returnType": "long",
-                    "isStatic": false,
-                    "example": "jcli Runtime maxMemory "
-                },
-                {
-                    "name": "runFinalization",
-                    "signature": "runFinalization()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Runtime runFinalization "
-                },
-                {
-                    "name": "totalMemory",
-                    "signature": "totalMemory()",
-                    "returnType": "long",
-                    "isStatic": false,
-                    "example": "jcli Runtime totalMemory "
-                },
-                {
-                    "name": "version",
-                    "signature": "version()",
-                    "returnType": "Runtime$Version",
-                    "isStatic": true,
-                    "example": "jcli Runtime version "
-                }
-            ]
-        },
-        {
-            "name": "RuntimePermission",
-            "fullName": "java.lang.RuntimePermission",
-            "description": "Wrapper for java.lang.RuntimePermission",
-            "methods": [
-                {
-                    "name": "getActions",
-                    "signature": "getActions()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli RuntimePermission getActions \"0\" "
-                },
-                {
-                    "name": "getName",
-                    "signature": "getName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli RuntimePermission getName \"0\" "
+                    "example": "jcli ScopedValue get "
                 },
                 {
                     "name": "hashCode",
                     "signature": "hashCode()",
                     "returnType": "int",
                     "isStatic": false,
-                    "example": "jcli RuntimePermission hashCode \"0\" "
+                    "example": "jcli ScopedValue hashCode "
                 },
                 {
-                    "name": "newPermissionCollection",
-                    "signature": "newPermissionCollection()",
-                    "returnType": "java.security.PermissionCollection",
+                    "name": "isBound",
+                    "signature": "isBound()",
+                    "returnType": "boolean",
                     "isStatic": false,
-                    "example": "jcli RuntimePermission newPermissionCollection \"0\" "
+                    "example": "jcli ScopedValue isBound "
                 },
                 {
-                    "name": "toString",
-                    "signature": "toString()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli RuntimePermission toString \"0\" "
-                }
-            ]
-        },
-        {
-            "name": "SecurityManager",
-            "fullName": "java.lang.SecurityManager",
-            "description": "Wrapper for java.lang.SecurityManager",
-            "methods": [
-                {
-                    "name": "checkAccept",
-                    "signature": "checkAccept(String arg0, int arg1)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkAccept \"test\" 0"
-                },
-                {
-                    "name": "checkConnect",
-                    "signature": "checkConnect(String arg0, int arg1)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkConnect \"test\" 0"
-                },
-                {
-                    "name": "checkCreateClassLoader",
-                    "signature": "checkCreateClassLoader()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkCreateClassLoader "
-                },
-                {
-                    "name": "checkDelete",
-                    "signature": "checkDelete(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkDelete \"test\""
-                },
-                {
-                    "name": "checkExec",
-                    "signature": "checkExec(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkExec \"test\""
-                },
-                {
-                    "name": "checkExit",
-                    "signature": "checkExit(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkExit 0"
-                },
-                {
-                    "name": "checkLink",
-                    "signature": "checkLink(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkLink \"test\""
-                },
-                {
-                    "name": "checkListen",
-                    "signature": "checkListen(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkListen 0"
-                },
-                {
-                    "name": "checkPackageAccess",
-                    "signature": "checkPackageAccess(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkPackageAccess \"test\""
-                },
-                {
-                    "name": "checkPackageDefinition",
-                    "signature": "checkPackageDefinition(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkPackageDefinition \"test\""
-                },
-                {
-                    "name": "checkPrintJobAccess",
-                    "signature": "checkPrintJobAccess()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkPrintJobAccess "
-                },
-                {
-                    "name": "checkPropertiesAccess",
-                    "signature": "checkPropertiesAccess()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkPropertiesAccess "
-                },
-                {
-                    "name": "checkPropertyAccess",
-                    "signature": "checkPropertyAccess(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkPropertyAccess \"test\""
-                },
-                {
-                    "name": "checkRead",
-                    "signature": "checkRead(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkRead \"test\""
-                },
-                {
-                    "name": "checkSecurityAccess",
-                    "signature": "checkSecurityAccess(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkSecurityAccess \"test\""
-                },
-                {
-                    "name": "checkSetFactory",
-                    "signature": "checkSetFactory()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkSetFactory "
-                },
-                {
-                    "name": "checkWrite",
-                    "signature": "checkWrite(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager checkWrite \"test\""
-                },
-                {
-                    "name": "getSecurityContext",
-                    "signature": "getSecurityContext()",
-                    "returnType": "Object",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager getSecurityContext "
-                },
-                {
-                    "name": "getThreadGroup",
-                    "signature": "getThreadGroup()",
-                    "returnType": "ThreadGroup",
-                    "isStatic": false,
-                    "example": "jcli SecurityManager getThreadGroup "
+                    "name": "newInstance",
+                    "signature": "newInstance()",
+                    "returnType": "ScopedValue<T>",
+                    "isStatic": true,
+                    "example": "jcli ScopedValue newInstance "
                 }
             ]
         },
@@ -6429,20 +6212,6 @@
             ]
         },
         {
-            "name": "Spliterators",
-            "fullName": "java.util.Spliterators",
-            "description": "Wrapper for java.util.Spliterators",
-            "methods": [
-                {
-                    "name": "emptySpliterator",
-                    "signature": "emptySpliterator()",
-                    "returnType": "java.util.Spliterator<T>",
-                    "isStatic": true,
-                    "example": "jcli Spliterators emptySpliterator "
-                }
-            ]
-        },
-        {
             "name": "SplittableRandom",
             "fullName": "java.util.SplittableRandom",
             "description": "Wrapper for java.util.SplittableRandom",
@@ -6474,104 +6243,6 @@
                     "returnType": "java.util.random.RandomGenerator$SplittableGenerator",
                     "isStatic": false,
                     "example": "jcli SplittableRandom split \"0\" "
-                }
-            ]
-        },
-        {
-            "name": "StackTraceElement",
-            "fullName": "java.lang.StackTraceElement",
-            "description": "Wrapper for java.lang.StackTraceElement",
-            "methods": [
-                {
-                    "name": "getClassLoaderName",
-                    "signature": "getClassLoaderName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getClassLoaderName "
-                },
-                {
-                    "name": "getClassName",
-                    "signature": "getClassName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getClassName "
-                },
-                {
-                    "name": "getFileName",
-                    "signature": "getFileName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getFileName "
-                },
-                {
-                    "name": "getLineNumber",
-                    "signature": "getLineNumber()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getLineNumber "
-                },
-                {
-                    "name": "getMethodName",
-                    "signature": "getMethodName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getMethodName "
-                },
-                {
-                    "name": "getModuleName",
-                    "signature": "getModuleName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getModuleName "
-                },
-                {
-                    "name": "getModuleVersion",
-                    "signature": "getModuleVersion()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement getModuleVersion "
-                },
-                {
-                    "name": "hashCode",
-                    "signature": "hashCode()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement hashCode "
-                },
-                {
-                    "name": "isNativeMethod",
-                    "signature": "isNativeMethod()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement isNativeMethod "
-                },
-                {
-                    "name": "toString",
-                    "signature": "toString()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli StackTraceElement toString "
-                }
-            ]
-        },
-        {
-            "name": "StackWalker",
-            "fullName": "java.lang.StackWalker",
-            "description": "Wrapper for java.lang.StackWalker",
-            "methods": [
-                {
-                    "name": "getInstance",
-                    "signature": "getInstance()",
-                    "returnType": "StackWalker",
-                    "isStatic": true,
-                    "example": "jcli StackWalker getInstance "
-                },
-                {
-                    "name": "getInstance",
-                    "signature": "getInstance(StackWalker$Option arg0)",
-                    "returnType": "StackWalker",
-                    "isStatic": true,
-                    "example": "jcli StackWalker getInstance public static final java.lang.StackWalker$Option RETAIN_CLASS_REFERENCE"
                 }
             ]
         },
@@ -6740,6 +6411,34 @@
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli StrictMath ceilMod 0 0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(long arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli StrictMath clamp 0 0 0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(long arg0, long arg1, long arg2)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli StrictMath clamp 0 0 0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(double arg0, double arg1, double arg2)",
+                    "returnType": "double",
+                    "isStatic": true,
+                    "example": "jcli StrictMath clamp 0.0 0.0 0.0"
+                },
+                {
+                    "name": "clamp",
+                    "signature": "clamp(float arg0, float arg1, float arg2)",
+                    "returnType": "float",
+                    "isStatic": true,
+                    "example": "jcli StrictMath clamp 0.0 0.0 0.0"
                 },
                 {
                     "name": "copySign",
@@ -7099,6 +6798,20 @@
                     "example": "jcli StrictMath pow 0.0 0.0"
                 },
                 {
+                    "name": "powExact",
+                    "signature": "powExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli StrictMath powExact 0 0"
+                },
+                {
+                    "name": "powExact",
+                    "signature": "powExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli StrictMath powExact 0 0"
+                },
+                {
                     "name": "random",
                     "signature": "random()",
                     "returnType": "double",
@@ -7239,11 +6952,46 @@
                     "example": "jcli StrictMath ulp 0.0"
                 },
                 {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
+                },
+                {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
+                },
+                {
+                    "name": "unsignedMultiplyExact",
+                    "signature": "unsignedMultiplyExact(long arg0, long arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
+                },
+                {
                     "name": "unsignedMultiplyHigh",
                     "signature": "unsignedMultiplyHigh(long arg0, long arg1)",
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli StrictMath unsignedMultiplyHigh 0 0"
+                },
+                {
+                    "name": "unsignedPowExact",
+                    "signature": "unsignedPowExact(int arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli StrictMath unsignedPowExact 0 0"
+                },
+                {
+                    "name": "unsignedPowExact",
+                    "signature": "unsignedPowExact(long arg0, int arg1)",
+                    "returnType": "long",
+                    "isStatic": true,
+                    "example": "jcli StrictMath unsignedPowExact 0 0"
                 }
             ]
         },
@@ -7387,6 +7135,13 @@
                 },
                 {
                     "name": "indexOf",
+                    "signature": "indexOf(int arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli String indexOf e"
+                },
+                {
+                    "name": "indexOf",
                     "signature": "indexOf(String arg0)",
                     "returnType": "int",
                     "isStatic": false,
@@ -7395,6 +7150,13 @@
                 {
                     "name": "indexOf",
                     "signature": "indexOf(String arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli String indexOf e"
+                },
+                {
+                    "name": "indexOf",
+                    "signature": "indexOf(String arg0, int arg1, int arg2)",
                     "returnType": "int",
                     "isStatic": false,
                     "example": "jcli String indexOf e"
@@ -7531,6 +7293,13 @@
                     "returnType": "String[]",
                     "isStatic": false,
                     "example": "jcli String split \"test\" \"test\""
+                },
+                {
+                    "name": "splitWithDelimiters",
+                    "signature": "splitWithDelimiters(String arg0, int arg1)",
+                    "returnType": "String[]",
+                    "isStatic": false,
+                    "example": "jcli String splitWithDelimiters \"test\" \"test\" 0"
                 },
                 {
                     "name": "startsWith",
@@ -8100,6 +7869,34 @@
                     "example": "jcli StringBuffer offsetByCodePoints \"0\" 0 0"
                 },
                 {
+                    "name": "repeat",
+                    "signature": "repeat(int arg0, int arg1)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer repeat \"0\" 0 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(CharSequence arg0, int arg1)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer repeat \"0\" \"test\" 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(CharSequence arg0, int arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer repeat \"0\" \"test\" 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(int arg0, int arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer repeat \"0\" 0 0"
+                },
+                {
                     "name": "replace",
                     "signature": "replace(int arg0, int arg1, String arg2)",
                     "returnType": "StringBuffer",
@@ -8595,6 +8392,34 @@
                     "returnType": "int",
                     "isStatic": false,
                     "example": "jcli StringBuilder offsetByCodePoints \"0\" 0 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(int arg0, int arg1)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder repeat \"0\" 0 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(CharSequence arg0, int arg1)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder repeat \"0\" \"test\" 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(CharSequence arg0, int arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder repeat \"0\" \"test\" 0"
+                },
+                {
+                    "name": "repeat",
+                    "signature": "repeat(int arg0, int arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder repeat \"0\" 0 0"
                 },
                 {
                     "name": "replace",
@@ -9260,510 +9085,6 @@
                     "returnType": "java.time.chrono.ThaiBuddhistEra[]",
                     "isStatic": true,
                     "example": "jcli ThaiBuddhistEra values "
-                }
-            ]
-        },
-        {
-            "name": "Thread",
-            "fullName": "java.lang.Thread",
-            "description": "Wrapper for java.lang.Thread",
-            "methods": [
-                {
-                    "name": "activeCount",
-                    "signature": "activeCount()",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli Thread activeCount "
-                },
-                {
-                    "name": "checkAccess",
-                    "signature": "checkAccess()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread checkAccess \"0\" "
-                },
-                {
-                    "name": "countStackFrames",
-                    "signature": "countStackFrames()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli Thread countStackFrames \"0\" "
-                },
-                {
-                    "name": "currentThread",
-                    "signature": "currentThread()",
-                    "returnType": "Thread",
-                    "isStatic": true,
-                    "example": "jcli Thread currentThread "
-                },
-                {
-                    "name": "dumpStack",
-                    "signature": "dumpStack()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Thread dumpStack "
-                },
-                {
-                    "name": "getAllStackTraces",
-                    "signature": "getAllStackTraces()",
-                    "returnType": "java.util.Map<Thread, StackTraceElement[]>",
-                    "isStatic": true,
-                    "example": "jcli Thread getAllStackTraces "
-                },
-                {
-                    "name": "getContextClassLoader",
-                    "signature": "getContextClassLoader()",
-                    "returnType": "ClassLoader",
-                    "isStatic": false,
-                    "example": "jcli Thread getContextClassLoader \"0\" "
-                },
-                {
-                    "name": "getDefaultUncaughtExceptionHandler",
-                    "signature": "getDefaultUncaughtExceptionHandler()",
-                    "returnType": "Thread$UncaughtExceptionHandler",
-                    "isStatic": true,
-                    "example": "jcli Thread getDefaultUncaughtExceptionHandler "
-                },
-                {
-                    "name": "getId",
-                    "signature": "getId()",
-                    "returnType": "long",
-                    "isStatic": false,
-                    "example": "jcli Thread getId \"0\" "
-                },
-                {
-                    "name": "getName",
-                    "signature": "getName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli Thread getName \"0\" "
-                },
-                {
-                    "name": "getPriority",
-                    "signature": "getPriority()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli Thread getPriority \"0\" "
-                },
-                {
-                    "name": "getStackTrace",
-                    "signature": "getStackTrace()",
-                    "returnType": "StackTraceElement[]",
-                    "isStatic": false,
-                    "example": "jcli Thread getStackTrace \"0\" "
-                },
-                {
-                    "name": "getState",
-                    "signature": "getState()",
-                    "returnType": "Thread$State",
-                    "isStatic": false,
-                    "example": "jcli Thread getState \"0\" "
-                },
-                {
-                    "name": "getThreadGroup",
-                    "signature": "getThreadGroup()",
-                    "returnType": "ThreadGroup",
-                    "isStatic": false,
-                    "example": "jcli Thread getThreadGroup \"0\" "
-                },
-                {
-                    "name": "getUncaughtExceptionHandler",
-                    "signature": "getUncaughtExceptionHandler()",
-                    "returnType": "Thread$UncaughtExceptionHandler",
-                    "isStatic": false,
-                    "example": "jcli Thread getUncaughtExceptionHandler \"0\" "
-                },
-                {
-                    "name": "interrupt",
-                    "signature": "interrupt()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread interrupt \"0\" "
-                },
-                {
-                    "name": "interrupted",
-                    "signature": "interrupted()",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Thread interrupted "
-                },
-                {
-                    "name": "isAlive",
-                    "signature": "isAlive()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli Thread isAlive \"0\" "
-                },
-                {
-                    "name": "isDaemon",
-                    "signature": "isDaemon()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli Thread isDaemon \"0\" "
-                },
-                {
-                    "name": "isInterrupted",
-                    "signature": "isInterrupted()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli Thread isInterrupted \"0\" "
-                },
-                {
-                    "name": "isVirtual",
-                    "signature": "isVirtual()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli Thread isVirtual \"0\" "
-                },
-                {
-                    "name": "join",
-                    "signature": "join(long arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread join \"0\" 0"
-                },
-                {
-                    "name": "join",
-                    "signature": "join(long arg0, int arg1)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread join \"0\" 0 0"
-                },
-                {
-                    "name": "join",
-                    "signature": "join()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread join \"0\" "
-                },
-                {
-                    "name": "ofPlatform",
-                    "signature": "ofPlatform()",
-                    "returnType": "Thread$Builder$OfPlatform",
-                    "isStatic": true,
-                    "example": "jcli Thread ofPlatform "
-                },
-                {
-                    "name": "ofVirtual",
-                    "signature": "ofVirtual()",
-                    "returnType": "Thread$Builder$OfVirtual",
-                    "isStatic": true,
-                    "example": "jcli Thread ofVirtual "
-                },
-                {
-                    "name": "onSpinWait",
-                    "signature": "onSpinWait()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Thread onSpinWait "
-                },
-                {
-                    "name": "resume",
-                    "signature": "resume()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread resume \"0\" "
-                },
-                {
-                    "name": "run",
-                    "signature": "run()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread run \"0\" "
-                },
-                {
-                    "name": "setDaemon",
-                    "signature": "setDaemon(boolean arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread setDaemon \"0\" false"
-                },
-                {
-                    "name": "setName",
-                    "signature": "setName(String arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread setName \"0\" \"test\""
-                },
-                {
-                    "name": "setPriority",
-                    "signature": "setPriority(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread setPriority \"0\" 0"
-                },
-                {
-                    "name": "sleep",
-                    "signature": "sleep(long arg0)",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Thread sleep 0"
-                },
-                {
-                    "name": "sleep",
-                    "signature": "sleep(long arg0, int arg1)",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Thread sleep 0 0"
-                },
-                {
-                    "name": "start",
-                    "signature": "start()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread start \"0\" "
-                },
-                {
-                    "name": "stop",
-                    "signature": "stop()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread stop \"0\" "
-                },
-                {
-                    "name": "suspend",
-                    "signature": "suspend()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Thread suspend \"0\" "
-                },
-                {
-                    "name": "threadId",
-                    "signature": "threadId()",
-                    "returnType": "long",
-                    "isStatic": false,
-                    "example": "jcli Thread threadId \"0\" "
-                },
-                {
-                    "name": "toString",
-                    "signature": "toString()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli Thread toString \"0\" "
-                },
-                {
-                    "name": "yield",
-                    "signature": "yield()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli Thread yield "
-                }
-            ]
-        },
-        {
-            "name": "ThreadGroup",
-            "fullName": "java.lang.ThreadGroup",
-            "description": "Wrapper for java.lang.ThreadGroup",
-            "methods": [
-                {
-                    "name": "activeCount",
-                    "signature": "activeCount()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup activeCount \"0\" "
-                },
-                {
-                    "name": "activeGroupCount",
-                    "signature": "activeGroupCount()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup activeGroupCount \"0\" "
-                },
-                {
-                    "name": "allowThreadSuspension",
-                    "signature": "allowThreadSuspension(boolean arg0)",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup allowThreadSuspension \"0\" false"
-                },
-                {
-                    "name": "checkAccess",
-                    "signature": "checkAccess()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup checkAccess \"0\" "
-                },
-                {
-                    "name": "destroy",
-                    "signature": "destroy()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup destroy \"0\" "
-                },
-                {
-                    "name": "getMaxPriority",
-                    "signature": "getMaxPriority()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup getMaxPriority \"0\" "
-                },
-                {
-                    "name": "getName",
-                    "signature": "getName()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup getName \"0\" "
-                },
-                {
-                    "name": "getParent",
-                    "signature": "getParent()",
-                    "returnType": "ThreadGroup",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup getParent \"0\" "
-                },
-                {
-                    "name": "interrupt",
-                    "signature": "interrupt()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup interrupt \"0\" "
-                },
-                {
-                    "name": "isDaemon",
-                    "signature": "isDaemon()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup isDaemon \"0\" "
-                },
-                {
-                    "name": "isDestroyed",
-                    "signature": "isDestroyed()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup isDestroyed \"0\" "
-                },
-                {
-                    "name": "list",
-                    "signature": "list()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup list \"0\" "
-                },
-                {
-                    "name": "resume",
-                    "signature": "resume()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup resume \"0\" "
-                },
-                {
-                    "name": "setDaemon",
-                    "signature": "setDaemon(boolean arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup setDaemon \"0\" false"
-                },
-                {
-                    "name": "setMaxPriority",
-                    "signature": "setMaxPriority(int arg0)",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup setMaxPriority \"0\" 0"
-                },
-                {
-                    "name": "stop",
-                    "signature": "stop()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup stop \"0\" "
-                },
-                {
-                    "name": "suspend",
-                    "signature": "suspend()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup suspend \"0\" "
-                },
-                {
-                    "name": "toString",
-                    "signature": "toString()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli ThreadGroup toString \"0\" "
-                }
-            ]
-        },
-        {
-            "name": "ThreadLocal",
-            "fullName": "java.lang.ThreadLocal",
-            "description": "Wrapper for java.lang.ThreadLocal",
-            "methods": [
-                {
-                    "name": "get",
-                    "signature": "get()",
-                    "returnType": "T",
-                    "isStatic": false,
-                    "example": "jcli ThreadLocal get "
-                },
-                {
-                    "name": "remove",
-                    "signature": "remove()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli ThreadLocal remove "
-                }
-            ]
-        },
-        {
-            "name": "Throwable",
-            "fullName": "java.lang.Throwable",
-            "description": "Wrapper for java.lang.Throwable",
-            "methods": [
-                {
-                    "name": "fillInStackTrace",
-                    "signature": "fillInStackTrace()",
-                    "returnType": "Throwable",
-                    "isStatic": false,
-                    "example": "jcli Throwable fillInStackTrace \"0\" "
-                },
-                {
-                    "name": "getCause",
-                    "signature": "getCause()",
-                    "returnType": "Throwable",
-                    "isStatic": false,
-                    "example": "jcli Throwable getCause \"0\" "
-                },
-                {
-                    "name": "getLocalizedMessage",
-                    "signature": "getLocalizedMessage()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli Throwable getLocalizedMessage \"0\" "
-                },
-                {
-                    "name": "getMessage",
-                    "signature": "getMessage()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli Throwable getMessage \"0\" "
-                },
-                {
-                    "name": "getStackTrace",
-                    "signature": "getStackTrace()",
-                    "returnType": "StackTraceElement[]",
-                    "isStatic": false,
-                    "example": "jcli Throwable getStackTrace \"0\" "
-                },
-                {
-                    "name": "getSuppressed",
-                    "signature": "getSuppressed()",
-                    "returnType": "Throwable[]",
-                    "isStatic": false,
-                    "example": "jcli Throwable getSuppressed \"0\" "
-                },
-                {
-                    "name": "printStackTrace",
-                    "signature": "printStackTrace()",
-                    "returnType": "void",
-                    "isStatic": false,
-                    "example": "jcli Throwable printStackTrace \"0\" "
-                },
-                {
-                    "name": "toString",
-                    "signature": "toString()",
-                    "returnType": "String",
-                    "isStatic": false,
-                    "example": "jcli Throwable toString \"0\" "
                 }
             ]
         },
