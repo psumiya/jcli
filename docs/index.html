@@ -150,6 +150,10 @@
             }
 
             function formatUsage(commandName, method) {
+                if (method.example) {
+                    return method.example;
+                }
+
                 let usage = `jcli ${commandName}`;
 
                 // Method name comes first

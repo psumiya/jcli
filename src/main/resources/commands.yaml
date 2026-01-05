@@ -8,3 +8,40 @@ scanPackages:
 
 commands: []
 
+examples:
+  # Math
+  "java.lang.Math.max": ["10", "20"]
+  "java.lang.Math.min": ["10", "20"]
+  "java.lang.Math.abs": ["-50"]
+  "java.lang.Math.pow": ["2", "3"]
+  "java.lang.Math.sqrt": ["16"]
+  "java.lang.Math.round": ["10.5"]
+  "java.lang.Math.ceil": ["10.1"]
+  "java.lang.Math.floor": ["10.9"]
+  "java.lang.Math.random": []
+
+  # String
+  "java.lang.String.substring": ["1"]
+  "java.lang.String.indexOf": ["e"]
+  "java.lang.String.startsWith": ["t"]
+  "java.lang.String.endsWith": ["t"]
+  "java.lang.String.contains": ["es"]
+  "java.lang.String.replace": ["test", "pass"]
+  "java.lang.String.toUpperCase": []
+  "java.lang.String.toLowerCase": []
+  "java.lang.String.trim": []
+  "java.lang.String.indent": ["2"]
+  "java.lang.String.concat": ["Case"]
+  
+  # Time
+  "java.time.LocalDate.now": []
+  "java.time.LocalDate.of": ["2023", "1", "1"]
+  "java.time.LocalTime.now": []
+  "java.time.LocalDateTime.now": []
+  "java.time.Instant.now": []
+  "java.time.Duration.ofDays": ["1"]
+  "java.time.Period.ofDays": ["1"]
+
+  # UUID
+  "java.util.UUID.randomUUID": []
+  "java.util.UUID.fromString": ["00000000-0000-0000-0000-000000000000"]

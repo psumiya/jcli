@@ -35,7 +35,9 @@ dependencies {
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.14.2")
 }
 
 application {
@@ -284,6 +286,7 @@ task generateDocsJson {
         def yaml = new Yaml()
         def data = commandsFile.exists() ? yaml.load(commandsFile.newInputStream()) : [:]
         def scanPackages = data['scanPackages'] ?: []
+        def explicitExamples = data['examples'] ?: [:]
         
         def docsData = [
             generatedAt: new Date().toString(),
@@ -302,9 +305,110 @@ task generateDocsJson {
              }
         }
 
+        // Initialize scanResult variable
+        def scanResult = null
+
+        // Heuristic Example Generator
+        def generateExample = { classInfo, method ->
+            def className = classInfo.getName()
+            def methodName = method.getName()
+            def key = "${className}.${methodName}".toString()
+            
+            // 1. Explicit Override
+            if (explicitExamples.containsKey(key)) {
+                def args = explicitExamples[key]
+                return "jcli ${classInfo.getSimpleName()} ${methodName} ${args.join(' ')}"
+            }
+
+            // Helpers for heuristics
+            def getHeuristicValue = { type ->
+                def typeStr = type.toString().replaceAll('java\\.lang\\.', '')
+                if (typeStr == 'int' || typeStr == 'Integer' || typeStr == 'long' || typeStr == 'Long') return "0"
+                if (typeStr == 'double' || typeStr == 'Double' || typeStr == 'float' || typeStr == 'Float') return "0.0"
+                if (typeStr == 'boolean' || typeStr == 'Boolean') return "false"
+                if (typeStr == 'String' || typeStr == 'CharSequence') return '"test"'
+                if (typeStr == 'byte' || typeStr == 'Byte') return "0"
+                if (typeStr == 'short' || typeStr == 'Short') return "0"
+                if (typeStr == 'char' || typeStr == 'Character') return "a"
+                
+                // Enums
+                try {
+                    def typeClass = scanResult.getClassInfo(type.toString())
+                    if (typeClass && typeClass.isEnum()) {
+                        def enumConstants = typeClass.getEnumConstants()
+                        if (enumConstants && enumConstants.size() > 0) {
+                            return enumConstants[0].toString()
+                        }
+                    }
+                } catch (Exception e) {}
+
+                return null // Unknown/Complex type
+            }
+
+            def methodArgs = []
+            def params = method.getParameterInfo()
+            for (param in params) {
+                 def val = getHeuristicValue(param.getTypeDescriptor())
+                 if (val == null) return null // Cannot generate arg for this param
+                 methodArgs << val
+            }
+
+            // Strategy Determination (Simplified replica of UniversalCommand logic)
+            // Static Method
+            if (method.isStatic()) {
+                return "jcli ${classInfo.getSimpleName()} ${methodName} ${methodArgs.join(' ')}"
+            }
+
+            // Instance Method
+            // We need an instance. 
+            // 1. Is it a String class? Instance is just a string.
+            if (className == "java.lang.String") {
+                 // heuristic: use "test" as instance
+                 return "jcli String ${methodName} \"test\" ${methodArgs.join(' ')}"
+            }
+
+            // 2. Does it have a constructor that takes String or primitive?
+            // (We simply check if we can generate a "default" instance arg, which usually matches 
+            // what UniversalCommand supports via createInstance or just passing the string)
+            
+            // If the class itself is supported by getHeuristicValue logic (primitives wrappers etc), we can use that.
+            // But usually this is for complex objects.
+            
+            // Check constructors
+            def hasUsableConstructor = classInfo.getConstructorInfo().any { ctor ->
+                 if (ctor.getParameterInfo().length == 1) {
+                     def pType = ctor.getParameterInfo()[0].getTypeDescriptor()
+                     return getHeuristicValue(pType) != null
+                 }
+                 return false
+            }
+
+            if (hasUsableConstructor) {
+                 // We assume we can construct it from a simple value.
+                 // For the example, we just need *some* value that works.
+                 // "0" or "test" is usually a safe bet for the CLI arg that becomes the instance.
+                 return "jcli ${classInfo.getSimpleName()} ${methodName} \"0\" ${methodArgs.join(' ')}"
+            }
+
+            // 3. Default constructor?
+            def hasDefaultConstructor = classInfo.getConstructorInfo().any { it.getParameterInfo().length == 0 }
+            if (hasDefaultConstructor) {
+                 // UniversalCommand supports "hybrid" where if default constructor exists, 
+                 // we might not need an instance arg if we passed all method args, 
+                 // OR we can pass an empty string/placeholder? 
+                 // Actually UniversalCommand executeHybrid checks:
+                 // "If class has default constructor, we can try using it as the instance and passing ALL args to the method."
+                 // So the command looks like: jcli Class method [args...]
+                 return "jcli ${classInfo.getSimpleName()} ${methodName} ${methodArgs.join(' ')}"
+            }
+
+            return null // Cannot determine how to invoke this instance method
+        }
+
         if (scanPackages) {
             println "Docs: Scanning packages: ${scanPackages}"
-            def scanResult = new ClassGraph()
+            // NOTE: scanResult is defined above
+            scanResult = new ClassGraph()
                 .overrideClasspath(sourceSets.main.runtimeClasspath)
                 .enableAllInfo()
                 .enableSystemJarsAndModules()
@@ -370,22 +474,30 @@ task generateDocsJson {
                                }
                                
                                if (allParamsSupported && isReturnTypeSupported(returnTypeSig)) {
-                                   methods << [
-                                       name: method.getName(),
-                                       signature: "${method.getName()}(${formatParams(method).join(', ')})",
-                                       returnType: returnTypeSig.toString().replaceAll('java\\.lang\\.', ''),
-                                       isStatic: method.isStatic()
-                                   ]
+                                   def exampleCmd = generateExample(classInfo, method)
+                                   
+                                   // CRITICAL FILTER: Only include if we have a valid example
+                                   if (exampleCmd != null) {
+                                       methods << [
+                                           name: method.getName(),
+                                           signature: "${method.getName()}(${formatParams(method).join(', ')})",
+                                           returnType: returnTypeSig.toString().replaceAll('java\\.lang\\.', ''),
+                                           isStatic: method.isStatic(),
+                                           example: exampleCmd
+                                       ]
+                                   }
                                }
                           }
                      }
 
-                     docsData.commands << [
-                         name: classInfo.getSimpleName(),
-                         fullName: classInfo.getName(),
-                         description: "Wrapper for ${classInfo.getName()}",
-                         methods: methods.sort { it.name }
-                     ]
+                     if (!methods.isEmpty()) {
+                         docsData.commands << [
+                             name: classInfo.getSimpleName(),
+                             fullName: classInfo.getName(),
+                             description: "Wrapper for ${classInfo.getName()}",
+                             methods: methods.sort { it.name }
+                         ]
+                     }
                 }
             }
         }
