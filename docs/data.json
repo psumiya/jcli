@@ -1,7 +1,1148 @@
 {
-    "generatedAt": "Sun Jan 04 17:32:36 PST 2026",
+    "generatedAt": "Sun Jan 04 22:25:42 PST 2026",
     "version": "0.0.3-beta",
     "commands": [
+        {
+            "name": "Arrays",
+            "fullName": "java.util.Arrays",
+            "description": "Wrapper for java.util.Arrays",
+            "methods": [
+                {
+                    "name": "asList",
+                    "signature": "asList(Object[] arg0)",
+                    "returnType": "java.util.List<T>",
+                    "isStatic": true,
+                    "example": "jcli Arrays asList [\"a\", 1]"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(long[] arg0, long arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2, 3] 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(long[] arg0, int arg1, int arg2, long arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2, 3] 0 0 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(int[] arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2, 3] 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(int[] arg0, int arg1, int arg2, int arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2, 3] 0 0 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(short[] arg0, short arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2] 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(short[] arg0, int arg1, int arg2, short arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2] 0 0 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(char[] arg0, char arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [\"a\", \"b\"] a"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(char[] arg0, int arg1, int arg2, char arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [\"a\", \"b\"] 0 0 a"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(byte[] arg0, byte arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2] 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(byte[] arg0, int arg1, int arg2, byte arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1, 2] 0 0 0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(double[] arg0, double arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1.0, 2.0, 3.0] 0.0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(double[] arg0, int arg1, int arg2, double arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1.0, 2.0, 3.0] 0 0 0.0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(float[] arg0, float arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1.0, 2.0, 3.0] 0.0"
+                },
+                {
+                    "name": "binarySearch",
+                    "signature": "binarySearch(float[] arg0, int arg1, int arg2, float arg3)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays binarySearch [1.0, 2.0, 3.0] 0 0 0.0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(boolean[] arg0, boolean[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [true, false] [true, false]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(boolean[] arg0, int arg1, int arg2, boolean[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [true, false] 0 0 [true, false] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(byte[] arg0, byte[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2] [1, 2]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(short[] arg0, short[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2] [1, 2]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(short[] arg0, int arg1, int arg2, short[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(char[] arg0, char[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [\"a\", \"b\"] [\"a\", \"b\"]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(char[] arg0, int arg1, int arg2, char[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [\"a\", \"b\"] 0 0 [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(int[] arg0, int[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(int[] arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(long[] arg0, long[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(long[] arg0, int arg1, int arg2, long[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(float[] arg0, float[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(float[] arg0, int arg1, int arg2, float[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(double[] arg0, double[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "compare",
+                    "signature": "compare(double[] arg0, int arg1, int arg2, double[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compare [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(byte[] arg0, byte[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2] [1, 2]"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(short[] arg0, short[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2] [1, 2]"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(short[] arg0, int arg1, int arg2, short[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(int[] arg0, int[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(int[] arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(long[] arg0, long[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "compareUnsigned",
+                    "signature": "compareUnsigned(long[] arg0, int arg1, int arg2, long[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays compareUnsigned [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(Object[] arg0, int arg1)",
+                    "returnType": "T[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [\"a\", 1] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(byte[] arg0, int arg1)",
+                    "returnType": "byte[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1, 2] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(short[] arg0, int arg1)",
+                    "returnType": "short[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1, 2] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(int[] arg0, int arg1)",
+                    "returnType": "int[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1, 2, 3] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(long[] arg0, int arg1)",
+                    "returnType": "long[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1, 2, 3] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(char[] arg0, int arg1)",
+                    "returnType": "char[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [\"a\", \"b\"] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(float[] arg0, int arg1)",
+                    "returnType": "float[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1.0, 2.0, 3.0] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(double[] arg0, int arg1)",
+                    "returnType": "double[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [1.0, 2.0, 3.0] 0"
+                },
+                {
+                    "name": "copyOf",
+                    "signature": "copyOf(boolean[] arg0, int arg1)",
+                    "returnType": "boolean[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOf [true, false] 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(Object[] arg0, int arg1, int arg2)",
+                    "returnType": "T[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [\"a\", 1] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(byte[] arg0, int arg1, int arg2)",
+                    "returnType": "byte[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1, 2] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(short[] arg0, int arg1, int arg2)",
+                    "returnType": "short[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1, 2] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(int[] arg0, int arg1, int arg2)",
+                    "returnType": "int[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(long[] arg0, int arg1, int arg2)",
+                    "returnType": "long[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(char[] arg0, int arg1, int arg2)",
+                    "returnType": "char[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(float[] arg0, int arg1, int arg2)",
+                    "returnType": "float[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(double[] arg0, int arg1, int arg2)",
+                    "returnType": "double[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "copyOfRange",
+                    "signature": "copyOfRange(boolean[] arg0, int arg1, int arg2)",
+                    "returnType": "boolean[]",
+                    "isStatic": true,
+                    "example": "jcli Arrays copyOfRange [true, false] 0 0"
+                },
+                {
+                    "name": "deepEquals",
+                    "signature": "deepEquals(Object[] arg0, Object[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays deepEquals [\"a\", 1] [\"a\", 1]"
+                },
+                {
+                    "name": "deepHashCode",
+                    "signature": "deepHashCode(Object[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays deepHashCode [\"a\", 1]"
+                },
+                {
+                    "name": "deepToString",
+                    "signature": "deepToString(Object[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays deepToString [\"a\", 1]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(long[] arg0, long[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(long[] arg0, int arg1, int arg2, long[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(int[] arg0, int[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(int[] arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(short[] arg0, short[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2] [1, 2]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(short[] arg0, int arg1, int arg2, short[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(char[] arg0, char[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [\"a\", \"b\"] [\"a\", \"b\"]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(char[] arg0, int arg1, int arg2, char[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [\"a\", \"b\"] 0 0 [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(byte[] arg0, byte[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2] [1, 2]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(boolean[] arg0, boolean[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [true, false] [true, false]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(boolean[] arg0, int arg1, int arg2, boolean[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [true, false] 0 0 [true, false] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(double[] arg0, double[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(double[] arg0, int arg1, int arg2, double[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(float[] arg0, float[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(float[] arg0, int arg1, int arg2, float[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(Object[] arg0, Object[] arg1)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [\"a\", 1] [\"a\", 1]"
+                },
+                {
+                    "name": "equals",
+                    "signature": "equals(Object[] arg0, int arg1, int arg2, Object[] arg3, int arg4, int arg5)",
+                    "returnType": "boolean",
+                    "isStatic": true,
+                    "example": "jcli Arrays equals [\"a\", 1] 0 0 [\"a\", 1] 0 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(long[] arg0, long arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2, 3] 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(long[] arg0, int arg1, int arg2, long arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2, 3] 0 0 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(int[] arg0, int arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2, 3] 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(int[] arg0, int arg1, int arg2, int arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2, 3] 0 0 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(short[] arg0, short arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2] 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(short[] arg0, int arg1, int arg2, short arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2] 0 0 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(char[] arg0, char arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [\"a\", \"b\"] a"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(char[] arg0, int arg1, int arg2, char arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [\"a\", \"b\"] 0 0 a"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(byte[] arg0, byte arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2] 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(byte[] arg0, int arg1, int arg2, byte arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1, 2] 0 0 0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(boolean[] arg0, boolean arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [true, false] false"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(boolean[] arg0, int arg1, int arg2, boolean arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [true, false] 0 0 false"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(double[] arg0, double arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1.0, 2.0, 3.0] 0.0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(double[] arg0, int arg1, int arg2, double arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1.0, 2.0, 3.0] 0 0 0.0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(float[] arg0, float arg1)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1.0, 2.0, 3.0] 0.0"
+                },
+                {
+                    "name": "fill",
+                    "signature": "fill(float[] arg0, int arg1, int arg2, float arg3)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays fill [1.0, 2.0, 3.0] 0 0 0.0"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(long[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1, 2, 3]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(int[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1, 2, 3]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(short[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1, 2]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(char[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [\"a\", \"b\"]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(byte[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1, 2]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(boolean[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [true, false]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(float[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(double[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode(Object[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays hashCode [\"a\", 1]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(boolean[] arg0, boolean[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [true, false] [true, false]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(boolean[] arg0, int arg1, int arg2, boolean[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [true, false] 0 0 [true, false] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(byte[] arg0, byte[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2] [1, 2]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(char[] arg0, char[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [\"a\", \"b\"] [\"a\", \"b\"]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(char[] arg0, int arg1, int arg2, char[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [\"a\", \"b\"] 0 0 [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(short[] arg0, short[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2] [1, 2]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(short[] arg0, int arg1, int arg2, short[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2] 0 0 [1, 2] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(int[] arg0, int[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(int[] arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(long[] arg0, long[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2, 3] [1, 2, 3]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(long[] arg0, int arg1, int arg2, long[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1, 2, 3] 0 0 [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(float[] arg0, float[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(float[] arg0, int arg1, int arg2, float[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(double[] arg0, double[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1.0, 2.0, 3.0] [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(double[] arg0, int arg1, int arg2, double[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [1.0, 2.0, 3.0] 0 0 [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(Object[] arg0, Object[] arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [\"a\", 1] [\"a\", 1]"
+                },
+                {
+                    "name": "mismatch",
+                    "signature": "mismatch(Object[] arg0, int arg1, int arg2, Object[] arg3, int arg4, int arg5)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Arrays mismatch [\"a\", 1] 0 0 [\"a\", 1] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(byte[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(byte[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(char[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [\"a\", \"b\"]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(char[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(short[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(short[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(int[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2, 3]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(int[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(long[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2, 3]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(long[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(float[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(float[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(double[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "parallelSort",
+                    "signature": "parallelSort(double[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays parallelSort [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(int[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2, 3]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(int[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(long[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2, 3]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(long[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2, 3] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(short[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(short[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(char[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [\"a\", \"b\"]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(char[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(byte[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(byte[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1, 2] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(float[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(float[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(double[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(double[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [1.0, 2.0, 3.0] 0 0"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(Object[] arg0)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [\"a\", 1]"
+                },
+                {
+                    "name": "sort",
+                    "signature": "sort(Object[] arg0, int arg1, int arg2)",
+                    "returnType": "void",
+                    "isStatic": true,
+                    "example": "jcli Arrays sort [\"a\", 1] 0 0"
+                },
+                {
+                    "name": "spliterator",
+                    "signature": "spliterator(Object[] arg0)",
+                    "returnType": "java.util.Spliterator<T>",
+                    "isStatic": true,
+                    "example": "jcli Arrays spliterator [\"a\", 1]"
+                },
+                {
+                    "name": "spliterator",
+                    "signature": "spliterator(Object[] arg0, int arg1, int arg2)",
+                    "returnType": "java.util.Spliterator<T>",
+                    "isStatic": true,
+                    "example": "jcli Arrays spliterator [\"a\", 1] 0 0"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(long[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1, 2, 3]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(int[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1, 2, 3]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(short[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1, 2]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(char[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [\"a\", \"b\"]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(byte[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1, 2]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(boolean[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [true, false]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(float[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(double[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [1.0, 2.0, 3.0]"
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString(Object[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli Arrays toString [\"a\", 1]"
+                }
+            ]
+        },
         {
             "name": "Boolean",
             "fullName": "java.lang.Boolean",
@@ -302,6 +1443,20 @@
                     "example": "jcli Character codePointAt \"test\" 0"
                 },
                 {
+                    "name": "codePointAt",
+                    "signature": "codePointAt(char[] arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character codePointAt [\"a\", \"b\"] 0"
+                },
+                {
+                    "name": "codePointAt",
+                    "signature": "codePointAt(char[] arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character codePointAt [\"a\", \"b\"] 0 0"
+                },
+                {
                     "name": "codePointBefore",
                     "signature": "codePointBefore(CharSequence arg0, int arg1)",
                     "returnType": "int",
@@ -309,11 +1464,32 @@
                     "example": "jcli Character codePointBefore \"test\" 0"
                 },
                 {
+                    "name": "codePointBefore",
+                    "signature": "codePointBefore(char[] arg0, int arg1)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character codePointBefore [\"a\", \"b\"] 0"
+                },
+                {
+                    "name": "codePointBefore",
+                    "signature": "codePointBefore(char[] arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character codePointBefore [\"a\", \"b\"] 0 0"
+                },
+                {
                     "name": "codePointCount",
                     "signature": "codePointCount(CharSequence arg0, int arg1, int arg2)",
                     "returnType": "int",
                     "isStatic": true,
                     "example": "jcli Character codePointCount \"test\" 0 0"
+                },
+                {
+                    "name": "codePointCount",
+                    "signature": "codePointCount(char[] arg0, int arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character codePointCount [\"a\", \"b\"] 0 0"
                 },
                 {
                     "name": "codePointOf",
@@ -468,48 +1644,6 @@
                     "returnType": "boolean",
                     "isStatic": true,
                     "example": "jcli Character isDigit 0"
-                },
-                {
-                    "name": "isEmoji",
-                    "signature": "isEmoji(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isEmoji 0"
-                },
-                {
-                    "name": "isEmojiComponent",
-                    "signature": "isEmojiComponent(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isEmojiComponent 0"
-                },
-                {
-                    "name": "isEmojiModifier",
-                    "signature": "isEmojiModifier(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isEmojiModifier 0"
-                },
-                {
-                    "name": "isEmojiModifierBase",
-                    "signature": "isEmojiModifierBase(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isEmojiModifierBase 0"
-                },
-                {
-                    "name": "isEmojiPresentation",
-                    "signature": "isEmojiPresentation(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isEmojiPresentation 0"
-                },
-                {
-                    "name": "isExtendedPictographic",
-                    "signature": "isExtendedPictographic(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli Character isExtendedPictographic 0"
                 },
                 {
                     "name": "isHighSurrogate",
@@ -792,11 +1926,25 @@
                     "example": "jcli Character offsetByCodePoints \"test\" 0 0"
                 },
                 {
+                    "name": "offsetByCodePoints",
+                    "signature": "offsetByCodePoints(char[] arg0, int arg1, int arg2, int arg3, int arg4)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character offsetByCodePoints [\"a\", \"b\"] 0 0 0 0"
+                },
+                {
                     "name": "reverseBytes",
                     "signature": "reverseBytes(char arg0)",
                     "returnType": "char",
                     "isStatic": true,
                     "example": "jcli Character reverseBytes a"
+                },
+                {
+                    "name": "toChars",
+                    "signature": "toChars(int arg0, char[] arg1, int arg2)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Character toChars 0 [\"a\", \"b\"] 0"
                 },
                 {
                     "name": "toChars",
@@ -1697,160 +2845,6 @@
             ]
         },
         {
-            "name": "ExactConversionsSupport",
-            "fullName": "java.lang.runtime.ExactConversionsSupport",
-            "description": "Wrapper for java.lang.runtime.ExactConversionsSupport",
-            "methods": [
-                {
-                    "name": "isDoubleToByteExact",
-                    "signature": "isDoubleToByteExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToByteExact 0.0"
-                },
-                {
-                    "name": "isDoubleToCharExact",
-                    "signature": "isDoubleToCharExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToCharExact 0.0"
-                },
-                {
-                    "name": "isDoubleToFloatExact",
-                    "signature": "isDoubleToFloatExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToFloatExact 0.0"
-                },
-                {
-                    "name": "isDoubleToIntExact",
-                    "signature": "isDoubleToIntExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToIntExact 0.0"
-                },
-                {
-                    "name": "isDoubleToLongExact",
-                    "signature": "isDoubleToLongExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToLongExact 0.0"
-                },
-                {
-                    "name": "isDoubleToShortExact",
-                    "signature": "isDoubleToShortExact(double arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isDoubleToShortExact 0.0"
-                },
-                {
-                    "name": "isFloatToByteExact",
-                    "signature": "isFloatToByteExact(float arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isFloatToByteExact 0.0"
-                },
-                {
-                    "name": "isFloatToCharExact",
-                    "signature": "isFloatToCharExact(float arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isFloatToCharExact 0.0"
-                },
-                {
-                    "name": "isFloatToIntExact",
-                    "signature": "isFloatToIntExact(float arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isFloatToIntExact 0.0"
-                },
-                {
-                    "name": "isFloatToLongExact",
-                    "signature": "isFloatToLongExact(float arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isFloatToLongExact 0.0"
-                },
-                {
-                    "name": "isFloatToShortExact",
-                    "signature": "isFloatToShortExact(float arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isFloatToShortExact 0.0"
-                },
-                {
-                    "name": "isIntToByteExact",
-                    "signature": "isIntToByteExact(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isIntToByteExact 0"
-                },
-                {
-                    "name": "isIntToCharExact",
-                    "signature": "isIntToCharExact(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isIntToCharExact 0"
-                },
-                {
-                    "name": "isIntToFloatExact",
-                    "signature": "isIntToFloatExact(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isIntToFloatExact 0"
-                },
-                {
-                    "name": "isIntToShortExact",
-                    "signature": "isIntToShortExact(int arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isIntToShortExact 0"
-                },
-                {
-                    "name": "isLongToByteExact",
-                    "signature": "isLongToByteExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToByteExact 0"
-                },
-                {
-                    "name": "isLongToCharExact",
-                    "signature": "isLongToCharExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToCharExact 0"
-                },
-                {
-                    "name": "isLongToDoubleExact",
-                    "signature": "isLongToDoubleExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToDoubleExact 0"
-                },
-                {
-                    "name": "isLongToFloatExact",
-                    "signature": "isLongToFloatExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToFloatExact 0"
-                },
-                {
-                    "name": "isLongToIntExact",
-                    "signature": "isLongToIntExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToIntExact 0"
-                },
-                {
-                    "name": "isLongToShortExact",
-                    "signature": "isLongToShortExact(long arg0)",
-                    "returnType": "boolean",
-                    "isStatic": true,
-                    "example": "jcli ExactConversionsSupport isLongToShortExact 0"
-                }
-            ]
-        },
-        {
             "name": "Float",
             "fullName": "java.lang.Float",
             "description": "Wrapper for java.lang.Float",
@@ -1889,20 +2883,6 @@
                     "returnType": "double",
                     "isStatic": false,
                     "example": "jcli Float doubleValue \"0\" "
-                },
-                {
-                    "name": "float16ToFloat",
-                    "signature": "float16ToFloat(short arg0)",
-                    "returnType": "float",
-                    "isStatic": true,
-                    "example": "jcli Float float16ToFloat 0"
-                },
-                {
-                    "name": "floatToFloat16",
-                    "signature": "floatToFloat16(float arg0)",
-                    "returnType": "short",
-                    "isStatic": true,
-                    "example": "jcli Float floatToFloat16 0.0"
                 },
                 {
                     "name": "floatToIntBits",
@@ -2106,6 +3086,13 @@
                     "returnType": "void",
                     "isStatic": false,
                     "example": "jcli Formatter flush \"0\" "
+                },
+                {
+                    "name": "format",
+                    "signature": "format(String arg0, Object[] arg1)",
+                    "returnType": "java.util.Formatter",
+                    "isStatic": false,
+                    "example": "jcli Formatter format \"0\" \"test\" [\"a\", 1]"
                 },
                 {
                     "name": "ioException",
@@ -2463,34 +3450,6 @@
                     "returnType": "java.time.chrono.HijrahEra[]",
                     "isStatic": true,
                     "example": "jcli HijrahEra values "
-                }
-            ]
-        },
-        {
-            "name": "IO",
-            "fullName": "java.lang.IO",
-            "description": "Wrapper for java.lang.IO",
-            "methods": [
-                {
-                    "name": "println",
-                    "signature": "println()",
-                    "returnType": "void",
-                    "isStatic": true,
-                    "example": "jcli IO println "
-                },
-                {
-                    "name": "readln",
-                    "signature": "readln()",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli IO readln "
-                },
-                {
-                    "name": "readln",
-                    "signature": "readln(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli IO readln \"test\""
                 }
             ]
         },
@@ -3081,6 +4040,13 @@
             "description": "Wrapper for net.minidev.json.JSONNavi",
             "methods": [
                 {
+                    "name": "add",
+                    "signature": "add(Object[] arg0)",
+                    "returnType": "net.minidev.json.JSONNavi<T>",
+                    "isStatic": false,
+                    "example": "jcli JSONNavi add \"0\" [\"a\", 1]"
+                },
+                {
                     "name": "array",
                     "signature": "array()",
                     "returnType": "net.minidev.json.JSONNavi<T>",
@@ -3404,6 +4370,13 @@
             "methods": [
                 {
                     "name": "parse",
+                    "signature": "parse(byte[] arg0)",
+                    "returnType": "Object",
+                    "isStatic": false,
+                    "example": "jcli JSONParser parse \"0\" [1, 2]"
+                },
+                {
+                    "name": "parse",
                     "signature": "parse(String arg0)",
                     "returnType": "Object",
                     "isStatic": false,
@@ -3502,6 +4475,13 @@
                 },
                 {
                     "name": "parse",
+                    "signature": "parse(byte[] arg0)",
+                    "returnType": "Object",
+                    "isStatic": true,
+                    "example": "jcli JSONValue parse [1, 2]"
+                },
+                {
+                    "name": "parse",
                     "signature": "parse(String arg0)",
                     "returnType": "Object",
                     "isStatic": true,
@@ -3520,6 +4500,13 @@
                     "returnType": "Object",
                     "isStatic": true,
                     "example": "jcli JSONValue parseStrict \"test\""
+                },
+                {
+                    "name": "parseWithException",
+                    "signature": "parseWithException(byte[] arg0)",
+                    "returnType": "Object",
+                    "isStatic": true,
+                    "example": "jcli JSONValue parseWithException [1, 2]"
                 },
                 {
                     "name": "parseWithException",
@@ -4053,13 +5040,6 @@
             "fullName": "java.util.Locale",
             "description": "Wrapper for java.util.Locale",
             "methods": [
-                {
-                    "name": "caseFoldLanguageTag",
-                    "signature": "caseFoldLanguageTag(String arg0)",
-                    "returnType": "String",
-                    "isStatic": true,
-                    "example": "jcli Locale caseFoldLanguageTag \"test\""
-                },
                 {
                     "name": "clone",
                     "signature": "clone()",
@@ -4810,34 +5790,6 @@
                     "example": "jcli Math ceilMod 0 0"
                 },
                 {
-                    "name": "clamp",
-                    "signature": "clamp(long arg0, int arg1, int arg2)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli Math clamp 0 0 0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(long arg0, long arg1, long arg2)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli Math clamp 0 0 0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(double arg0, double arg1, double arg2)",
-                    "returnType": "double",
-                    "isStatic": true,
-                    "example": "jcli Math clamp 0.0 0.0 0.0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(float arg0, float arg1, float arg2)",
-                    "returnType": "float",
-                    "isStatic": true,
-                    "example": "jcli Math clamp 0.0 0.0 0.0"
-                },
-                {
                     "name": "copySign",
                     "signature": "copySign(double arg0, double arg1)",
                     "returnType": "double",
@@ -5195,20 +6147,6 @@
                     "example": "jcli Math pow 2 3"
                 },
                 {
-                    "name": "powExact",
-                    "signature": "powExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli Math powExact 0 0"
-                },
-                {
-                    "name": "powExact",
-                    "signature": "powExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli Math powExact 0 0"
-                },
-                {
                     "name": "random",
                     "signature": "random()",
                     "returnType": "double",
@@ -5349,46 +6287,11 @@
                     "example": "jcli Math ulp 0.0"
                 },
                 {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli Math unsignedMultiplyExact 0 0"
-                },
-                {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli Math unsignedMultiplyExact 0 0"
-                },
-                {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(long arg0, long arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli Math unsignedMultiplyExact 0 0"
-                },
-                {
                     "name": "unsignedMultiplyHigh",
                     "signature": "unsignedMultiplyHigh(long arg0, long arg1)",
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli Math unsignedMultiplyHigh 0 0"
-                },
-                {
-                    "name": "unsignedPowExact",
-                    "signature": "unsignedPowExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli Math unsignedPowExact 0 0"
-                },
-                {
-                    "name": "unsignedPowExact",
-                    "signature": "unsignedPowExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli Math unsignedPowExact 0 0"
                 }
             ]
         },
@@ -5788,6 +6691,13 @@
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli Objects checkIndex 0 0"
+                },
+                {
+                    "name": "hash",
+                    "signature": "hash(Object[] arg0)",
+                    "returnType": "int",
+                    "isStatic": true,
+                    "example": "jcli Objects hash [\"a\", 1]"
                 }
             ]
         },
@@ -5932,6 +6842,90 @@
             ]
         },
         {
+            "name": "ProcessBuilder",
+            "fullName": "java.lang.ProcessBuilder",
+            "description": "Wrapper for java.lang.ProcessBuilder",
+            "methods": [
+                {
+                    "name": "command",
+                    "signature": "command(String[] arg0)",
+                    "returnType": "ProcessBuilder",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder command \"0\" [\"a\", \"b\"]"
+                },
+                {
+                    "name": "command",
+                    "signature": "command()",
+                    "returnType": "java.util.List<String>",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder command \"0\" "
+                },
+                {
+                    "name": "directory",
+                    "signature": "directory()",
+                    "returnType": "java.io.File",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder directory \"0\" "
+                },
+                {
+                    "name": "environment",
+                    "signature": "environment()",
+                    "returnType": "java.util.Map<String, String>",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder environment \"0\" "
+                },
+                {
+                    "name": "inheritIO",
+                    "signature": "inheritIO()",
+                    "returnType": "ProcessBuilder",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder inheritIO \"0\" "
+                },
+                {
+                    "name": "redirectError",
+                    "signature": "redirectError()",
+                    "returnType": "ProcessBuilder$Redirect",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder redirectError \"0\" "
+                },
+                {
+                    "name": "redirectErrorStream",
+                    "signature": "redirectErrorStream()",
+                    "returnType": "boolean",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder redirectErrorStream \"0\" "
+                },
+                {
+                    "name": "redirectErrorStream",
+                    "signature": "redirectErrorStream(boolean arg0)",
+                    "returnType": "ProcessBuilder",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder redirectErrorStream \"0\" false"
+                },
+                {
+                    "name": "redirectInput",
+                    "signature": "redirectInput()",
+                    "returnType": "ProcessBuilder$Redirect",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder redirectInput \"0\" "
+                },
+                {
+                    "name": "redirectOutput",
+                    "signature": "redirectOutput()",
+                    "returnType": "ProcessBuilder$Redirect",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder redirectOutput \"0\" "
+                },
+                {
+                    "name": "start",
+                    "signature": "start()",
+                    "returnType": "Process",
+                    "isStatic": false,
+                    "example": "jcli ProcessBuilder start \"0\" "
+                }
+            ]
+        },
+        {
             "name": "Random",
             "fullName": "java.util.Random",
             "description": "Wrapper for java.util.Random",
@@ -5942,6 +6936,13 @@
                     "returnType": "boolean",
                     "isStatic": false,
                     "example": "jcli Random nextBoolean \"0\" "
+                },
+                {
+                    "name": "nextBytes",
+                    "signature": "nextBytes(byte[] arg0)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli Random nextBytes \"0\" [1, 2]"
                 },
                 {
                     "name": "nextDouble",
@@ -6012,41 +7013,6 @@
                     "returnType": "java.time.format.ResolverStyle[]",
                     "isStatic": true,
                     "example": "jcli ResolverStyle values "
-                }
-            ]
-        },
-        {
-            "name": "ScopedValue",
-            "fullName": "java.lang.ScopedValue",
-            "description": "Wrapper for java.lang.ScopedValue",
-            "methods": [
-                {
-                    "name": "get",
-                    "signature": "get()",
-                    "returnType": "T",
-                    "isStatic": false,
-                    "example": "jcli ScopedValue get "
-                },
-                {
-                    "name": "hashCode",
-                    "signature": "hashCode()",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli ScopedValue hashCode "
-                },
-                {
-                    "name": "isBound",
-                    "signature": "isBound()",
-                    "returnType": "boolean",
-                    "isStatic": false,
-                    "example": "jcli ScopedValue isBound "
-                },
-                {
-                    "name": "newInstance",
-                    "signature": "newInstance()",
-                    "returnType": "ScopedValue<T>",
-                    "isStatic": true,
-                    "example": "jcli ScopedValue newInstance "
                 }
             ]
         },
@@ -6245,6 +7211,13 @@
             "description": "Wrapper for java.util.SplittableRandom",
             "methods": [
                 {
+                    "name": "nextBytes",
+                    "signature": "nextBytes(byte[] arg0)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli SplittableRandom nextBytes \"0\" [1, 2]"
+                },
+                {
                     "name": "nextInt",
                     "signature": "nextInt()",
                     "returnType": "int",
@@ -6439,34 +7412,6 @@
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli StrictMath ceilMod 0 0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(long arg0, int arg1, int arg2)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli StrictMath clamp 0 0 0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(long arg0, long arg1, long arg2)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli StrictMath clamp 0 0 0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(double arg0, double arg1, double arg2)",
-                    "returnType": "double",
-                    "isStatic": true,
-                    "example": "jcli StrictMath clamp 0.0 0.0 0.0"
-                },
-                {
-                    "name": "clamp",
-                    "signature": "clamp(float arg0, float arg1, float arg2)",
-                    "returnType": "float",
-                    "isStatic": true,
-                    "example": "jcli StrictMath clamp 0.0 0.0 0.0"
                 },
                 {
                     "name": "copySign",
@@ -6826,20 +7771,6 @@
                     "example": "jcli StrictMath pow 0.0 0.0"
                 },
                 {
-                    "name": "powExact",
-                    "signature": "powExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli StrictMath powExact 0 0"
-                },
-                {
-                    "name": "powExact",
-                    "signature": "powExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli StrictMath powExact 0 0"
-                },
-                {
                     "name": "random",
                     "signature": "random()",
                     "returnType": "double",
@@ -6980,46 +7911,11 @@
                     "example": "jcli StrictMath ulp 0.0"
                 },
                 {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
-                },
-                {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
-                },
-                {
-                    "name": "unsignedMultiplyExact",
-                    "signature": "unsignedMultiplyExact(long arg0, long arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli StrictMath unsignedMultiplyExact 0 0"
-                },
-                {
                     "name": "unsignedMultiplyHigh",
                     "signature": "unsignedMultiplyHigh(long arg0, long arg1)",
                     "returnType": "long",
                     "isStatic": true,
                     "example": "jcli StrictMath unsignedMultiplyHigh 0 0"
-                },
-                {
-                    "name": "unsignedPowExact",
-                    "signature": "unsignedPowExact(int arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": true,
-                    "example": "jcli StrictMath unsignedPowExact 0 0"
-                },
-                {
-                    "name": "unsignedPowExact",
-                    "signature": "unsignedPowExact(long arg0, int arg1)",
-                    "returnType": "long",
-                    "isStatic": true,
-                    "example": "jcli StrictMath unsignedPowExact 0 0"
                 }
             ]
         },
@@ -7099,6 +7995,20 @@
                     "example": "jcli String contentEquals \"test\" \"test\""
                 },
                 {
+                    "name": "copyValueOf",
+                    "signature": "copyValueOf(char[] arg0, int arg1, int arg2)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String copyValueOf [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "copyValueOf",
+                    "signature": "copyValueOf(char[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String copyValueOf [\"a\", \"b\"]"
+                },
+                {
                     "name": "describeConstable",
                     "signature": "describeConstable()",
                     "returnType": "java.util.Optional<String>",
@@ -7120,6 +8030,27 @@
                     "example": "jcli String equalsIgnoreCase \"test\" \"test\""
                 },
                 {
+                    "name": "format",
+                    "signature": "format(String arg0, Object[] arg1)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String format \"test\" [\"a\", 1]"
+                },
+                {
+                    "name": "formatted",
+                    "signature": "formatted(Object[] arg0)",
+                    "returnType": "String",
+                    "isStatic": false,
+                    "example": "jcli String formatted \"test\" [\"a\", 1]"
+                },
+                {
+                    "name": "getBytes",
+                    "signature": "getBytes(int arg0, int arg1, byte[] arg2, int arg3)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli String getBytes \"test\" 0 0 [1, 2] 0"
+                },
+                {
                     "name": "getBytes",
                     "signature": "getBytes(String arg0)",
                     "returnType": "byte[]",
@@ -7132,6 +8063,13 @@
                     "returnType": "byte[]",
                     "isStatic": false,
                     "example": "jcli String getBytes \"test\" "
+                },
+                {
+                    "name": "getChars",
+                    "signature": "getChars(int arg0, int arg1, char[] arg2, int arg3)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli String getChars \"test\" 0 0 [\"a\", \"b\"] 0"
                 },
                 {
                     "name": "hashCode",
@@ -7163,13 +8101,6 @@
                 },
                 {
                     "name": "indexOf",
-                    "signature": "indexOf(int arg0, int arg1, int arg2)",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli String indexOf e"
-                },
-                {
-                    "name": "indexOf",
                     "signature": "indexOf(String arg0)",
                     "returnType": "int",
                     "isStatic": false,
@@ -7178,13 +8109,6 @@
                 {
                     "name": "indexOf",
                     "signature": "indexOf(String arg0, int arg1)",
-                    "returnType": "int",
-                    "isStatic": false,
-                    "example": "jcli String indexOf e"
-                },
-                {
-                    "name": "indexOf",
-                    "signature": "indexOf(String arg0, int arg1, int arg2)",
                     "returnType": "int",
                     "isStatic": false,
                     "example": "jcli String indexOf e"
@@ -7209,6 +8133,13 @@
                     "returnType": "boolean",
                     "isStatic": false,
                     "example": "jcli String isEmpty \"test\" "
+                },
+                {
+                    "name": "join",
+                    "signature": "join(CharSequence arg0, CharSequence[] arg1)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String join \"test\" [\"a\", \"b\"]"
                 },
                 {
                     "name": "lastIndexOf",
@@ -7323,13 +8254,6 @@
                     "example": "jcli String split \"test\" \"test\""
                 },
                 {
-                    "name": "splitWithDelimiters",
-                    "signature": "splitWithDelimiters(String arg0, int arg1)",
-                    "returnType": "String[]",
-                    "isStatic": false,
-                    "example": "jcli String splitWithDelimiters \"test\" \"test\" 0"
-                },
-                {
                     "name": "startsWith",
                     "signature": "startsWith(String arg0, int arg1)",
                     "returnType": "boolean",
@@ -7436,6 +8360,20 @@
                 },
                 {
                     "name": "valueOf",
+                    "signature": "valueOf(char[] arg0)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String valueOf [\"a\", \"b\"]"
+                },
+                {
+                    "name": "valueOf",
+                    "signature": "valueOf(char[] arg0, int arg1, int arg2)",
+                    "returnType": "String",
+                    "isStatic": true,
+                    "example": "jcli String valueOf [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "valueOf",
                     "signature": "valueOf(boolean arg0)",
                     "returnType": "String",
                     "isStatic": true,
@@ -7506,6 +8444,20 @@
                 },
                 {
                     "name": "append",
+                    "signature": "append(char[] arg0)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer append \"0\" [\"a\", \"b\"]"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0, int arg1, int arg2)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer append \"0\" [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "append",
                     "signature": "append(boolean arg0)",
                     "returnType": "StringBuffer",
                     "isStatic": false,
@@ -7587,6 +8539,20 @@
                     "returnType": "AbstractStringBuilder",
                     "isStatic": false,
                     "example": "jcli StringBuffer append \"0\" false"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0, int arg1, int arg2)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer append \"0\" [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer append \"0\" [\"a\", \"b\"]"
                 },
                 {
                     "name": "append",
@@ -7722,6 +8688,13 @@
                     "example": "jcli StringBuffer ensureCapacity \"0\" 0"
                 },
                 {
+                    "name": "getChars",
+                    "signature": "getChars(int arg0, int arg1, char[] arg2, int arg3)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer getChars \"0\" 0 0 [\"a\", \"b\"] 0"
+                },
+                {
                     "name": "indexOf",
                     "signature": "indexOf(String arg0)",
                     "returnType": "int",
@@ -7737,10 +8710,24 @@
                 },
                 {
                     "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1, int arg2, int arg3)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer insert \"0\" 0 [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "insert",
                     "signature": "insert(int arg0, String arg1)",
                     "returnType": "StringBuffer",
                     "isStatic": false,
                     "example": "jcli StringBuffer insert \"0\" 0 \"test\""
+                },
+                {
+                    "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1)",
+                    "returnType": "StringBuffer",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer insert \"0\" 0 [\"a\", \"b\"]"
                 },
                 {
                     "name": "insert",
@@ -7856,10 +8843,24 @@
                 },
                 {
                     "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer insert \"0\" 0 [\"a\", \"b\"]"
+                },
+                {
+                    "name": "insert",
                     "signature": "insert(int arg0, String arg1)",
                     "returnType": "AbstractStringBuilder",
                     "isStatic": false,
                     "example": "jcli StringBuffer insert \"0\" 0 \"test\""
+                },
+                {
+                    "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1, int arg2, int arg3)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuffer insert \"0\" 0 [\"a\", \"b\"] 0 0"
                 },
                 {
                     "name": "isEmpty",
@@ -7895,34 +8896,6 @@
                     "returnType": "int",
                     "isStatic": false,
                     "example": "jcli StringBuffer offsetByCodePoints \"0\" 0 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(int arg0, int arg1)",
-                    "returnType": "StringBuffer",
-                    "isStatic": false,
-                    "example": "jcli StringBuffer repeat \"0\" 0 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(CharSequence arg0, int arg1)",
-                    "returnType": "StringBuffer",
-                    "isStatic": false,
-                    "example": "jcli StringBuffer repeat \"0\" \"test\" 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(CharSequence arg0, int arg1)",
-                    "returnType": "AbstractStringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuffer repeat \"0\" \"test\" 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(int arg0, int arg1)",
-                    "returnType": "AbstractStringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuffer repeat \"0\" 0 0"
                 },
                 {
                     "name": "replace",
@@ -8031,6 +9004,20 @@
                 },
                 {
                     "name": "append",
+                    "signature": "append(char[] arg0)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder append \"0\" [\"a\", \"b\"]"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0, int arg1, int arg2)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder append \"0\" [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "append",
                     "signature": "append(boolean arg0)",
                     "returnType": "StringBuilder",
                     "isStatic": false,
@@ -8112,6 +9099,20 @@
                     "returnType": "AbstractStringBuilder",
                     "isStatic": false,
                     "example": "jcli StringBuilder append \"0\" false"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0, int arg1, int arg2)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder append \"0\" [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "append",
+                    "signature": "append(char[] arg0)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder append \"0\" [\"a\", \"b\"]"
                 },
                 {
                     "name": "append",
@@ -8247,6 +9248,13 @@
                     "example": "jcli StringBuilder ensureCapacity \"0\" 0"
                 },
                 {
+                    "name": "getChars",
+                    "signature": "getChars(int arg0, int arg1, char[] arg2, int arg3)",
+                    "returnType": "void",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder getChars \"0\" 0 0 [\"a\", \"b\"] 0"
+                },
+                {
                     "name": "indexOf",
                     "signature": "indexOf(String arg0)",
                     "returnType": "int",
@@ -8262,10 +9270,24 @@
                 },
                 {
                     "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1, int arg2, int arg3)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder insert \"0\" 0 [\"a\", \"b\"] 0 0"
+                },
+                {
+                    "name": "insert",
                     "signature": "insert(int arg0, String arg1)",
                     "returnType": "StringBuilder",
                     "isStatic": false,
                     "example": "jcli StringBuilder insert \"0\" 0 \"test\""
+                },
+                {
+                    "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1)",
+                    "returnType": "StringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder insert \"0\" 0 [\"a\", \"b\"]"
                 },
                 {
                     "name": "insert",
@@ -8381,10 +9403,24 @@
                 },
                 {
                     "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder insert \"0\" 0 [\"a\", \"b\"]"
+                },
+                {
+                    "name": "insert",
                     "signature": "insert(int arg0, String arg1)",
                     "returnType": "AbstractStringBuilder",
                     "isStatic": false,
                     "example": "jcli StringBuilder insert \"0\" 0 \"test\""
+                },
+                {
+                    "name": "insert",
+                    "signature": "insert(int arg0, char[] arg1, int arg2, int arg3)",
+                    "returnType": "AbstractStringBuilder",
+                    "isStatic": false,
+                    "example": "jcli StringBuilder insert \"0\" 0 [\"a\", \"b\"] 0 0"
                 },
                 {
                     "name": "isEmpty",
@@ -8420,34 +9456,6 @@
                     "returnType": "int",
                     "isStatic": false,
                     "example": "jcli StringBuilder offsetByCodePoints \"0\" 0 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(int arg0, int arg1)",
-                    "returnType": "StringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuilder repeat \"0\" 0 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(CharSequence arg0, int arg1)",
-                    "returnType": "StringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuilder repeat \"0\" \"test\" 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(CharSequence arg0, int arg1)",
-                    "returnType": "AbstractStringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuilder repeat \"0\" \"test\" 0"
-                },
-                {
-                    "name": "repeat",
-                    "signature": "repeat(int arg0, int arg1)",
-                    "returnType": "AbstractStringBuilder",
-                    "isStatic": false,
-                    "example": "jcli StringBuilder repeat \"0\" 0 0"
                 },
                 {
                     "name": "replace",
@@ -9122,6 +10130,13 @@
             "description": "Wrapper for java.util.UUID",
             "methods": [
                 {
+                    "name": "clockSequence",
+                    "signature": "clockSequence()",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli UUID clockSequence \"0\" "
+                },
+                {
                     "name": "fromString",
                     "signature": "fromString(String arg0)",
                     "returnType": "java.util.UUID",
@@ -9129,11 +10144,74 @@
                     "example": "jcli UUID fromString 00000000-0000-0000-0000-000000000000"
                 },
                 {
+                    "name": "getLeastSignificantBits",
+                    "signature": "getLeastSignificantBits()",
+                    "returnType": "long",
+                    "isStatic": false,
+                    "example": "jcli UUID getLeastSignificantBits \"0\" "
+                },
+                {
+                    "name": "getMostSignificantBits",
+                    "signature": "getMostSignificantBits()",
+                    "returnType": "long",
+                    "isStatic": false,
+                    "example": "jcli UUID getMostSignificantBits \"0\" "
+                },
+                {
+                    "name": "hashCode",
+                    "signature": "hashCode()",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli UUID hashCode \"0\" "
+                },
+                {
+                    "name": "nameUUIDFromBytes",
+                    "signature": "nameUUIDFromBytes(byte[] arg0)",
+                    "returnType": "java.util.UUID",
+                    "isStatic": true,
+                    "example": "jcli UUID nameUUIDFromBytes [1, 2]"
+                },
+                {
+                    "name": "node",
+                    "signature": "node()",
+                    "returnType": "long",
+                    "isStatic": false,
+                    "example": "jcli UUID node \"0\" "
+                },
+                {
                     "name": "randomUUID",
                     "signature": "randomUUID()",
                     "returnType": "java.util.UUID",
                     "isStatic": true,
                     "example": "jcli UUID randomUUID "
+                },
+                {
+                    "name": "timestamp",
+                    "signature": "timestamp()",
+                    "returnType": "long",
+                    "isStatic": false,
+                    "example": "jcli UUID timestamp \"0\" "
+                },
+                {
+                    "name": "toString",
+                    "signature": "toString()",
+                    "returnType": "String",
+                    "isStatic": false,
+                    "example": "jcli UUID toString \"0\" "
+                },
+                {
+                    "name": "variant",
+                    "signature": "variant()",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli UUID variant \"0\" "
+                },
+                {
+                    "name": "version",
+                    "signature": "version()",
+                    "returnType": "int",
+                    "isStatic": false,
+                    "example": "jcli UUID version \"0\" "
                 }
             ]
         },

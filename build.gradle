@@ -355,6 +355,21 @@ task generateDocsJson {
                 if (typeStr == 'short' || typeStr == 'Short') return "0"
                 if (typeStr == 'char' || typeStr == 'Character') return "a"
                 
+                // Array types
+                if (typeStr.endsWith('[]')) {
+                    def componentType = typeStr.substring(0, typeStr.length() - 2)
+                    if (componentType == 'int' || componentType == 'Integer') return "[1, 2, 3]"
+                    if (componentType == 'long' || componentType == 'Long') return "[1, 2, 3]"
+                    if (componentType == 'double' || componentType == 'Double') return "[1.0, 2.0, 3.0]"
+                    if (componentType == 'float' || componentType == 'Float') return "[1.0, 2.0, 3.0]"
+                    if (componentType == 'boolean' || componentType == 'Boolean') return "[true, false]"
+                    if (componentType == 'String' || componentType == 'CharSequence') return '["a", "b"]'
+                    if (componentType == 'byte' || componentType == 'Byte') return "[1, 2]"
+                    if (componentType == 'short' || componentType == 'Short') return "[1, 2]"
+                    if (componentType == 'char' || componentType == 'Character') return "[\"a\", \"b\"]"
+                    if (componentType == 'Object') return '["a", 1]' 
+                }
+                
                 // Enums
                 try {
                     def typeClass = scanResult.getClassInfo(type.toString())

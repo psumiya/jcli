@@ -1004,42 +1004,6 @@
                 ]
             },
             {
-                "name": "isEmoji",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isEmojiPresentation",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isEmojiModifier",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isEmojiModifierBase",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isEmojiComponent",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isExtendedPictographic",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
                 "name": "toLowerCase",
                 "parameterTypes": [
                     "char"
@@ -1574,18 +1538,6 @@
                 ]
             },
             {
-                "name": "float16ToFloat",
-                "parameterTypes": [
-                    "short"
-                ]
-            },
-            {
-                "name": "floatToFloat16",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
                 "name": "compareTo",
                 "parameterTypes": [
                     "java.lang.Float"
@@ -1641,44 +1593,6 @@
                 "name": "resolveConstantDesc",
                 "parameterTypes": [
                     "java.lang.invoke.MethodHandles$Lookup"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.IO",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "println",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "println",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "print",
-                "parameterTypes": [
-                    "java.lang.Object"
-                ]
-            },
-            {
-                "name": "readln",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "readln",
-                "parameterTypes": [
-                    "java.lang.String"
                 ]
             }
         ]
@@ -2873,38 +2787,6 @@
                 ]
             },
             {
-                "name": "clamp",
-                "parameterTypes": [
-                    "long",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "long",
-                    "long",
-                    "long"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "double",
-                    "double",
-                    "double"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "float",
-                    "float",
-                    "float"
-                ]
-            },
-            {
                 "name": "fma",
                 "parameterTypes": [
                     "double",
@@ -3058,55 +2940,6 @@
                     "float",
                     "int"
                 ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "long",
-                    "long"
-                ]
-            },
-            {
-                "name": "powExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedPowExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "powExact",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedPowExact",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
             }
         ]
     },
@@ -3142,12 +2975,6 @@
             },
             {
                 "name": "getLayer",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isNativeAccessEnabled",
                 "parameterTypes": [
                     
                 ]
@@ -3613,57 +3440,6 @@
                 "name": "startPipeline",
                 "parameterTypes": [
                     "java.util.List<java.lang.ProcessBuilder>"
-                ]
-            }
-        ]
-    },
-    {
-        "name": "java.lang.ScopedValue",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "hashCode",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "where",
-                "parameterTypes": [
-                    "java.lang.ScopedValue<T>",
-                    "T"
-                ]
-            },
-            {
-                "name": "newInstance",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "get",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "isBound",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
-                "name": "orElse",
-                "parameterTypes": [
-                    "T"
-                ]
-            },
-            {
-                "name": "orElseThrow",
-                "parameterTypes": [
-                    "java.util.function.Supplier<? extends X>"
                 ]
             }
         ]
@@ -4302,38 +4078,6 @@
                 ]
             },
             {
-                "name": "clamp",
-                "parameterTypes": [
-                    "long",
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "long",
-                    "long",
-                    "long"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "double",
-                    "double",
-                    "double"
-                ]
-            },
-            {
-                "name": "clamp",
-                "parameterTypes": [
-                    "float",
-                    "float",
-                    "float"
-                ]
-            },
-            {
                 "name": "fma",
                 "parameterTypes": [
                     "double",
@@ -4485,55 +4229,6 @@
                 "name": "scalb",
                 "parameterTypes": [
                     "float",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedMultiplyExact",
-                "parameterTypes": [
-                    "long",
-                    "long"
-                ]
-            },
-            {
-                "name": "powExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedPowExact",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "powExact",
-                "parameterTypes": [
-                    "long",
-                    "int"
-                ]
-            },
-            {
-                "name": "unsignedPowExact",
-                "parameterTypes": [
-                    "long",
                     "int"
                 ]
             }
@@ -4719,14 +4414,6 @@
                 ]
             },
             {
-                "name": "indexOf",
-                "parameterTypes": [
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            {
                 "name": "lastIndexOf",
                 "parameterTypes": [
                     "int"
@@ -4749,14 +4436,6 @@
                 "name": "indexOf",
                 "parameterTypes": [
                     "java.lang.String",
-                    "int"
-                ]
-            },
-            {
-                "name": "indexOf",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "int",
                     "int"
                 ]
             },
@@ -4841,13 +4520,6 @@
             },
             {
                 "name": "split",
-                "parameterTypes": [
-                    "java.lang.String",
-                    "int"
-                ]
-            },
-            {
-                "name": "splitWithDelimiters",
                 "parameterTypes": [
                     "java.lang.String",
                     "int"
@@ -5457,37 +5129,9 @@
                 ]
             },
             {
-                "name": "repeat",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "java.lang.CharSequence",
-                    "int"
-                ]
-            },
-            {
                 "name": "toString",
                 "parameterTypes": [
                     
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "java.lang.CharSequence",
-                    "int"
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "int",
-                    "int"
                 ]
             },
             {
@@ -5988,37 +5632,9 @@
                 ]
             },
             {
-                "name": "repeat",
-                "parameterTypes": [
-                    "int",
-                    "int"
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "java.lang.CharSequence",
-                    "int"
-                ]
-            },
-            {
                 "name": "toString",
                 "parameterTypes": [
                     
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "java.lang.CharSequence",
-                    "int"
-                ]
-            },
-            {
-                "name": "repeat",
-                "parameterTypes": [
-                    "int",
-                    "int"
                 ]
             },
             {
@@ -6565,140 +6181,6 @@
         "allPublicConstructors": true,
         "methods": [
             
-        ]
-    },
-    {
-        "name": "java.lang.runtime.ExactConversionsSupport",
-        "queryAllPublicMethods": true,
-        "allDeclaredConstructors": true,
-        "allPublicConstructors": true,
-        "methods": [
-            {
-                "name": "isIntToByteExact",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isIntToShortExact",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isIntToCharExact",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isIntToFloatExact",
-                "parameterTypes": [
-                    "int"
-                ]
-            },
-            {
-                "name": "isLongToByteExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isLongToShortExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isLongToCharExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isLongToIntExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isLongToFloatExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isLongToDoubleExact",
-                "parameterTypes": [
-                    "long"
-                ]
-            },
-            {
-                "name": "isFloatToByteExact",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
-                "name": "isFloatToShortExact",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
-                "name": "isFloatToCharExact",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
-                "name": "isFloatToIntExact",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
-                "name": "isFloatToLongExact",
-                "parameterTypes": [
-                    "float"
-                ]
-            },
-            {
-                "name": "isDoubleToByteExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            },
-            {
-                "name": "isDoubleToShortExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            },
-            {
-                "name": "isDoubleToCharExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            },
-            {
-                "name": "isDoubleToIntExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            },
-            {
-                "name": "isDoubleToLongExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            },
-            {
-                "name": "isDoubleToFloatExact",
-                "parameterTypes": [
-                    "double"
-                ]
-            }
         ]
     },
     {
@@ -7468,12 +6950,6 @@
                 "parameterTypes": [
                     "java.time.temporal.Temporal",
                     "java.time.temporal.TemporalUnit"
-                ]
-            },
-            {
-                "name": "until",
-                "parameterTypes": [
-                    "java.time.Instant"
                 ]
             },
             {
@@ -19299,12 +18775,6 @@
                 ]
             },
             {
-                "name": "availableCurrencies",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
                 "name": "getCurrencyCode",
                 "parameterTypes": [
                     
@@ -19911,12 +19381,6 @@
                 ]
             },
             {
-                "name": "availableLocales",
-                "parameterTypes": [
-                    
-                ]
-            },
-            {
                 "name": "getISOCountries",
                 "parameterTypes": [
                     
@@ -20010,12 +19474,6 @@
                 "name": "toLanguageTag",
                 "parameterTypes": [
                     
-                ]
-            },
-            {
-                "name": "caseFoldLanguageTag",
-                "parameterTypes": [
-                    "java.lang.String"
                 ]
             },
             {
