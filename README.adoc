@@ -17,6 +17,8 @@ brew tap psumiya/jcli
 brew install jcli
 ----
 
+View documentation for all available commands: https://psumiya.github.io/jcli/
+
 == Motivation
 
 `jcli` aims to provide a convenient way to execute common JDK and JVM-based library methods directly from the command line, without writing boilerplate Java code.
