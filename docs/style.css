@@ -5,6 +5,10 @@
     --text-color: #333;
     --border-color: #dee2e6;
     --code-bg: #f1f3f5;
+    --header-height: 60px;
+    --footer-height: 50px;
+    --header-bg: #343a40;
+    --header-text: #fff;
 }
 
 * {
@@ -16,12 +20,61 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Header */
+.app-header {
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    flex-shrink: 0;
+}
+
+.app-header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.app-header .logo:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.app-footer {
+    height: var(--footer-height);
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    flex-shrink: 0;
+}
+
+.app-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
 .app-container {
     display: flex;
-    height: 100vh;
+    flex: 1;
     overflow: hidden;
+    position: relative;
 }
 
 /* Sidebar */
@@ -31,6 +84,7 @@ body {
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .search-container {
@@ -72,11 +126,12 @@ body {
     flex: 1;
     overflow-y: auto;
     padding: 2rem;
+    height: 100%;
 }
 
 #content-header {
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 15vh;
     color: #6c757d;
 }
 
@@ -153,10 +208,22 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .app-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
     .app-container {
         flex-direction: column;
-        height: auto;
+        flex: 1;
         overflow: visible;
+        height: auto;
     }
 
     .sidebar {
@@ -171,6 +238,7 @@ body {
         padding: 1rem;
         /* Allow content to scroll naturally with the page */
         overflow-y: visible;
+        height: auto;
     }
 
     #content-header {
