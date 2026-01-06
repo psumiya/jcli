@@ -61,38 +61,47 @@ sdk use java 25.0.1-graalce
 
 To build the standard executable JAR:
 
-1.  Clone the project.
-2.  Run the build:
-    [source,bash]
-    ----
-    ./gradlew clean build
-    ----
-3.  Execute the JAR:
-    [source,bash]
-    ----
-    java -jar build/libs/jcli-0.0.2-beta-all.jar -h
-    ----
+. Clone the project.
+. Run the build:
++
+[source,bash]
+----
+./gradlew clean build
+----
+
+. Execute the JAR:
++
+[source,bash]
+----
+java -jar build/libs/jcli-0.0.2-beta-all.jar -h
+----
 
 === Native Build (GraalVM)
 
 To compile a standalone native executable (faster startup, no JVM required at runtime):
 
-1.  Ensure you are using GraalVM 25:
-    [source,bash]
-    ----
-    sdk use java 25.0.1-graalce
-    ----
-2.  Run the native compile task (this may take a few minutes):
-    [source,bash]
-    ----
-    ./gradlew nativeCompile
-    ----
-3.  The executable is generated at `build/native/nativeCompile/jcli`.
-4.  Execute it directly:
-    [source,bash]
-    ----
-    ./build/native/nativeCompile/jcli --help
-    ----
+1. Ensure you are using GraalVM 25:
++
+[source,bash]
+----
+sdk use java 25.0.1-graalce
+----
+
+2. Run the native compile task (this may take a few minutes):
++
+[source,bash]
+----
+./gradlew nativeCompile
+----
+
+3. The executable is generated at `build/native/nativeCompile/jcli`.
+
+4. Execute it directly:
++
+[source,bash]
+----
+./build/native/nativeCompile/jcli --help
+----
 
 == Available Commands
 
@@ -125,14 +134,15 @@ You can extend `jcli` to support more libraries or packages by modifying the con
 
 1.  Open `src/main/resources/commands.yaml`.
 2.  Add the package you want to scan under `scanPackages`.
-
-    ```yaml
-    scanPackages:
-      - java.lang
-      - java.util
-      - java.time
-      - your.custom.package  # <--- Add this
-    ```
++
+[source,yaml]
+----
+scanPackages:
+  - java.lang
+  - java.util
+  - java.time
+  - your.custom.package  # <--- Add this
+----
 
 3.  **Rebuild**:
     *   For JVM: `./gradlew build`
